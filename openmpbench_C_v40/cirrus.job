@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# For more than 2 nodes:
+#
+# replace "--qos=short" with "--qos=standard"
+# delete "--reservation=shortqos"
+
+#SBATCH --account=d403-wt
+#SBATCH --job-name=host_arraybench
+#SBATCH --time=00:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --partition=standard
+#SBATCH --qos=standard
+# SBATCH --reservation=shortqos
+
+#SBATCH --output=%x_%j.out
+#SBATCH --exclusive
+#SBATCH --tasks-per-node=36
+#SBATCH --cpus-per-task=1
+
+module load gcc
+module load intel-license
+module load intel-20.4/cc
+module load intel-20.4/fc
+module load intel-20.4/compilers 
+module load mpt
+module load nvidia/nvhpc
+
+# Launch the parallel job
+
+echo "*****************************************************************************************************************************" 
+for numThreads in 1 2 4 8 16 32
+do
+    export OMP_NUM_THREADS=$numThreads
+    echo "*********************************************************************************Threads Number ="$numThreads"***************************************************************************************" 
+    # echo "*******************Threads Number ="$numThreads"************************" 
+        # srun --cpu-bind=cores ./arraybench_1 --outer-repetitions 40
+        srun arraybench_1 --measureonly PRIVATE --outer-repetitions 100 --test-time 1000.00 --delay-time 100
+
+    echo ""
+done

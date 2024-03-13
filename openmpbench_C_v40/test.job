@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#SBATCH --account=d403-wt
+#SBATCH --job-name=dev_arraybench
+#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+#SBATCH --gres=gpu:1
+# SBATCH --reservation=shortqos
+
+#SBATCH --output=%x_%j.out
+
+module load gcc
+module load intel-license
+module load intel-20.4/cc
+module load intel-20.4/fc
+module load intel-20.4/compilers 
+module load mpt
+module load nvidia/nvhpc
+
+# Launch the parallel job
+# srun ./a.out
+# srun arraybench_1 
+# srun schedbench --measureonly STATIC --outer-repetitions 100 --test-time 1000.00 --delay-time 1
+# srun syncbench --measureonly FOR --outer-repetitions 100 --test-time 1000.00 --delay-time 100
+export OMP_NUM_THREADS=20
+echo "*****************************************************************************************************************************" 
+# for numThreads in 1 2 4 8 16 32
+for delaytime in 0.01 0.1 1 10 100 1000 10000
+do
+    echo "************************************************************************************************************************************************************************" 
+        srun arraybench_1 --measureonly PRIVATE --outer-repetitions 100 --test-time 1000.00 --delay-time $delaytime
+
+    echo ""
+done

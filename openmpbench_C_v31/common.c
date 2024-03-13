@@ -322,6 +322,8 @@ void benchmark(char *name, void (*test)(void))
     for (k=0; k<=outerreps; k++) {
 	start = getclock();
 	test();
+    // Convert from second to microsecond
+    // Caution: Divided by innerreps!!
 	times[k] = (getclock() - start) * 1.0e6 / (double) innerreps;
     }
 

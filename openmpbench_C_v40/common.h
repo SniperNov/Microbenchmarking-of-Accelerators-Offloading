@@ -60,9 +60,11 @@ void finalisetest(char *name);
 
 double getclock();
 
+#pragma omp declare target
 void delay(int delaylength);
 
 void array_delay(int delaylength, double a[1]);
+#pragma omp end declare target
 
 int getdelaylengthfromtime(double delaytime);
 

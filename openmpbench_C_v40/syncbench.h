@@ -41,8 +41,10 @@ void referatom(void);
 void referred(void);
 
 void testpr(void);
+void device_testpr(void);
 
 void testfor(void);
+void device_testfor(void);
 
 void testpfor(void);
 
