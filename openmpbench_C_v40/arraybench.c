@@ -40,8 +40,7 @@
 
 double btest[IDA];
 double atest[IDA];
-
-#pragma omp threadprivate (btest)
+double atest_device[IDA]; // Consider that on the device, we work with pointers.
 
 int main(int argc, char **argv) {
 
@@ -49,6 +48,33 @@ int main(int argc, char **argv) {
 
     char testName[32];
     extern char type[120];
+
+// /****************************************************************************/
+//     int hostdev, targetdev, numdevs;
+
+//     numdevs = omp_get_num_devices();
+//     hostdev = omp_get_initial_device();
+//     targetdev = -9999;
+
+// #pragma omp target map(from : targetdev)
+//     {
+//         targetdev = omp_is_initial_device();
+//     }
+
+//     printf("There are  %d available devices\n", numdevs);
+//     printf("Host device is %d\n", hostdev);
+
+//     if (targetdev)
+//     {
+//         printf("Target region executed on host\n");
+//     }
+//     else
+//     {
+//         printf("Target region executed on device\n");
+//     }
+// /****************************************************************************/
+
+#pragma omp threadprivate(btest)
 
     /* GENERATE REFERENCE TIME */
     reference("reference time 1", &refer);
@@ -59,11 +85,30 @@ int main(int argc, char **argv) {
       benchmark(testName, &testprivnew);
     }
 
+    /****************************************************************************/
+    /* TEST PRIVATE on Device */
+    if ((strcmp("PRIVATE", type) == 0) || (strcmp("ALL", type) == 0))
+    {
+        sprintf(testName, "PRIVATE_DEVICE %d", IDA); // Name changed to indicate device
+        benchmark(testName, &device_testprivnew);    // Use the device version of the test
+    }
+    /****************************************************************************/
+
     /* TEST  FIRSTPRIVATE */
     if((strcmp("FIRSTPRIVATE",type)==0)||(strcmp("ALL",type)==0)){
       sprintf(testName, "FIRSTPRIVATE %d", IDA);
       benchmark(testName, &testfirstprivnew);
     }
+
+
+    /****************************************************************************/
+    /* TEST  FIRSTPRIVATE ON DEVICE*/
+    if ((strcmp("FIRSTPRIVATE", type) == 0) || (strcmp("ALL", type) == 0))
+    {
+        sprintf(testName, "FIRSTPRIVATE_DEVICE %d", IDA);
+        benchmark(testName, &device_testfirstprivnew);
+    }
+    /****************************************************************************/
 
     /* TEST  COPYPRIVATE */
     if((strcmp("COPYPRIVATE",type)==0)||(strcmp("ALL",type)==0)){
@@ -100,6 +145,20 @@ void testprivnew() {
     }
 }
 
+void device_testprivnew()
+{
+    int j;
+    // Map the entire loop to the device
+    for (j = 0; j < innerreps; j++)
+    {
+#pragma omp target map(tofrom : atest) // Mapping 'atest'
+#pragma omp teams distribute parallel private(atest) // Distribute the outer loop among teams
+        {
+            array_delay(delaylength, atest);
+        }
+    }
+}
+
 void testfirstprivnew() {
     int j;
     for (j = 0; j < innerreps; j++) {
@@ -110,6 +169,18 @@ void testfirstprivnew() {
     }
 }
 
+void device_testfirstprivnew()
+{
+    int j;
+    for (j = 0; j < innerreps; j++)
+    {
+#pragma omp target map(tofrom : atest) // Mapping 'atest'
+#pragma omp teams distribute parallel firstprivate(atest) // Ensuring 'atest' array is available on the device
+        {
+            array_delay(delaylength, atest);
+        }
+    }
+}
 
 void testcopyprivnew()
 {
@@ -136,3 +207,4 @@ void testthrprivnew() {
     }
 
 }
+

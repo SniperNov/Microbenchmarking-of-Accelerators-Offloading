@@ -44,6 +44,13 @@ void teststaticn(void);
 
 void teststaticnmono(void);
 
+void device_teststatic(void);
+
+void device_teststaticmono(void);
+
+void device_teststaticn(void);
+
+void device_teststaticnmono(void);
 
 void testdynamicn(void);
 

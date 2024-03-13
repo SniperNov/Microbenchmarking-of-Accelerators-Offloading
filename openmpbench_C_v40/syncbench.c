@@ -60,10 +60,21 @@ int main(int argc, char **argv) {
     if((strcmp("PARALLEL",type)==0)||(strcmp("ALL",type)==0)){
     benchmark("PARALLEL", &testpr);
   }
+    /* TEST On Device PARALLEL REGION */
+    if ((strcmp("PARALLEL", type) == 0) || (strcmp("ALL", type) == 0)){
+    benchmark("PARALLEL_ON_DEVICE", &device_testpr);
+  }
+
     /* TEST FOR */
     if((strcmp("FOR",type)==0)||(strcmp("ALL",type)==0)){
     benchmark("FOR", &testfor);
   }
+  /* TEST On Device FOR */
+  if ((strcmp("FOR", type) == 0) || (strcmp("ALL", type) == 0))
+  {
+      benchmark("FOR_ON_DEVICE", &device_testfor);
+  }
+
     /* TEST PARALLEL FOR */
     if((strcmp("PARALLEL_FOR",type)==0)||(strcmp("ALL",type)==0)){
     benchmark("PARALLEL FOR", &testpfor);
@@ -115,9 +126,9 @@ int main(int argc, char **argv) {
     benchmark("ATOMIC", &testatom);
     }
     /* TEST ATOMIC SEQCST */
-    if((strcmp("ATOMIC_SEQCST",type)==0)||(strcmp("ALL",type)==0)){
-    benchmark("ATOMIC_SEQCST", &testatomseqcst);
-    }
+    // if((strcmp("ATOMIC_SEQCST",type)==0)||(strcmp("ALL",type)==0)){
+    // benchmark("ATOMIC_SEQCST", &testatomseqcst);
+    // }
 
     /* GENERATE NEW REFERENCE TIME */
     if((strcmp("REDUCTION",type)==0)||(strcmp("ALL",type)==0)){
@@ -175,6 +186,18 @@ void testpr() {
     }
 }
 
+void device_testpr()
+{
+    int j;
+    for (j = 0; j < innerreps; j++){
+#pragma omp target
+    #pragma omp parallel
+    {
+        delay(delaylength);
+    }
+    }
+}
+
 void testfor() {
     int i, j;
 #pragma omp parallel private(j)
@@ -185,6 +208,24 @@ void testfor() {
 		delay(delaylength);
 	    }
 	}
+    }
+}
+
+void device_testfor()
+{
+    int i, j;
+// Offload the outer loop to the device without collapsing the loops
+#pragma omp parallel private(j)
+    {
+        for (j = 0; j < innerreps; j++)
+        {
+// Inside the target region, parallelize only the inner loop
+#pragma omp target teams distribute parallel for
+            for (i = 0; i < nthreads; i++)
+            {
+                delay(delaylength);
+            }
+        }
     }
 }
 
@@ -330,25 +371,25 @@ void testatom() {
 	printf("%f\n", aaaa);
 }
 
-void testatomseqcst() {
-    int j;
-    double aaaa = 0.0;
-    double epsilon = 1.0e-15;
-    double b,c;
-    b = 1.0;
-    c = (1.0 + epsilon);
-#pragma omp parallel private(j) firstprivate(b)
-    {
-        int ub = innerreps / nthreads; //avoid division on every iteration
-	for (j = 0; j < ub; j++) {
-#pragma omp atomic seq_cst
-	    aaaa += b;
-	    b *= c;
-	}
-    }
-    if (aaaa < 0.0)
-	printf("%f\n", aaaa);
-}
+// void testatomseqcst() {
+//     int j;
+//     double aaaa = 0.0;
+//     double epsilon = 1.0e-15;
+//     double b,c;
+//     b = 1.0;
+//     c = (1.0 + epsilon);
+// #pragma omp parallel private(j) firstprivate(b)
+//     {
+//         int ub = innerreps / nthreads; //avoid division on every iteration
+// 	for (j = 0; j < ub; j++) {
+// #pragma omp atomic seq_cst
+// 	    aaaa += b;
+// 	    b *= c;
+// 	}
+//     }
+//     if (aaaa < 0.0)
+// 	printf("%f\n", aaaa);
+// }
 
 void testred() {
     int j;

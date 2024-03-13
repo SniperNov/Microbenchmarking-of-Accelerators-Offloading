@@ -36,8 +36,10 @@
 void refer();
 
 void testfirstprivnew();
+void device_testfirstprivnew();
 
 void testprivnew();
+void device_testprivnew();
 
 void testcopyprivnew();
 
