@@ -39,7 +39,7 @@ else:
     exit()
 
 # Regular expression patterns to extract encountered benchmarks
-benchmark_pattern = r"Computing (\w+) 1 time using \d+ reps"
+benchmark_pattern = r"Computing (\w+) \d+ time using \d+ reps"
 
 # Extract benchmarks names
 benchmarks = re.findall(benchmark_pattern, content, re.DOTALL)
