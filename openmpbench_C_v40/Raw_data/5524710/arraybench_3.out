@@ -1,0 +1,66 @@
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	6 delay length (iterations) 
+	0.010000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 327680 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.009198   0.009158   0.008808   0.009777   0.000248   0
+reference 1 mean time    = 0.009198 microseconds +/- 0.000486
+reference 1 median time  = 0.009158 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 3 time using 20480 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.106785   0.106008   0.102539   0.115135   0.002860   0
+PRIVATE 3 time         = 0.106785 microseconds +/- 0.005605
+PRIVATE 3 overhead     = 0.097587 microseconds +/- 0.006092
+PRIVATE 3 median_ovrhd = 0.096850 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 3 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               24.663520   24.557114   24.092197   26.702881   0.383556   12
+PRIVATE_DEVICE 3 time         = 24.663520 microseconds +/- 0.751769
+PRIVATE_DEVICE 3 overhead     = 24.654321 microseconds +/- 0.752255
+PRIVATE_DEVICE 3 median_ovrhd = 24.547955 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	23 delay length (iterations) 
+	0.050000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 81920 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.039427   0.039293   0.038039   0.043359   0.001040   2
+reference 1 mean time    = 0.039427 microseconds +/- 0.002038
+reference 1 median time  = 0.039293 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 3 time using 20480 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.150484   0.150292   0.144879   0.160048   0.003950   0
+PRIVATE 3 time         = 0.150484 microseconds +/- 0.007742
+PRIVATE 3 overhead     = 0.111058 microseconds +/- 0.009780
+PRIVATE 3 median_ovrhd = 0.110999 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 3 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               24.812579   24.747849   24.151802   27.000904   0.440012   12
+PRIVATE_DEVICE 3 time         = 24.812579 microseconds +/- 0.862423
+PRIVATE_DEVICE 3 overhead     = 24.773153 microseconds +/- 0.864461
+PRIVATE_DEVICE 3 median_ovrhd = 24.708555 microseconds 
