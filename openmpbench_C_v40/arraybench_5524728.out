@@ -1,0 +1,60 @@
+arraybench_(1)_0.01
+
+arraybench_(1)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 29, Delay Time: 0.050000 microseconds
+{'reference': [], 'PRIVATE': [], 'PRIVATE_DEVICE': []}
+['0.003824', '0.097129', '23.964643', '0.053594', '0.168848', '23.546469']
+reference: [0.003824, 0.053594]
+PRIVATE: [0.097129, 0.168848]
+PRIVATE_DEVICE: [23.964643, 23.546469]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 109, in <module>
+    plt.savefig(plot_filename)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/pyplot.py", line 1134, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/figure.py", line 3390, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2193, in print_figure
+    result = print_method(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2043, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 497, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 446, in _print_pil
+    mpl.image.imsave(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/image.py", line 1656, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/PIL/Image.py", line 2436, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'Plots/5524728/arraybench_1/_plot.png'
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+{'reference': []}
+['0.010711', '0.109214', '24.555826', '0.063126', '0.172852', '24.814999']
+reference: [0.010711, 0.109214]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 109, in <module>
+    plt.savefig(plot_filename)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/pyplot.py", line 1134, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/figure.py", line 3390, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2193, in print_figure
+    result = print_method(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2043, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 497, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 446, in _print_pil
+    mpl.image.imsave(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/matplotlib/image.py", line 1656, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/PIL/Image.py", line 2436, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'Plots/5524728/arraybench_3/_plot.png'
