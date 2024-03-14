@@ -1,0 +1,28 @@
+arraybench_(1)_0.01
+
+arraybench_(1)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 29, Delay Time: 0.050000 microseconds
+{'reference': [], 'PRIVATE': [], 'PRIVATE_DEVICE': []}
+['0.002942', '0.097651', '23.078942', '0.053336', '0.165834', '24.611998']
+reference: [0.002942, 0.053336]
+PRIVATE: [0.097651, 0.165834]
+PRIVATE_DEVICE: [23.078942, 24.611998]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 83, in <module>
+    plt.plot(delay_times, predictions, color=color, linestyle='-', linewidth=2, marker='o', label=f'{benchmark} (y = {reg.coef_[0]:.4f}x + {reg.intercept_:.4f})')
+NameError: name 'reg' is not defined
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 6, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 23, Delay Time: 0.050000 microseconds
+{'reference': []}
+['0.009198', '0.106785', '24.663520', '0.039427', '0.150484', '24.812579']
+reference: [0.009198, 0.106785]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 83, in <module>
+    plt.plot(delay_times, predictions, color=color, linestyle='-', linewidth=2, marker='o', label=f'{benchmark} (y = {reg.coef_[0]:.4f}x + {reg.intercept_:.4f})')
+NameError: name 'reg' is not defined

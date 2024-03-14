@@ -1,0 +1,22 @@
+arraybench_(1)_0.01
+
+arraybench_(1)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+{'reference': [], 'PRIVATE': [], 'PRIVATE_DEVICE': []}
+['0.003836', '0.098117', '23.964322', '0.063144', '0.171895', '24.498105']
+reference: [0.003836, 0.063144]
+PRIVATE: [0.098117, 0.171895]
+PRIVATE_DEVICE: [23.964322, 24.498105]
+Plot saved to Plots/arraybench_1_performance_plot.png
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+Run 1: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 1000, Test Time: 1000.00 microseconds, Delay Length: 29, Delay Time: 0.050000 microseconds
+{'reference': []}
+['0.010731', '0.110077', '24.434376', '0.053924', '0.170161', '23.947382']
+reference: [0.010731, 0.110077]
+Plot saved to Plots/arraybench_3_performance_plot.png

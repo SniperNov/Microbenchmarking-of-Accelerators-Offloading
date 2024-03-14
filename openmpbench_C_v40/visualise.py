@@ -2,7 +2,9 @@ import os
 import re
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
+from scipy.stats import linregress
+
+# from sklearn.linear_model import LinearRegression
 import argparse
 
 # Setting up argument parser
@@ -73,9 +75,12 @@ for benchmark, data in benchmark_data.items():
     color = next(colors)
     data_np = np.array(data)
     # Linear regression
-    reg = LinearRegression().fit(delay_times_np, data_np)
-    predictions = reg.predict(delay_times_np)
-    plt.plot(delay_times, predictions, color=color, linestyle='-', linewidth=2, marker='o', label=f'{benchmark} (y = {reg.coef_[0]:.4f}x + {reg.intercept_:.4f})')
+    # reg = LinearRegression().fit(delay_times_np, data_np)
+    # predictions = reg.predict(delay_times_np)
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+    predictions = intercept + slope * np.array(delay_times)
+
+    plt.plot(delay_times, predictions, color=color, linestyle='-', linewidth=2, marker='o', label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
     plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)  # Actual data points
 
 # Final plot adjustments
