@@ -10,10 +10,12 @@ import argparse
 # Setting up argument parser
 parser = argparse.ArgumentParser(description='Parse and plot data from OpenMP benchmark output.')
 parser.add_argument('filename', type=str, help='Name of the output file to parse')
+# Add a new argument for the output directory
+parser.add_argument('output_dir', type=str, default='Plots', help='Directory to save the plot')
 args = parser.parse_args()
 
 # Ensure the /Plots directory exists
-plots_directory = 'Plots'
+plot_filename = args.output_dir
 # os.makedirs(plots_directory, exist_ok=True)
 
 # Reading content from the specified output file
@@ -70,17 +72,16 @@ else:
 # Plotting
 plt.figure(figsize=(10, 6))
 colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])  # More visually distinct colors
-delay_times_np = np.array(delay_times).reshape(-1, 1)
+extended_x = np.linspace(0, max(delay_times) * 1.1, 100)
+
 for benchmark, data in benchmark_data.items():
     color = next(colors)
-    data_np = np.array(data)
-    # Linear regression
-    # reg = LinearRegression().fit(delay_times_np, data_np)
-    # predictions = reg.predict(delay_times_np)
+    # Linear regression using SciPy
     slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
-    predictions = intercept + slope * np.array(delay_times)
+    # Calculate predictions over the extended range
+    extended_predictions = intercept + slope * extended_x
 
-    plt.plot(delay_times, predictions, color=color, linestyle='-', linewidth=2, marker='o', label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
+    plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
     plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)  # Actual data points
 
 # Final plot adjustments
@@ -104,6 +105,6 @@ plt.show()
 
 
 # Saving the diagram
-plot_filename = os.path.join(plots_directory, f'{os.path.basename(args.filename).split(".")[0]}_performance_plot.png')
+print(plot_filename)
 plt.savefig(plot_filename)
 print(f"Plot saved to {plot_filename}")
