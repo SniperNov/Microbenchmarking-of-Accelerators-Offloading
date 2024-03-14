@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#SBATCH --account=d403-wt
+#SBATCH --job-name=arraybench
+#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --exclusive
+
+
+#SBATCH --output=AvailableModule.out
+
+module load gcc
+module load intel-license
+module load intel-20.4/cc
+module load intel-20.4/fc
+module load intel-20.4/compilers 
+module load mpt
+module load nvidia/nvhpc
+module load openmpi/4.1.6
+module load python
+python -c "import numpy; print(numpy.__version__)"
+python -c "import scipy; print(scipy.__version__)"
