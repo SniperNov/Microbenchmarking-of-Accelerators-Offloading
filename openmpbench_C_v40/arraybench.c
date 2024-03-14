@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
 #pragma omp threadprivate(btest)
 
     /* GENERATE REFERENCE TIME */
-    reference("reference time 1", &refer);
+    reference("reference 1", &refer);
 
     /* TEST  PRIVATE */
     if((strcmp("PRIVATE",type)==0)||(strcmp("ALL",type)==0)){
