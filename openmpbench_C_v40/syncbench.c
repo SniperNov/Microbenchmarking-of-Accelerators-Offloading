@@ -54,14 +54,14 @@ int main(int argc, char **argv) {
     omp_init_lock_with_hint(&lock3, omp_lock_hint_uncontended);
 
     /* GENERATE REFERENCE TIME */
-    reference("reference time 1", &refer);
+    reference("reference 1", &refer);
 
     /* TEST PARALLEL REGION */
     if((strcmp("PARALLEL",type)==0)||(strcmp("ALL",type)==0)){
     benchmark("PARALLEL", &testpr);
   }
     /* TEST On Device PARALLEL REGION */
-    if ((strcmp("PARALLEL", type) == 0) || (strcmp("ALL", type) == 0)){
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0)){
     benchmark("PARALLEL_ON_DEVICE", &device_testpr);
   }
 
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
     benchmark("FOR", &testfor);
   }
   /* TEST On Device FOR */
-  if ((strcmp("FOR", type) == 0) || (strcmp("ALL", type) == 0))
+  if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
   {
       benchmark("FOR_ON_DEVICE", &device_testfor);
   }
@@ -220,7 +220,8 @@ void device_testfor()
         for (j = 0; j < innerreps; j++)
         {
 // Inside the target region, parallelize only the inner loop
-#pragma omp target teams distribute parallel for
+#pragma omp target 
+#pragma omp for
             for (i = 0; i < nthreads; i++)
             {
                 delay(delaylength);
@@ -238,6 +239,21 @@ void testpfor() {
 	}
     }
 }
+
+void device_testpfor()
+{
+    int i, j;
+    for (j = 0; j < innerreps; j++)
+    {
+#pragma omp target teams distribute parallel for
+        for (i = 0; i < nthreads; i++)
+        {
+            delay(delaylength);
+        }
+    }
+}
+
+
 void testbar() {
     int j;
 #pragma omp parallel private(j)

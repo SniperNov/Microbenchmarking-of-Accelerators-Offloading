@@ -1,0 +1,330 @@
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	7 delay length (iterations) 
+	0.010000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 327680 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.010850   0.010851   0.010327   0.011423   0.000289   0
+reference 1 mean time    = 0.010850 microseconds +/- 0.000567
+reference 1 median time  = 0.010851 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 20480 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.111319   0.111759   0.105519   0.118068   0.003218   0
+PRIVATE 2187 time         = 0.111319 microseconds +/- 0.006307
+PRIVATE 2187 overhead     = 0.100469 microseconds +/- 0.006874
+PRIVATE 2187 median_ovrhd = 0.100908 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               34.764194   34.701824   33.497810   37.348270   0.583259   10
+PRIVATE_DEVICE 2187 time         = 34.764194 microseconds +/- 1.143187
+PRIVATE_DEVICE 2187 overhead     = 34.753345 microseconds +/- 1.143754
+PRIVATE_DEVICE 2187 median_ovrhd = 34.690974 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	32 delay length (iterations) 
+	0.050000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 40960 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.063439   0.063441   0.060059   0.069186   0.001799   1
+reference 1 mean time    = 0.063439 microseconds +/- 0.003527
+reference 1 median time  = 0.063441 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 20480 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.173752   0.174099   0.165671   0.183203   0.004603   0
+PRIVATE 2187 time         = 0.173752 microseconds +/- 0.009022
+PRIVATE 2187 overhead     = 0.110314 microseconds +/- 0.012548
+PRIVATE 2187 median_ovrhd = 0.110659 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               35.207880   35.095215   34.296513   38.146973   0.540030   17
+PRIVATE_DEVICE 2187 time         = 35.207880 microseconds +/- 1.058459
+PRIVATE_DEVICE 2187 overhead     = 35.144441 microseconds +/- 1.061986
+PRIVATE_DEVICE 2187 median_ovrhd = 35.031774 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	56 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 20480 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.113330   0.113435   0.106788   0.123144   0.003399   0
+reference 1 mean time    = 0.113330 microseconds +/- 0.006663
+reference 1 median time  = 0.113435 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 10240 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.232808   0.233785   0.221678   0.246475   0.007147   0
+PRIVATE 2187 time         = 0.232808 microseconds +/- 0.014008
+PRIVATE 2187 overhead     = 0.119478 microseconds +/- 0.020671
+PRIVATE 2187 median_ovrhd = 0.120350 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               35.660458   35.393238   34.308434   221.705437   5.916513   1
+PRIVATE_DEVICE 2187 time         = 35.660458 microseconds +/- 11.596365
+PRIVATE_DEVICE 2187 overhead     = 35.547128 microseconds +/- 11.603028
+PRIVATE_DEVICE 2187 median_ovrhd = 35.279803 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	226 delay length (iterations) 
+	0.500000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 5120 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.529991   0.531157   0.507804   0.559771   0.014606   0
+reference 1 mean time    = 0.529991 microseconds +/- 0.028628
+reference 1 median time  = 0.531157 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 5120 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               0.645757   0.647246   0.617607   0.678515   0.017332   0
+PRIVATE 2187 time         = 0.645757 microseconds +/- 0.033971
+PRIVATE 2187 overhead     = 0.115766 microseconds +/- 0.062599
+PRIVATE 2187 median_ovrhd = 0.116089 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               37.522364   37.443638   36.346912   40.149689   0.635817   9
+PRIVATE_DEVICE 2187 time         = 37.522364 microseconds +/- 1.246202
+PRIVATE_DEVICE 2187 overhead     = 36.992372 microseconds +/- 1.274830
+PRIVATE_DEVICE 2187 median_ovrhd = 36.912481 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	445 delay length (iterations) 
+	1.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 2560 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               1.063245   1.066085   1.014862   1.120381   0.029272   0
+reference 1 mean time    = 1.063245 microseconds +/- 0.057373
+reference 1 median time  = 1.066085 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 2560 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               1.176924   1.178728   1.128856   1.244899   0.031540   0
+PRIVATE 2187 time         = 1.176924 microseconds +/- 0.061818
+PRIVATE 2187 overhead     = 0.113679 microseconds +/- 0.119191
+PRIVATE 2187 median_ovrhd = 0.112643 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               39.385629   39.052963   37.705898   44.596195   1.134030   7
+PRIVATE_DEVICE 2187 time         = 39.385629 microseconds +/- 2.222699
+PRIVATE_DEVICE 2187 overhead     = 38.322383 microseconds +/- 2.280072
+PRIVATE_DEVICE 2187 median_ovrhd = 37.986878 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	2069 delay length (iterations) 
+	5.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 640 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               4.998631   5.015731   4.775077   5.290657   0.137089   0
+reference 1 mean time    = 4.998631 microseconds +/- 0.268695
+reference 1 median time  = 5.015731 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 640 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               5.118211   5.122647   4.920363   5.421788   0.137469   0
+PRIVATE 2187 time         = 5.118211 microseconds +/- 0.269440
+PRIVATE 2187 overhead     = 0.119580 microseconds +/- 0.538135
+PRIVATE 2187 median_ovrhd = 0.106916 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               59.227324   58.448315   57.148933   66.602230   2.001443   8
+PRIVATE_DEVICE 2187 time         = 59.227324 microseconds +/- 3.922827
+PRIVATE_DEVICE 2187 overhead     = 54.228693 microseconds +/- 4.191522
+PRIVATE_DEVICE 2187 median_ovrhd = 53.432584 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	4440 delay length (iterations) 
+	10.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 320 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               10.676461   10.678172   10.252744   11.284649   0.292300   0
+reference 1 mean time    = 10.676461 microseconds +/- 0.572908
+reference 1 median time  = 10.678172 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 320 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               10.830386   10.843575   10.406226   11.424720   0.291239   0
+PRIVATE 2187 time         = 10.830386 microseconds +/- 0.570829
+PRIVATE 2187 overhead     = 0.153925 microseconds +/- 1.143736
+PRIVATE 2187 median_ovrhd = 0.165403 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               87.774158   86.700916   85.449219   99.503994   3.020680   45
+PRIVATE_DEVICE 2187 time         = 87.774158 microseconds +/- 5.920533
+PRIVATE_DEVICE 2187 overhead     = 77.097696 microseconds +/- 6.493441
+PRIVATE_DEVICE 2187 median_ovrhd = 76.022744 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	22465 delay length (iterations) 
+	50.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               53.854191   54.025650   51.897764   57.274103   1.510194   0
+reference 1 mean time    = 53.854191 microseconds +/- 2.959980
+reference 1 median time  = 54.025650 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               54.050720   54.287910   52.076578   57.649612   1.492485   0
+PRIVATE 2187 time         = 54.050720 microseconds +/- 2.925271
+PRIVATE 2187 overhead     = 0.196528 microseconds +/- 5.885251
+PRIVATE 2187 median_ovrhd = 0.262260 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               302.722466   301.206112   300.204754   350.105762   7.299776   22
+PRIVATE_DEVICE 2187 time         = 302.722466 microseconds +/- 14.307562
+PRIVATE_DEVICE 2187 overhead     = 248.868275 microseconds +/- 17.267542
+PRIVATE_DEVICE 2187 median_ovrhd = 247.180462 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	43784 delay length (iterations) 
+	100.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               105.731213   106.126070   101.149082   111.508369   2.993549   0
+reference 1 mean time    = 105.731213 microseconds +/- 5.867357
+reference 1 median time  = 106.126070 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               105.475032   105.828047   101.339817   111.889839   3.006709   0
+PRIVATE 2187 time         = 105.475032 microseconds +/- 5.893151
+PRIVATE 2187 overhead     = -0.256181 microseconds +/- 11.760507
+PRIVATE 2187 median_ovrhd = -0.298023 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               556.331193   554.800034   553.607941   647.389889   10.121569   18
+PRIVATE_DEVICE 2187 time         = 556.331193 microseconds +/- 19.838276
+PRIVATE_DEVICE 2187 overhead     = 450.599980 microseconds +/- 25.705633
+PRIVATE_DEVICE 2187 median_ovrhd = 448.673964 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	1000 outer repetitions
+	1000.00 test time (microseconds)
+	221327 delay length (iterations) 
+	500.000000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               530.590212   529.998541   511.598587   556.445122   11.765636   0
+reference 1 mean time    = 530.590212 microseconds +/- 23.060647
+reference 1 median time  = 529.998541 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               530.693185   530.445576   511.896610   559.258461   11.283580   0
+PRIVATE 2187 time         = 530.693185 microseconds +/- 22.115817
+PRIVATE 2187 overhead     = 0.102973 microseconds +/- 45.176465
+PRIVATE 2187 median_ovrhd = 0.447035 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 2187 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 1000               2665.364575   2664.154768   2662.491798   3116.691113   17.365763   4
+PRIVATE_DEVICE 2187 time         = 2665.364575 microseconds +/- 34.036895
+PRIVATE_DEVICE 2187 overhead     = 2134.774363 microseconds +/- 57.097542
+PRIVATE_DEVICE 2187 median_ovrhd = 2134.156227 microseconds 
