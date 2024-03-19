@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
       benchmark("STATIC", &teststatic);
     }
     /* TEST STATIC on device */
-    if ((strcmp("STATIC", type) == 0) || (strcmp("ALL", type) == 0))
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
       benchmark("STATIC_DEVICE", &device_teststatic);
     }
@@ -67,19 +67,19 @@ int main(int argc, char **argv) {
       benchmark("STATIC_MONOTONIC", &teststaticmono);
     }
     /* TEST STATIC MONO on device */
-    if ((strcmp("STATIC_MONOTONIC", type) == 0) || (strcmp("ALL", type) == 0)){
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0)){
       benchmark("STATIC_MONOTONIC_DEVICE", &device_teststaticmono);
     }
 
-    // /* TEST STATIC,n */
-    // if((strcmp("STATICN",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1024;
-    //   while (cksz <= itersperthr) {
-    //     sprintf(testName, "STATIC %d", cksz);
-    //     benchmark(testName, &teststaticn);
-    //     cksz *= 2;
-    //   }
-    // }
+    /* TEST STATIC,n */
+    if((strcmp("STATICN",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1024;
+      while (cksz <= itersperthr) {
+        sprintf(testName, "STATIC %d", cksz);
+        benchmark(testName, &teststaticn);
+        cksz *= 2;
+      }
+    }
     // /* TEST STATIC,n ON DEVICE*/
     // if ((strcmp("STATICN", type) == 0) || (strcmp("ALL", type) == 0))
     // {
@@ -92,15 +92,15 @@ int main(int argc, char **argv) {
     //   }
     // }
 
-    // /* TEST STATIC MONO,n */
-    // if((strcmp("STATICN_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1024;
-    //   while (cksz <= itersperthr) {
-    //     sprintf(testName, "STATIC_MONOTONIC %d", cksz);
-    //     benchmark(testName, &teststaticnmono);
-    //     cksz *= 2;
-    //   }
-    // }
+    /* TEST STATIC MONO,n */
+    if((strcmp("STATICN_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1024;
+      while (cksz <= itersperthr) {
+        sprintf(testName, "STATIC_MONOTONIC %d", cksz);
+        benchmark(testName, &teststaticnmono);
+        cksz *= 2;
+      }
+    }
     // /* TEST STATIC MONO ON DEVICE,n */
     //     if ((strcmp("STATICN_MONOTONIC", type) == 0) || (strcmp("ALL", type) == 0))
     // {
@@ -113,43 +113,43 @@ int main(int argc, char **argv) {
     //   }
     // }
 
-    // /* TEST DYNAMIC,n */
-    // if((strcmp("DYNAMIC",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1;
-    //   while (cksz <= itersperthr) {
-    //     sprintf(testName, "DYNAMIC %d", cksz);
-    //     benchmark(testName, &testdynamicn);
-    //     cksz *= 2;
-    //   }
-    // }
+    /* TEST DYNAMIC,n */
+    if((strcmp("DYNAMIC",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1;
+      while (cksz <= itersperthr) {
+        sprintf(testName, "DYNAMIC %d", cksz);
+        benchmark(testName, &testdynamicn);
+        cksz *= 2;
+      }
+    }
 
-    // if((strcmp("DYNAMIC_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1;
-    //   while (cksz <= itersperthr) {
-    //     sprintf(testName, "DYNAMIC_MONOTONIC %d", cksz);
-    //     benchmark(testName, &testdynamicnmono);
-    //     cksz *= 2;
-    //   }
-    // }
+    if((strcmp("DYNAMIC_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1;
+      while (cksz <= itersperthr) {
+        sprintf(testName, "DYNAMIC_MONOTONIC %d", cksz);
+        benchmark(testName, &testdynamicnmono);
+        cksz *= 2;
+      }
+    }
 
-    // /* TEST GUIDED,n */
-    // if((strcmp("GUIDED",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1;
-    //   while (cksz <= itersperthr / nthreads) {
-    //     sprintf(testName, "GUIDED %d", cksz);
-    //     benchmark(testName, &testguidedn);
-    //   cksz *= 2;
-    //   }
-    // }
+    /* TEST GUIDED,n */
+    if((strcmp("GUIDED",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1;
+      while (cksz <= itersperthr / nthreads) {
+        sprintf(testName, "GUIDED %d", cksz);
+        benchmark(testName, &testguidedn);
+      cksz *= 2;
+      }
+    }
 
-    // if((strcmp("GUIDED_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
-    //   cksz = 1;
-    //   while (cksz <= itersperthr / nthreads) {
-    //     sprintf(testName, "GUIDED_MONOTONIC %d", cksz);
-    //     benchmark(testName, &testguidednmono);
-    //     cksz *= 2;
-    //   }
-    // }
+    if((strcmp("GUIDED_MONOTONIC",type)==0)||(strcmp("ALL",type)==0)){
+      cksz = 1;
+      while (cksz <= itersperthr / nthreads) {
+        sprintf(testName, "GUIDED_MONOTONIC %d", cksz);
+        benchmark(testName, &testguidednmono);
+        cksz *= 2;
+      }
+    }
 
     // if((strcmp("TASKLOOP",type)==0)||(strcmp("ALL",type)==0)){
     //   cksz = 1;
@@ -192,10 +192,12 @@ void device_teststatic() {
 
   int i, j;
   // calculated before the offloaded region to ensure that the total number of iterations aligns with your intended distribution across threads and iterations per thread.
+#pragma omp parallel private(j)
   for (j = 0; j < innerreps; j++)
   {
 // Offload the entire parallel region to the device
-#pragma omp target teams distribute parallel for private(j) schedule(static)
+#pragma omp target
+#pragma omp parallel for schedule(static)
     for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);
@@ -211,7 +213,7 @@ void teststaticmono() {
 #pragma omp parallel private(j)
     {
 	for (j = 0; j < innerreps; j++) {
-#pragma omp for schedule(monotonic:static)
+#pragma omp parallel for schedule(monotonic:static)
 	    for (i = 0; i < itersperthr * nthreads; i++) {
 		delay(delaylength);
 	    }
@@ -223,10 +225,12 @@ void device_teststaticmono()
 {
 
   int i, j;
+#pragma omp parallel private(j)
   for (j = 0; j < innerreps; j++)
   {
 // Offload the entire parallel region to the device
-#pragma omp target teams distribute parallel for private(j) schedule(monotonic : static)
+#pragma omp target
+#pragma omp for schedule(monotonic : static)
     for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);

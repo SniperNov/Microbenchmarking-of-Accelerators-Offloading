@@ -87,9 +87,11 @@ int main(int argc, char **argv) {
 
     /****************************************************************************/
     /* TEST PRIVATE on Device */
-    if ((strcmp("PRIVATE", type) == 0) || (strcmp("ALL", type) == 0))
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
         sprintf(testName, "PRIVATE_DEVICE %d", IDA); // Name changed to indicate device
+     
+     
         benchmark(testName, &device_testprivnew);    // Use the device version of the test
     }
     /****************************************************************************/
@@ -103,7 +105,7 @@ int main(int argc, char **argv) {
 
     /****************************************************************************/
     /* TEST  FIRSTPRIVATE ON DEVICE*/
-    if ((strcmp("FIRSTPRIVATE", type) == 0) || (strcmp("ALL", type) == 0))
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
         sprintf(testName, "FIRSTPRIVATE_DEVICE %d", IDA);
         benchmark(testName, &device_testfirstprivnew);
@@ -152,7 +154,7 @@ void device_testprivnew()
     for (j = 0; j < innerreps; j++)
     {
 #pragma omp target map(tofrom : atest) // Mapping 'atest'
-#pragma omp teams distribute parallel private(atest) // Distribute the outer loop among teams
+#pragma omp parallel private(atest) // Distribute the outer loop among teams
         {
             array_delay(delaylength, atest);
         }
@@ -175,7 +177,7 @@ void device_testfirstprivnew()
     for (j = 0; j < innerreps; j++)
     {
 #pragma omp target map(tofrom : atest) // Mapping 'atest'
-#pragma omp teams distribute parallel firstprivate(atest) // Ensuring 'atest' array is available on the device
+#pragma omp parallel firstprivate(atest) // Ensuring 'atest' array is available on the device
         {
             array_delay(delaylength, atest);
         }

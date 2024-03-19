@@ -1,0 +1,42 @@
+************************************************************************************************************************************************************************
+Invalid float:--delay-time: 0
+Usage: arraybench_1 
+	--measureonly <selected measurement> (runs all by default)
+	--outer-repetitions <outer-repetitions> (default 20)
+	--test-time <target-test-time> (default 1000.00 microseconds)
+	--delay-time <delay-time> (default 0.1000 microseconds)
+	--delay-length <delay-length> (default auto-generated based on processor speed)
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	10000 outer repetitions
+	1000.00 test time (microseconds)
+	1 delay length (iterations) 
+	0.001000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference 1 time using 655360 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               0.002915   0.002933   0.002789   0.003351   0.000085   6
+reference 1 mean time    = 0.002915 microseconds +/- 0.000167
+reference 1 median time  = 0.002933 microseconds
+
+--------------------------------------------------------
+Computing PRIVATE 1 time using 40960 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               0.096221   0.096386   0.090967   0.103371   0.002603   0
+PRIVATE 1 time         = 0.096221 microseconds +/- 0.005101
+PRIVATE 1 overhead     = 0.093306 microseconds +/- 0.005268
+PRIVATE 1 median_ovrhd = 0.093453 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE 1 time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               23.856349   23.806095   23.245811   26.500225   0.402252   128
+PRIVATE_DEVICE 1 time         = 23.856349 microseconds +/- 0.788414
+PRIVATE_DEVICE 1 overhead     = 23.853434 microseconds +/- 0.788582
+PRIVATE_DEVICE 1 median_ovrhd = 23.803162 microseconds 
+************************************************************************************************************************************************************************

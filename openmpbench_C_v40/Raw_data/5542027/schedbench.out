@@ -1,0 +1,67 @@
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	10000 outer repetitions
+	1000.00 test time (microseconds)
+	1 delay length (iterations) 
+	0.001000 delay time (microseconds)
+	1024 iterations per thread
+
+--------------------------------------------------------
+Computing reference time time using 1280 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               2.639543   2.634432   2.533570   2.813339   0.069513   0
+reference time mean time    = 2.639543 microseconds +/- 0.136245
+reference time median time  = 2.634432 microseconds
+
+--------------------------------------------------------
+Computing STATIC time using 1280 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               2.823316   2.819672   2.687424   3.046915   0.073818   1
+STATIC time         = 2.823316 microseconds +/- 0.144684
+STATIC overhead     = 0.183773 microseconds +/- 0.280929
+STATIC median_ovrhd = 0.185240 microseconds 
+
+--------------------------------------------------------
+Computing STATIC_DEVICE time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               338.660794   338.494778   338.101387   394.594669   2.149957   36
+STATIC_DEVICE time         = 338.660794 microseconds +/- 4.213916
+STATIC_DEVICE overhead     = 336.021252 microseconds +/- 4.350162
+STATIC_DEVICE median_ovrhd = 335.860346 microseconds 
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	10000 outer repetitions
+	1000.00 test time (microseconds)
+	1 delay length (iterations) 
+	0.001000 delay time (microseconds)
+	1024 iterations per thread
+
+--------------------------------------------------------
+Computing reference time time using 1280 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               2.634377   2.625957   2.533570   2.840720   0.068192   1
+reference time mean time    = 2.634377 microseconds +/- 0.133657
+reference time median time  = 2.625957 microseconds
+
+--------------------------------------------------------
+Computing STATIC_MONOTONIC time using 1280 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               2.816764   2.803095   2.725795   3.335997   0.073776   2
+STATIC_MONOTONIC time         = 2.816764 microseconds +/- 0.144601
+STATIC_MONOTONIC overhead     = 0.182386 microseconds +/- 0.278258
+STATIC_MONOTONIC median_ovrhd = 0.177138 microseconds 
+
+--------------------------------------------------------
+Computing STATIC_MONOTONIC_DEVICE time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               338.732468   338.506699   337.994099   394.845009   2.742321   45
+STATIC_MONOTONIC_DEVICE time         = 338.732468 microseconds +/- 5.374949
+STATIC_MONOTONIC_DEVICE overhead     = 336.098091 microseconds +/- 5.508606
+STATIC_MONOTONIC_DEVICE median_ovrhd = 335.880741 microseconds 
