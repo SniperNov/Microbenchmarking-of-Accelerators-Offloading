@@ -1,20 +1,56 @@
+import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
 
-# Data from the user
+# Your data
 data = {
     "N.O.": [1, 3, 9, 27, 81, 243, 729, 2187, 6561],
     "Private": [26.6306, 26.7829, 26.7355, 25.9252, 27.4870, 27.6285, 29.8393, 36.4567, 47.1146],
     "First Private": [26.6334, 26.8032, 27.1135, 27.2318, 35.1258, 51.4223, 100.4461, 247.8276, 681.5814]
 }
 
-# Plotting the data
+# Convert your data to numpy arrays for the regression
+X = np.array(data['N.O.']).reshape(-1, 1)
+Y_private = np.array(data['Private']).reshape(-1, 1)
+Y_first_private = np.array(data['First Private']).reshape(-1, 1)
+
+# Create linear regression models
+lin_reg_private = LinearRegression()
+lin_reg_first_private = LinearRegression()
+
+# Fit the models
+lin_reg_private.fit(X, Y_private)
+lin_reg_first_private.fit(X, Y_first_private)
+
+# Extend X values to start from 0 for plotting
+X_extended = np.linspace(0, max(data['N.O.']), 500).reshape(-1, 1)
+
+# Predict y values for the extended X values
+Y_private_extended = lin_reg_private.predict(X_extended)
+Y_first_private_extended = lin_reg_first_private.predict(X_extended)
+
+# Equations for the regression lines
+equation_private_linear = f'y = {lin_reg_private.intercept_[0]:.4f} + {lin_reg_private.coef_[0][0]:.4f}X'
+equation_first_private_linear = f'y = {lin_reg_first_private.intercept_[0]:.4f} + {lin_reg_first_private.coef_[0][0]:.4f}X'
+
+# Plotting
 plt.figure(figsize=[10,5])
-plt.plot(data['N.O.'], data['Private'], label='Private', marker='o')
-plt.plot(data['N.O.'], data['First Private'], label='First Private', marker='o')
-plt.xscale('log')  # Assuming the user wants a logarithmic scale due to the distribution of N.O.
+plt.plot(data['N.O.'], data['Private'], 'o', label='Private')
+plt.plot(data['N.O.'], data['First Private'], 'o', label='First Private')
+plt.plot(X_extended, Y_private_extended, '--', label=f'Linear Fit Private ({equation_private_linear})')
+plt.plot(X_extended, Y_first_private_extended, '--', label=f'Linear Fit First Private ({equation_first_private_linear})')
+
+# Setting the origin and limits
+plt.xlim(left=0)
+plt.ylim(bottom=0)
+# Setting the origin
+plt.xlim(left=0)
+plt.ylim(bottom=0)
 plt.xlabel('IDA')
 plt.ylabel('Values')
-plt.title('Comparison of Private vs First Private')
+plt.title('Linear Regression Comparison of Private vs First Private')
 plt.legend()
 plt.grid(True)
+plt.show()
+
 plt.savefig("ComparingPrivate&FirstPrivate.png")
