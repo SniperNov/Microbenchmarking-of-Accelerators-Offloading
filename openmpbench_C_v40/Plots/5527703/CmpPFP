@@ -1,0 +1,20 @@
+import matplotlib.pyplot as plt
+
+# Data from the user
+data = {
+    "N.O.": [1, 3, 9, 27, 81, 243, 729, 2187, 6561],
+    "Private": [26.6306, 26.7829, 26.7355, 25.9252, 27.4870, 27.6285, 29.8393, 36.4567, 47.1146],
+    "First Private": [26.6334, 26.8032, 27.1135, 27.2318, 35.1258, 51.4223, 100.4461, 247.8276, 681.5814]
+}
+
+# Plotting the data
+plt.figure(figsize=[10,5])
+plt.plot(data['N.O.'], data['Private'], label='Private', marker='o')
+plt.plot(data['N.O.'], data['First Private'], label='First Private', marker='o')
+plt.xscale('log')  # Assuming the user wants a logarithmic scale due to the distribution of N.O.
+plt.xlabel('IDA')
+plt.ylabel('Values')
+plt.title('Comparison of Private vs First Private')
+plt.legend()
+plt.grid(True)
+plt.savefig("ComparingPrivate&FirstPrivate.png")
