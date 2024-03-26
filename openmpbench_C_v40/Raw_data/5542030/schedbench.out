@@ -108,3 +108,69 @@ STATIC median_ovrhd = 2.891570 microseconds
 
 --------------------------------------------------------
 Computing STATIC_DEVICE time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               17138.430282   17128.598690   16764.855385   17735.791206   142.621070   31
+STATIC_DEVICE time         = 17138.430282 microseconds +/- 279.537298
+STATIC_DEVICE overhead     = 17134.832022 microseconds +/- 279.732142
+STATIC_DEVICE median_ovrhd = 17125.018686 microseconds 
+Running OpenMP benchmark version 4.0
+	20 thread(s)
+	10000 outer repetitions
+	1000.00 test time (microseconds)
+	3 delay length (iterations) 
+	0.005000 delay time (microseconds)
+	1024 iterations per thread
+
+--------------------------------------------------------
+Computing reference time time using 640 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               4.713073   4.693866   4.507974   5.295128   0.124334   3
+reference time mean time    = 4.713073 microseconds +/- 0.243694
+reference time median time  = 4.693866 microseconds
+
+--------------------------------------------------------
+Computing STATIC_MONOTONIC time using 160 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               7.722752   7.681549   7.180870   14.136732   0.494186   82
+STATIC_MONOTONIC time         = 7.722752 microseconds +/- 0.968605
+STATIC_MONOTONIC overhead     = 3.009679 microseconds +/- 1.212298
+STATIC_MONOTONIC median_ovrhd = 2.987683 microseconds 
+
+--------------------------------------------------------
+Computing STATIC_MONOTONIC_DEVICE time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               18053.260760   18033.349514   17820.155621   22140.848637   122.549356   73
+STATIC_MONOTONIC_DEVICE time         = 18053.260760 microseconds +/- 240.196737
+STATIC_MONOTONIC_DEVICE overhead     = 18048.547687 microseconds +/- 240.440431
+STATIC_MONOTONIC_DEVICE median_ovrhd = 18028.655648 microseconds 
+Running OpenMP benchmark version 4.0
+	20 thread(s)
+	10000 outer repetitions
+	1000.00 test time (microseconds)
+	3 delay length (iterations) 
+	0.005000 delay time (microseconds)
+	1024 iterations per thread
+
+--------------------------------------------------------
+Computing reference time time using 640 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               4.725667   4.721805   4.507974   5.275011   0.128012   4
+reference time mean time    = 4.725667 microseconds +/- 0.250904
+reference time median time  = 4.721805 microseconds
+
+--------------------------------------------------------
+Computing STATIC_DEVICE time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 10000               121.494567   122.559071   100.505352   235.450268   4.649693   154
+STATIC_DEVICE time         = 121.494567 microseconds +/- 9.113398
+STATIC_DEVICE overhead     = 116.768901 microseconds +/- 9.364302
+STATIC_DEVICE median_ovrhd = 117.837265 microseconds 
+
+--------------------------------------------------------
+Computing STATIC_MONOTONIC_DEVICE time using 20 reps

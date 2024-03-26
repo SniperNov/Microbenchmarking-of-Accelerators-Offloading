@@ -35,6 +35,7 @@
 #define SYNCBENCH_H
 
 void refer(void);
+void device_refer(void);
 
 void referatom(void);
 

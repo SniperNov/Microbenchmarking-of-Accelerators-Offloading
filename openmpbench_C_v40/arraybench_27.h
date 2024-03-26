@@ -1,7 +1,7 @@
 # 1 "arraybench.h"
-# 1 "/mnt/lustre/indy2lfs/sw/nvidia/hpcsdk-2211/Linux_x86_64/22.11/compilers/include/_cplus_macros.h" 1 3
+# 1 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_macros.h" 1 3
 # 1 "arraybench.h" 2
-# 1 "/mnt/lustre/indy2lfs/sw/nvidia/hpcsdk-2211/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 1 3
+# 1 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 1 3
  
 
 
@@ -16,13 +16,13 @@ struct __va_list_tag {
   char *reg_save_area;
 };
 
-# 27 "/mnt/lustre/indy2lfs/sw/nvidia/hpcsdk-2211/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
+# 27 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
 
 typedef struct __va_list_tag __pgi_va_list[1];
 
 
 
-# 41 "/mnt/lustre/indy2lfs/sw/nvidia/hpcsdk-2211/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
+# 41 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
 
 
 
@@ -71,6 +71,7 @@ typedef struct __va_list_tag __pgi_va_list[1];
 
 
 void refer();
+void device_refer();
 
 void testfirstprivnew();
 void device_testfirstprivnew();
