@@ -50,7 +50,9 @@ int main(int argc, char **argv) {
     printf("\t%d iterations per thread\n", itersperthr);
 
     /* GENERATE REFERENCE TIME */
-    reference("reference time", &refer);
+    // reference("reference", &refer);
+    reference("reference_Device", &device_refer);
+
 
     /* TEST STATIC */
     if((strcmp("STATIC",type)==0)||(strcmp("ALL",type)==0)){
@@ -174,6 +176,16 @@ void refer() {
     }
 }
 
+void device_refer() {
+    int i, j;
+    for (j = 0; j < innerreps; j++) {
+      #pragma omp target
+      for (i = 0; i < itersperthr; i++) {
+        delay(delaylength);
+      }
+    }
+}
+
 void teststatic() {
 
     int i, j;
@@ -197,7 +209,7 @@ void device_teststatic() {
   {
 // Offload the entire parallel region to the device
 #pragma omp target
-#pragma omp parallel for schedule(static)
+#pragma omp teams distribute parallel for schedule(static)
     for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);
@@ -230,7 +242,7 @@ void device_teststaticmono()
   {
 // Offload the entire parallel region to the device
 #pragma omp target
-#pragma omp for schedule(monotonic : static)
+#pragma omp teams distribute parallel for schedule(monotonic : static)
     for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);

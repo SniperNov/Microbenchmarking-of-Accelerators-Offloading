@@ -54,7 +54,9 @@ int main(int argc, char **argv) {
     omp_init_lock_with_hint(&lock3, omp_lock_hint_uncontended);
 
     /* GENERATE REFERENCE TIME */
-    reference("reference 1", &refer);
+    // reference("reference", &refer);
+    reference("reference_DEVICE", &device_refer);
+
 
     /* TEST PARALLEL REGION */
     if((strcmp("PARALLEL",type)==0)||(strcmp("ALL",type)==0)){
@@ -62,7 +64,7 @@ int main(int argc, char **argv) {
   }
     /* TEST On Device PARALLEL REGION */
     if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0)){
-    benchmark("PARALLEL_ON_DEVICE", &device_testpr);
+    benchmark("PARALLEL_DEVICE", &device_testpr);
   }
 
     /* TEST FOR */
@@ -72,7 +74,7 @@ int main(int argc, char **argv) {
   /* TEST On Device FOR */
   if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
   {
-      benchmark("FOR_ON_DEVICE", &device_testfor);
+      benchmark("FOR_DEVICE", &device_testfor);
   }
 
     /* TEST PARALLEL FOR */
@@ -148,6 +150,14 @@ int main(int argc, char **argv) {
 void refer() {
     int j;
     for (j = 0; j < innerreps; j++) {
+	delay(delaylength);
+    }
+}
+
+void device_refer() {
+    int j;
+    for (j = 0; j < innerreps; j++) {
+#pragma omp target
 	delay(delaylength);
     }
 }

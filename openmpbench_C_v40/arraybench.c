@@ -77,11 +77,13 @@ int main(int argc, char **argv) {
 #pragma omp threadprivate(btest)
 
     /* GENERATE REFERENCE TIME */
-    reference("reference 1", &refer);
+    // reference("reference", &refer);
+    reference("reference_Device", &device_refer);
+
 
     /* TEST  PRIVATE */
     if((strcmp("PRIVATE",type)==0)||(strcmp("ALL",type)==0)){
-      sprintf(testName, "PRIVATE %d", IDA);
+      sprintf(testName, "PRIVATE_%d", IDA);
       benchmark(testName, &testprivnew);
     }
 
@@ -89,7 +91,7 @@ int main(int argc, char **argv) {
     /* TEST PRIVATE on Device */
     if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
-        sprintf(testName, "PRIVATE_DEVICE %d", IDA); // Name changed to indicate device
+        sprintf(testName, "PRIVATE_DEVICE_%d", IDA); // Name changed to indicate device
      
      
         benchmark(testName, &device_testprivnew);    // Use the device version of the test
@@ -98,7 +100,7 @@ int main(int argc, char **argv) {
 
     /* TEST  FIRSTPRIVATE */
     if((strcmp("FIRSTPRIVATE",type)==0)||(strcmp("ALL",type)==0)){
-      sprintf(testName, "FIRSTPRIVATE %d", IDA);
+      sprintf(testName, "FIRSTPRIVATE_%d", IDA);
       benchmark(testName, &testfirstprivnew);
     }
 
@@ -107,20 +109,20 @@ int main(int argc, char **argv) {
     /* TEST  FIRSTPRIVATE ON DEVICE*/
     if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
-        sprintf(testName, "FIRSTPRIVATE_DEVICE %d", IDA);
+        sprintf(testName, "FIRSTPRIVATE_DEVICE_%d", IDA);
         benchmark(testName, &device_testfirstprivnew);
     }
     /****************************************************************************/
 
     /* TEST  COPYPRIVATE */
     if((strcmp("COPYPRIVATE",type)==0)||(strcmp("ALL",type)==0)){
-      sprintf(testName, "COPYPRIVATE %d", IDA);
+      sprintf(testName, "COPYPRIVATE_%d", IDA);
       benchmark(testName, &testcopyprivnew);
     }
 
     /* TEST  THREADPRIVATE - COPYIN */
     if((strcmp("COPYIN",type)==0)||(strcmp("ALL",type)==0)){
-      sprintf(testName, "COPYIN %d", IDA);
+      sprintf(testName, "COPYIN_%d", IDA);
       benchmark(testName, &testthrprivnew);
     }
 
@@ -128,10 +130,18 @@ int main(int argc, char **argv) {
     return EXIT_SUCCESS;
 
 }
-
 void refer() {
     int j;
     double a[1];
+    for (j = 0; j < innerreps; j++) {
+	array_delay(delaylength, a);
+    }
+}
+
+void device_refer() {
+    int j;
+    double a[1];
+#pragma omp target map(tofrom:a)
     for (j = 0; j < innerreps; j++) {
 	array_delay(delaylength, a);
     }

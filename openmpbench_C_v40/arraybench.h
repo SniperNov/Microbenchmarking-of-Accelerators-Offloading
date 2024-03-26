@@ -34,6 +34,7 @@
 #define ARRAYBENCH_H
 
 void refer();
+void device_refer();
 
 void testfirstprivnew();
 void device_testfirstprivnew();

@@ -33,7 +33,7 @@ delay_times = []
 if params:
     for i, (threads, outer_repetitions, test_time, delay_length, delay_time) in enumerate(params, start=1):
         delay_times.append(float(delay_time))
-        # print(f"Run {i}: Threads: {threads}, Outer Repetitions: {outer_repetitions}, Test Time: {test_time} microseconds, Delay Length: {delay_length}, Delay Time: {delay_time} microseconds")
+        print(f"Run {i}: Threads: {threads}, Outer Repetitions: {outer_repetitions}, Test Time: {test_time} microseconds, Delay Length: {delay_length}, Delay Time: {delay_time} microseconds")
 else:
     print("Parameters not found in the file.")
     exit()
@@ -47,7 +47,7 @@ benchmarks = re.findall(benchmark_pattern, content, re.DOTALL)
 
 if benchmarks:
     benchmark_data = {benchmark: [] for benchmark in benchmarks}
-    # print(benchmark_data)
+    print(benchmark_data)
 else:
     print("Benchmarks not found in the file.")
     exit()
@@ -62,8 +62,8 @@ if all_data:
     for benchmark, mean_time in zip(benchmarks, all_data):
         benchmark_data[benchmark].append(float(mean_time))
     # Print out the collected benchmark data
-    # for benchmark, mean_times in benchmark_data.items():
-        # print(f"{benchmark}: {mean_times}")
+    for benchmark, mean_times in benchmark_data.items():
+        print(f"{benchmark}: {mean_times}")
 else:
     print("Data not found in the file.")
     exit()
