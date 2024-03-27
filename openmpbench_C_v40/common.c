@@ -291,7 +291,7 @@ void stats(char *name, double *mtp, double *sdp, double *medp) {
 
 void printfooter(char *name, double testtime, double testsd, double testmed, 
 		 double referencetime, double referencesd, double referencemed) {
-    printf("%s time         = %f microseconds +/- %f\n",
+    printf("%s mean time    = %f microseconds +/- %f\n",
 	   name, testtime, CONF95*testsd);
     printf("%s overhead     = %f microseconds +/- %f\n",
 	   name, testtime-referencetime, CONF95*(testsd+referencesd));

@@ -1,0 +1,507 @@
+arraybench_(1)_0.001
+
+arraybench_(1)_0.005
+
+arraybench_(1)_0.01
+
+arraybench_(1)_0.05
+
+arraybench_(1)_0.1
+
+arraybench_(1)_0.5
+
+arraybench_(1)_1
+
+arraybench_(1)_5
+
+arraybench_(1)_10
+
+arraybench_(1)_20
+
+arraybench_(1)_30
+
+arraybench_(1)_40
+
+arraybench_(1)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 13947, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+['1.778126', '27.996719', '28.180003', '1.781225', '26.944816', '26.320517', '1.909971', '27.211726', '26.837707', '2.228022', '27.349770', '27.036011', '2.621174', '28.798521', '28.303266', '4.977226', '31.265974', '29.830337', '7.957935', '33.326030', '31.919777', '33.484936', '59.633493', '56.416035', '63.541174', '85.953951', '80.902934', '122.308016', '139.410019', '133.207083', '192.221880', '199.599028', '193.008900', '229.086876', '231.613874', '226.922989', '299.170971', '294.908047', '294.556141']
+reference_Device: [1.778126, 1.781225, 1.909971, 2.228022, 2.621174, 4.977226, 7.957935, 33.484936, 63.541174, 122.308016, 192.22188, 229.086876, 299.170971]
+PRIVATE_DEVICE_1: [27.996719, 26.944816, 27.211726, 27.34977, 28.798521, 31.265974, 33.32603, 59.633493, 85.953951, 139.410019, 199.599028, 231.613874, 294.908047]
+FIRSTPRIVATE_DEVICE_1: [28.180003, 26.320517, 26.837707, 27.036011, 28.303266, 29.830337, 31.919777, 56.416035, 80.902934, 133.207083, 193.0089, 226.922989, 294.556141]
+['26.218593', '26.401877', '25.163591', '24.539292', '25.301754', '24.927735', '25.121748', '24.807990', '26.177347', '25.682092', '26.288748', '24.853110', '25.368094', '23.961842', '26.148558', '22.931099', '22.412777', '17.361760', '17.102003', '10.899067', '7.377148', '0.787020', '2.526999']
+PRIVATE_DEVICE_1: [26.218593, 25.163591, 25.301754, 25.121748, 26.177347, 26.288748, 25.368094, 26.148558, 22.412777, 17.102003, 7.377148, 2.526999]
+FIRSTPRIVATE_DEVICE_1: [26.401877, 24.539292, 24.927735, 24.80799, 25.682092, 24.85311, 23.961842, 22.931099, 17.36176, 10.899067, 0.78702]
+Plot saved to Plots/5563080/arraybench_1_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(3)_0.001
+
+arraybench_(3)_0.005
+
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+arraybench_(3)_0.1
+
+arraybench_(3)_0.5
+
+arraybench_(3)_1
+
+arraybench_(3)_5
+
+arraybench_(3)_10
+
+arraybench_(3)_20
+
+arraybench_(3)_30
+
+arraybench_(3)_40
+
+arraybench_(3)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 12679, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 18565, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 20422, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+['1.711845', '27.395010', '26.850998', '1.765013', '27.903259', '27.894795', '1.895905', '27.458787', '27.077794', '2.222061', '27.983010', '27.368486', '2.606153', '28.990448', '28.434694', '5.007029', '31.530261', '30.388713', '8.011818', '34.517229', '33.298731', '33.515930', '60.494423', '56.814432', '63.593864', '86.921096', '82.090497', '122.272015', '139.202118', '132.803917', '176.398993', '184.716940', '177.803040', '250.465155', '251.924038', '248.055935', '273.868084', '271.514893', '269.218922']
+reference_Device: [1.711845, 1.765013, 1.895905, 2.222061, 2.606153, 5.007029, 8.011818, 33.51593, 63.593864, 122.272015, 176.398993, 250.465155, 273.868084]
+PRIVATE_DEVICE_3: [27.39501, 27.903259, 27.458787, 27.98301, 28.990448, 31.530261, 34.517229, 60.494423, 86.921096, 139.202118, 184.71694, 251.924038, 271.514893]
+FIRSTPRIVATE_DEVICE_3: [26.850998, 27.894795, 27.077794, 27.368486, 28.434694, 30.388713, 33.298731, 56.814432, 82.090497, 132.803917, 177.80304, 248.055935, 269.218922]
+['25.683165', '25.139153', '26.138246', '26.129782', '25.562882', '25.181890', '25.760949', '25.146425', '26.384294', '25.828540', '26.523232', '25.381684', '26.505411', '25.286913', '26.978493', '23.298502', '23.327231', '18.496633', '16.930103', '10.531902', '8.317947', '1.404047', '1.458883']
+PRIVATE_DEVICE_3: [25.683165, 26.138246, 25.562882, 25.760949, 26.384294, 26.523232, 26.505411, 26.978493, 23.327231, 16.930103, 8.317947, 1.458883]
+FIRSTPRIVATE_DEVICE_3: [25.139153, 26.129782, 25.18189, 25.146425, 25.82854, 25.381684, 25.286913, 23.298502, 18.496633, 10.531902, 1.404047]
+Plot saved to Plots/5563080/arraybench_3_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(9)_0.001
+
+arraybench_(9)_0.005
+
+arraybench_(9)_0.01
+
+arraybench_(9)_0.05
+
+arraybench_(9)_0.1
+
+arraybench_(9)_0.5
+
+arraybench_(9)_1
+
+arraybench_(9)_5
+
+arraybench_(9)_10
+
+arraybench_(9)_20
+
+arraybench_(9)_30
+
+arraybench_(9)_40
+
+arraybench_(9)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 404, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 13947, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+['1.774073', '28.261244', '28.150737', '1.757622', '27.394533', '27.360439', '1.986980', '28.538764', '28.764546', '2.275229', '28.784692', '28.568447', '2.614975', '29.160202', '28.974473', '4.971981', '30.547678', '30.179024', '7.453203', '34.400284', '33.639193', '33.437014', '58.905005', '56.009054', '63.612938', '87.328553', '82.475543', '122.322083', '139.430761', '134.094238', '192.074776', '199.989080', '193.639994', '229.082584', '232.046843', '227.549791', '299.508095', '294.713974', '294.226170']
+reference_Device: [1.774073, 1.757622, 1.98698, 2.275229, 2.614975, 4.971981, 7.453203, 33.437014, 63.612938, 122.322083, 192.074776, 229.082584, 299.508095]
+PRIVATE_DEVICE_9: [28.261244, 27.394533, 28.538764, 28.784692, 29.160202, 30.547678, 34.400284, 58.905005, 87.328553, 139.430761, 199.98908, 232.046843, 294.713974]
+FIRSTPRIVATE_DEVICE_9: [28.150737, 27.360439, 28.764546, 28.568447, 28.974473, 30.179024, 33.639193, 56.009054, 82.475543, 134.094238, 193.639994, 227.549791, 294.22617]
+['26.487172', '26.376665', '25.636911', '25.602818', '26.551783', '26.777565', '26.509464', '26.293218', '26.545227', '26.359499', '25.575697', '25.207043', '26.947081', '26.185989', '25.467992', '22.572041', '23.715615', '18.862605', '17.108679', '11.772156', '7.914305', '1.565218', '2.964258']
+PRIVATE_DEVICE_9: [26.487172, 25.636911, 26.551783, 26.509464, 26.545227, 25.575697, 26.947081, 25.467992, 23.715615, 17.108679, 7.914305, 2.964258]
+FIRSTPRIVATE_DEVICE_9: [26.376665, 25.602818, 26.777565, 26.293218, 26.359499, 25.207043, 26.185989, 22.572041, 18.862605, 11.772156, 1.565218]
+Plot saved to Plots/5563080/arraybench_9_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(27)_0.001
+
+arraybench_(27)_0.005
+
+arraybench_(27)_0.01
+
+arraybench_(27)_0.05
+
+arraybench_(27)_0.1
+
+arraybench_(27)_0.5
+
+arraybench_(27)_1
+
+arraybench_(27)_5
+
+arraybench_(27)_10
+
+arraybench_(27)_20
+
+arraybench_(27)_30
+
+arraybench_(27)_40
+
+arraybench_(27)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2069, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 12679, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+['1.761913', '27.429044', '28.468430', '1.816034', '27.689993', '28.798521', '1.934052', '27.435780', '28.229773', '2.293110', '29.362977', '29.923975', '2.606153', '29.178262', '29.767931', '5.021095', '31.885266', '31.963766', '8.041859', '34.807205', '34.916520', '30.607939', '57.343960', '55.822492', '63.577890', '87.317467', '83.544016', '122.328997', '139.831781', '134.931087', '176.091909', '186.161995', '180.325985', '229.101658', '231.877089', '228.325129', '299.575090', '294.402122', '294.863701']
+reference_Device: [1.761913, 1.816034, 1.934052, 2.29311, 2.606153, 5.021095, 8.041859, 30.607939, 63.57789, 122.328997, 176.091909, 229.101658, 299.57509]
+PRIVATE_DEVICE_27: [27.429044, 27.689993, 27.43578, 29.362977, 29.178262, 31.885266, 34.807205, 57.34396, 87.317467, 139.831781, 186.161995, 231.877089, 294.402122]
+FIRSTPRIVATE_DEVICE_27: [28.46843, 28.798521, 28.229773, 29.923975, 29.767931, 31.963766, 34.91652, 55.822492, 83.544016, 134.931087, 180.325985, 228.325129, 294.863701]
+['25.667131', '26.706517', '25.873959', '26.982486', '25.501728', '26.295722', '27.069867', '27.630866', '26.572108', '27.161777', '26.864171', '26.942670', '26.765347', '26.874661', '26.736021', '25.214553', '23.739576', '19.966125', '17.502785', '12.602091', '10.070086', '4.234076', '2.775431']
+PRIVATE_DEVICE_27: [25.667131, 25.873959, 25.501728, 27.069867, 26.572108, 26.864171, 26.765347, 26.736021, 23.739576, 17.502785, 10.070086, 2.775431]
+FIRSTPRIVATE_DEVICE_27: [26.706517, 26.982486, 26.295722, 27.630866, 27.161777, 26.94267, 26.874661, 25.214553, 19.966125, 12.602091, 4.234076]
+Plot saved to Plots/5563080/arraybench_27_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(81)_0.001
+
+arraybench_(81)_0.005
+
+arraybench_(81)_0.01
+
+arraybench_(81)_0.05
+
+arraybench_(81)_0.1
+
+arraybench_(81)_0.5
+
+arraybench_(81)_1
+
+arraybench_(81)_5
+
+arraybench_(81)_10
+
+arraybench_(81)_20
+
+arraybench_(81)_30
+
+arraybench_(81)_40
+
+arraybench_(81)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 12679, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 18565, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+['1.765966', '28.223515', '35.671294', '1.787186', '27.436972', '34.661889', '1.973867', '28.497756', '36.091268', '2.234936', '28.006852', '35.226285', '2.604961', '29.530525', '36.370516', '5.012035', '31.950235', '38.839519', '8.045912', '34.927011', '41.890502', '33.467054', '60.332060', '64.545512', '63.603163', '87.321639', '89.854956', '122.304201', '139.976025', '141.344070', '176.506281', '185.143948', '185.591936', '250.454187', '251.968145', '256.077051', '299.502134', '295.654058', '302.335024']
+reference_Device: [1.765966, 1.787186, 1.973867, 2.234936, 2.604961, 5.012035, 8.045912, 33.467054, 63.603163, 122.304201, 176.506281, 250.454187, 299.502134]
+PRIVATE_DEVICE_81: [28.223515, 27.436972, 28.497756, 28.006852, 29.530525, 31.950235, 34.927011, 60.33206, 87.321639, 139.976025, 185.143948, 251.968145, 295.654058]
+FIRSTPRIVATE_DEVICE_81: [35.671294, 34.661889, 36.091268, 35.226285, 36.370516, 38.839519, 41.890502, 64.545512, 89.854956, 141.34407, 185.591936, 256.077051, 302.335024]
+['26.457548', '33.905327', '25.649786', '32.874703', '26.523888', '34.117401', '25.771916', '32.991350', '26.925564', '33.765554', '26.938200', '33.827484', '26.881099', '33.844590', '26.865005', '31.078458', '23.718476', '26.251793', '17.671824', '19.039869', '8.637667', '9.085655', '1.513958', '5.622864', '2.832890']
+PRIVATE_DEVICE_81: [26.457548, 25.649786, 26.523888, 25.771916, 26.925564, 26.9382, 26.881099, 26.865005, 23.718476, 17.671824, 8.637667, 1.513958, 2.83289]
+FIRSTPRIVATE_DEVICE_81: [33.905327, 32.874703, 34.117401, 32.99135, 33.765554, 33.827484, 33.84459, 31.078458, 26.251793, 19.039869, 9.085655, 5.622864]
+Plot saved to Plots/5563080/arraybench_81_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(243)_0.001
+
+arraybench_(243)_0.005
+
+arraybench_(243)_0.01
+
+arraybench_(243)_0.05
+
+arraybench_(243)_0.1
+
+arraybench_(243)_0.5
+
+arraybench_(243)_1
+
+arraybench_(243)_5
+
+arraybench_(243)_10
+
+arraybench_(243)_20
+
+arraybench_(243)_30
+
+arraybench_(243)_40
+
+arraybench_(243)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 13947, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+['1.760244', '29.644966', '55.963039', '1.782894', '28.589964', '54.907084', '1.902103', '28.419018', '54.556012', '2.218008', '29.032230', '55.277586', '2.737999', '32.585144', '58.564544', '5.000114', '32.608032', '58.781385', '8.028984', '36.104202', '61.730504', '33.485174', '61.653852', '84.671617', '63.568830', '91.516972', '110.690117', '122.329950', '140.782118', '159.876108', '192.295074', '199.949265', '218.868732', '229.337692', '233.151197', '253.498316', '299.525023', '296.461105', '320.771933']
+reference_Device: [1.760244, 1.782894, 1.902103, 2.218008, 2.737999, 5.000114, 8.028984, 33.485174, 63.56883, 122.32995, 192.295074, 229.337692, 299.525023]
+PRIVATE_DEVICE_243: [29.644966, 28.589964, 28.419018, 29.03223, 32.585144, 32.608032, 36.104202, 61.653852, 91.516972, 140.782118, 199.949265, 233.151197, 296.461105]
+FIRSTPRIVATE_DEVICE_243: [55.963039, 54.907084, 54.556012, 55.277586, 58.564544, 58.781385, 61.730504, 84.671617, 110.690117, 159.876108, 218.868732, 253.498316, 320.771933]
+['27.884722', '54.202795', '26.807070', '53.124189', '26.516914', '52.653909', '26.814222', '53.059578', '29.847145', '55.826545', '27.607918', '53.781271', '28.075218', '53.701520', '28.168678', '51.186442', '27.948141', '47.121286', '18.452168', '37.546158', '7.654190', '26.573658', '3.813505', '24.160624', '21.246910']
+PRIVATE_DEVICE_243: [27.884722, 26.80707, 26.516914, 26.814222, 29.847145, 27.607918, 28.075218, 28.168678, 27.948141, 18.452168, 7.65419, 3.813505, 21.24691]
+FIRSTPRIVATE_DEVICE_243: [54.202795, 53.124189, 52.653909, 53.059578, 55.826545, 53.781271, 53.70152, 51.186442, 47.121286, 37.546158, 26.573658, 24.160624]
+Plot saved to Plots/5563080/arraybench_243_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 139, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 135, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(729)_0.001
+
+arraybench_(729)_0.005
+
+arraybench_(729)_0.01
+
+arraybench_(729)_0.05
+
+arraybench_(729)_0.1
+
+arraybench_(729)_0.5
+
+arraybench_(729)_1
+
+arraybench_(729)_5
+
+arraybench_(729)_10
+
+arraybench_(729)_20
+
+arraybench_(729)_30
+
+arraybench_(729)_40
+
+arraybench_(729)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 3, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 13947, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+['1.808882', '31.543016', '103.324890', '1.771212', '30.902386', '102.302074', '1.984835', '31.995058', '103.641987', '2.323151', '32.512188', '103.814125', '2.612114', '32.803059', '104.191065', '5.121946', '37.487268', '109.190941', '8.141041', '40.525198', '111.855984', '33.624887', '66.101074', '134.777069', '63.598871', '94.002008', '157.995939', '122.451067', '145.370245', '208.672762', '192.284822', '203.407049', '267.462969', '229.034185', '234.943628', '300.491095', '299.229145', '300.744057', '370.686054']
+reference_Device: [1.808882, 1.771212, 1.984835, 2.323151, 2.612114, 5.121946, 8.141041, 33.624887, 63.598871, 122.451067, 192.284822, 229.034185, 299.229145]
+PRIVATE_DEVICE_729: [31.543016, 30.902386, 31.995058, 32.512188, 32.803059, 37.487268, 40.525198, 66.101074, 94.002008, 145.370245, 203.407049, 234.943628, 300.744057]
+FIRSTPRIVATE_DEVICE_729: [103.32489, 102.302074, 103.641987, 103.814125, 104.191065, 109.190941, 111.855984, 134.777069, 157.995939, 208.672762, 267.462969, 300.491095, 370.686054]
+['29.734135', '101.516008', '29.131174', '100.530863', '30.010223', '101.657152', '30.189037', '101.490974', '30.190945', '101.578951', '32.365322', '104.068995', '32.384157', '103.714943', '32.476187', '101.152182', '30.403137', '94.397068', '22.919178', '86.221695', '11.122227', '75.178146', '5.909443', '71.456909', '1.514912', '71.456909']
+PRIVATE_DEVICE_729: [29.734135, 29.131174, 30.010223, 30.189037, 30.190945, 32.365322, 32.384157, 32.476187, 30.403137, 22.919178, 11.122227, 5.909443, 1.514912]
+FIRSTPRIVATE_DEVICE_729: [101.516008, 100.530863, 101.657152, 101.490974, 101.578951, 104.068995, 103.714943, 101.152182, 94.397068, 86.221695, 75.178146, 71.456909, 71.456909]
+Plot saved to Plots/5563080/arraybench_729_performance_plot.png
+Plot saved to Plots/5563080/arraybench_729_overhead_plot.png
+arraybench_(2187)_0.001
+
+arraybench_(2187)_0.005
+
+arraybench_(2187)_0.01
+
+arraybench_(2187)_0.05
+
+arraybench_(2187)_0.1
+
+arraybench_(2187)_0.5
+
+arraybench_(2187)_1
+
+arraybench_(2187)_5
+
+arraybench_(2187)_10
+
+arraybench_(2187)_20
+
+arraybench_(2187)_30
+
+arraybench_(2187)_40
+
+arraybench_(2187)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 6, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2069, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4440, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 8659, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 12679, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 20422, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+['1.711130', '37.405729', '249.675035', '1.907349', '39.281607', '251.368046', '1.951218', '39.407015', '251.245975', '2.301931', '40.291548', '251.513720', '2.610922', '39.974928', '251.617908', '5.003929', '42.183161', '253.633976', '8.016109', '45.087099', '256.805897', '30.549765', '66.456079', '274.805784', '63.561201', '98.907948', '302.244186', '122.282982', '148.352861', '350.819111', '176.533937', '194.021463', '397.858143', '229.355812', '241.530180', '447.529078', '273.680925', '281.141043', '489.806175']
+reference_Device: [1.71113, 1.907349, 1.951218, 2.301931, 2.610922, 5.003929, 8.016109, 30.549765, 63.561201, 122.282982, 176.533937, 229.355812, 273.680925]
+PRIVATE_DEVICE_2187: [37.405729, 39.281607, 39.407015, 40.291548, 39.974928, 42.183161, 45.087099, 66.456079, 98.907948, 148.352861, 194.021463, 241.53018, 281.141043]
+FIRSTPRIVATE_DEVICE_2187: [249.675035, 251.368046, 251.245975, 251.51372, 251.617908, 253.633976, 256.805897, 274.805784, 302.244186, 350.819111, 397.858143, 447.529078, 489.806175]
+['35.694599', '247.963905', '37.374258', '249.460697', '37.455797', '249.294758', '37.989616', '249.211788', '37.364006', '249.006987', '37.179232', '248.630047', '37.070990', '248.789787', '35.906315', '244.256020', '35.346746', '238.682985', '26.069880', '228.536129', '17.487526', '221.324205', '12.174368', '218.173265', '7.460117', '216.125250']
+PRIVATE_DEVICE_2187: [35.694599, 37.374258, 37.455797, 37.989616, 37.364006, 37.179232, 37.07099, 35.906315, 35.346746, 26.06988, 17.487526, 12.174368, 7.460117]
+FIRSTPRIVATE_DEVICE_2187: [247.963905, 249.460697, 249.294758, 249.211788, 249.006987, 248.630047, 248.789787, 244.25602, 238.682985, 228.536129, 221.324205, 218.173265, 216.12525]
+Plot saved to Plots/5563080/arraybench_2187_performance_plot.png
+Plot saved to Plots/5563080/arraybench_2187_overhead_plot.png
+arraybench_(6561)_0.001
+
+arraybench_(6561)_0.005
+
+arraybench_(6561)_0.01
+
+arraybench_(6561)_0.05
+
+arraybench_(6561)_0.1
+
+arraybench_(6561)_0.5
+
+arraybench_(6561)_1
+
+arraybench_(6561)_5
+
+arraybench_(6561)_10
+
+arraybench_(6561)_20
+
+arraybench_(6561)_30
+
+arraybench_(6561)_40
+
+arraybench_(6561)_50
+
+Run 1: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.001000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4, Delay Time: 0.005000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 7, Delay Time: 0.010000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 32, Delay Time: 0.050000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 56, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 226, Delay Time: 0.500000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 445, Delay Time: 1.000000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 2276, Delay Time: 5.000000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 4036, Delay Time: 10.000000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 9525, Delay Time: 20.000000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 13947, Delay Time: 30.000000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 16877, Delay Time: 40.000000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 50, Test Time: 1000.00 microseconds, Delay Length: 22465, Delay Time: 50.000000 microseconds
+{'reference_Device': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+['1.704931', '46.715736', '679.679871', '1.868963', '46.548128', '679.891109', '1.971245', '49.512863', '682.276011', '2.290010', '49.951077', '682.540894', '2.618790', '50.652027', '682.929754', '5.007029', '50.113201', '682.879210', '8.028984', '55.544138', '687.680244', '33.481836', '81.332922', '708.981991', '57.971001', '102.176189', '727.001905', '134.354830', '169.469118', '793.465614', '192.305803', '219.435215', '845.985174', '229.054213', '250.755072', '878.833771', '299.338102', '315.522194', '946.323872']
+reference_Device: [1.704931, 1.868963, 1.971245, 2.29001, 2.61879, 5.007029, 8.028984, 33.481836, 57.971001, 134.35483, 192.305803, 229.054213, 299.338102]
+PRIVATE_DEVICE_6561: [46.715736, 46.548128, 49.512863, 49.951077, 50.652027, 50.113201, 55.544138, 81.332922, 102.176189, 169.469118, 219.435215, 250.755072, 315.522194]
+FIRSTPRIVATE_DEVICE_6561: [679.679871, 679.891109, 682.276011, 682.540894, 682.929754, 682.87921, 687.680244, 708.981991, 727.001905, 793.465614, 845.985174, 878.833771, 946.323872]
+['45.010805', '677.974939', '44.679165', '678.022146', '47.541618', '680.304766', '47.661066', '680.250883', '48.033237', '680.310965', '45.106173', '677.872181', '47.515154', '679.651260', '47.851086', '675.500154', '44.205189', '669.030905', '35.114288', '659.110785', '27.129412', '653.679371', '21.700859', '649.779558', '16.184092', '646.985769']
+PRIVATE_DEVICE_6561: [45.010805, 44.679165, 47.541618, 47.661066, 48.033237, 45.106173, 47.515154, 47.851086, 44.205189, 35.114288, 27.129412, 21.700859, 16.184092]
+FIRSTPRIVATE_DEVICE_6561: [677.974939, 678.022146, 680.304766, 680.250883, 680.310965, 677.872181, 679.65126, 675.500154, 669.030905, 659.110785, 653.679371, 649.779558, 646.985769]
+Plot saved to Plots/5563080/arraybench_6561_performance_plot.png
+Plot saved to Plots/5563080/arraybench_6561_overhead_plot.png
