@@ -72,6 +72,7 @@ typedef struct __va_list_tag __pgi_va_list[1];
 
 void refer();
 void device_refer();
+void device_target();
 
 void testfirstprivnew();
 void device_testfirstprivnew();
