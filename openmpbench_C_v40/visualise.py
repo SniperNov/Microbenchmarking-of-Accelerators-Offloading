@@ -39,13 +39,13 @@ def plot_performance(benchmark_data, delay_times, plot_filename):
     plt.show()
     print(f"Plot saved to {plot_filename}")
 
-def plot_overhead(benchmark_data, delay_times, plot_filename):
+def plot_overhead(benchmark_overhead, delay_times, plot_filename):
     # Plotting performance based on extracted data
     plt.figure(figsize=(10, 6))
     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
     extended_x = np.linspace(0, max(delay_times) * 1.1, 100)
 
-    for benchmark, data in benchmark_data.items():
+    for benchmark, data in benchmark_overhead.items():
         color = next(colors)
         slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
         extended_predictions = intercept + slope * extended_x
@@ -98,9 +98,11 @@ def main():
         benchmark_data = {benchmark: [] for benchmark in benchmarks}
         benchmark_overhead = {benchmark: [] for benchmark in benchmarks if 'reference' not in benchmark}
         
-        print("The Performance extracted:\n" + benchmark_data)
+        print("The Performance extracted:\n")
+        print(benchmark_data)
 
-        print("The Overheads extracted:\n" + benchmark_overhead)
+        print("The Overheads extracted:\n")
+        print(benchmark_overhead)
     else:
         print("Benchmarks not found in the file.")
         exit()
@@ -108,7 +110,8 @@ def main():
     # data_pattern = r"Sample_size\s+Mean\s+Median\s+Min\s+Max\s+StdDev\s+Outliers\n\s*\d+\s+([\d.]+)"
     data_pattern = r"mean time\s+=\s+([\d.]+)"
     all_data = re.findall(data_pattern, content, re.DOTALL)
-    print("Performance mean time: "+all_data)
+    print("Performance mean time:\n")
+    print(all_data)
     if all_data:
         for benchmark, mean_time in zip(benchmarks, all_data):
             benchmark_data[benchmark].append(float(mean_time))
@@ -118,10 +121,12 @@ def main():
         print("Data not found in the file.")
         exit()    
 
-    overhead_pattern = r"overhead\s+=\s+([\d.]+)"
+    overhead_pattern = r"overhead\s+=\s+(-?[\d.]+)"
     all_overhead = re.findall(overhead_pattern, content, re.DOTALL)
-    print("Overheads:" + all_overhead)
+    print("Overheads:\n")
+    print(all_overhead)
     benchmark_filtered = [item for item in benchmarks if 'reference' not in item]
+
     if all_overhead:
         for benchmark, overhead in zip(benchmark_filtered, all_overhead):
             benchmark_overhead[benchmark].append(float(overhead))

@@ -35,6 +35,7 @@
 
 void refer();
 void device_refer();
+void device_target();
 
 void testfirstprivnew();
 void device_testfirstprivnew();

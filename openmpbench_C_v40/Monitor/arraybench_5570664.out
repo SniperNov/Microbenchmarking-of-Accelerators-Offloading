@@ -1,0 +1,522 @@
+arraybench_(1)_0.001
+
+arraybench_(1)_0.005
+
+arraybench_(1)_0.01
+
+arraybench_(1)_0.05
+
+arraybench_(1)_0.1
+
+arraybench_(1)_0.5
+
+arraybench_(1)_1
+
+arraybench_(1)_5
+
+arraybench_(1)_10
+
+arraybench_(1)_20
+
+arraybench_(1)_30
+
+arraybench_(1)_40
+
+arraybench_(1)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+Performance mean time:
+
+['1.693964', '28.933764', '26.188016', '25.954723', '1.797199', '29.123783', '26.204765', '26.279628', '1.976013', '30.055285', '27.332246', '27.130842', '2.237797', '29.534280', '26.549041', '26.316941', '2.594233', '29.945731', '26.703775', '26.782990', '4.966021', '32.412708', '28.578997', '28.863251', '8.019209', '36.104977', '32.949209', '32.423317', '33.494234', '61.643481', '56.064606', '55.291533', '63.585758', '87.759972', '81.018090', '79.452991', '122.408628', '141.045809', '133.162022', '130.710125', '176.363945', '186.110020', '177.233934', '177.486181', '250.183105', '253.106117', '247.786283', '247.982740', '273.303986', '273.144007', '269.356012', '269.556999']
+reference_Device: [1.693964, 1.797199, 1.976013, 2.237797, 2.594233, 4.966021, 8.019209, 33.494234, 63.585758, 122.408628, 176.363945, 250.183105, 273.303986]
+TARGET_DEVICE_1: [28.933764, 29.123783, 30.055285, 29.53428, 29.945731, 32.412708, 36.104977, 61.643481, 87.759972, 141.045809, 186.11002, 253.106117, 273.144007]
+PRIVATE_DEVICE_1: [26.188016, 26.204765, 27.332246, 26.549041, 26.703775, 28.578997, 32.949209, 56.064606, 81.01809, 133.162022, 177.233934, 247.786283, 269.356012]
+FIRSTPRIVATE_DEVICE_1: [25.954723, 26.279628, 27.130842, 26.316941, 26.78299, 28.863251, 32.423317, 55.291533, 79.452991, 130.710125, 177.486181, 247.98274, 269.556999]
+Overheads:
+
+['27.239799', '24.494052', '24.260759', '27.326584', '24.407566', '24.482429', '28.079271', '25.356233', '25.154829', '27.296484', '24.311244', '24.079144', '27.351499', '24.109542', '24.188757', '27.446687', '23.612976', '23.897231', '28.085768', '24.930000', '24.404109', '28.149247', '22.570372', '21.797299', '24.174213', '17.432332', '15.867233', '18.637180', '10.753393', '8.301497', '9.746075', '0.869989', '1.122236', '2.923012']
+TARGET_DEVICE_1: [27.239799, 27.326584, 28.079271, 27.296484, 27.351499, 27.446687, 28.085768, 28.149247, 24.174213, 18.63718, 9.746075, 2.923012]
+PRIVATE_DEVICE_1: [24.494052, 24.407566, 25.356233, 24.311244, 24.109542, 23.612976, 24.93, 22.570372, 17.432332, 10.753393, 0.869989]
+FIRSTPRIVATE_DEVICE_1: [24.260759, 24.482429, 25.154829, 24.079144, 24.188757, 23.897231, 24.404109, 21.797299, 15.867233, 8.301497, 1.122236]
+Plot saved to Plots/5570664/arraybench_1_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(3)_0.001
+
+arraybench_(3)_0.005
+
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+arraybench_(3)_0.1
+
+arraybench_(3)_0.5
+
+arraybench_(3)_1
+
+arraybench_(3)_5
+
+arraybench_(3)_10
+
+arraybench_(3)_20
+
+arraybench_(3)_30
+
+arraybench_(3)_40
+
+arraybench_(3)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+Performance mean time:
+
+['1.695871', '28.971791', '26.441276', '26.071727', '1.842976', '30.202806', '27.860761', '27.842224', '1.973867', '30.345261', '27.573228', '27.521014', '2.301931', '30.275822', '27.821779', '27.726293', '2.604008', '30.717790', '27.941763', '28.000534', '4.950047', '32.012999', '29.511750', '28.881550', '7.973909', '35.207450', '31.773984', '31.746507', '33.494234', '60.900927', '55.709004', '54.559112', '63.612938', '87.489605', '81.055522', '79.472065', '122.325897', '140.136719', '132.153988', '129.795074', '176.427841', '186.028004', '177.565098', '177.716017', '228.933811', '234.146833', '228.188992', '228.565216', '299.175024', '295.754194', '293.662786', '293.993950']
+reference_Device: [1.695871, 1.842976, 1.973867, 2.301931, 2.604008, 4.950047, 7.973909, 33.494234, 63.612938, 122.325897, 176.427841, 228.933811, 299.175024]
+TARGET_DEVICE_3: [28.971791, 30.202806, 30.345261, 30.275822, 30.71779, 32.012999, 35.20745, 60.900927, 87.489605, 140.136719, 186.028004, 234.146833, 295.754194]
+PRIVATE_DEVICE_3: [26.441276, 27.860761, 27.573228, 27.821779, 27.941763, 29.51175, 31.773984, 55.709004, 81.055522, 132.153988, 177.565098, 228.188992, 293.662786]
+FIRSTPRIVATE_DEVICE_3: [26.071727, 27.842224, 27.521014, 27.726293, 28.000534, 28.88155, 31.746507, 54.559112, 79.472065, 129.795074, 177.716017, 228.565216, 293.99395]
+Overheads:
+
+['27.275920', '24.745405', '24.375856', '28.359830', '26.017785', '25.999248', '28.371394', '25.599360', '25.547147', '27.973890', '25.519848', '25.424361', '28.113782', '25.337756', '25.396526', '27.062953', '24.561703', '23.931503', '27.233541', '23.800075', '23.772597', '27.406693', '22.214770', '21.064878', '23.876667', '17.442584', '15.859127', '17.810822', '9.828091', '7.469177', '9.600163', '1.137257', '1.288176', '5.213022']
+TARGET_DEVICE_3: [27.27592, 28.35983, 28.371394, 27.97389, 28.113782, 27.062953, 27.233541, 27.406693, 23.876667, 17.810822, 9.600163, 5.213022]
+PRIVATE_DEVICE_3: [24.745405, 26.017785, 25.59936, 25.519848, 25.337756, 24.561703, 23.800075, 22.21477, 17.442584, 9.828091, 1.137257]
+FIRSTPRIVATE_DEVICE_3: [24.375856, 25.999248, 25.547147, 25.424361, 25.396526, 23.931503, 23.772597, 21.064878, 15.859127, 7.469177, 1.288176]
+Plot saved to Plots/5570664/arraybench_3_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(9)_0.001
+
+arraybench_(9)_0.005
+
+arraybench_(9)_0.01
+
+arraybench_(9)_0.05
+
+arraybench_(9)_0.1
+
+arraybench_(9)_0.5
+
+arraybench_(9)_1
+
+arraybench_(9)_5
+
+arraybench_(9)_10
+
+arraybench_(9)_20
+
+arraybench_(9)_30
+
+arraybench_(9)_40
+
+arraybench_(9)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+Performance mean time:
+
+['1.768112', '29.701054', '27.580261', '27.535021', '1.816034', '29.911518', '27.602732', '28.002024', '1.890182', '29.046476', '26.397288', '26.715934', '2.264023', '30.238032', '27.695537', '27.880967', '2.621174', '30.880213', '28.222561', '28.414965', '5.316019', '33.611298', '30.599535', '31.108975', '7.952213', '35.320461', '31.761229', '32.175243', '33.513784', '62.096477', '56.725979', '55.811405', '63.621044', '88.567138', '82.119465', '80.815434', '122.485161', '143.225908', '135.468721', '133.793116', '176.029682', '186.053991', '177.692175', '178.146124', '229.214668', '234.477997', '228.084087', '228.680134', '299.240828', '295.725107', '293.902874', '294.252872']
+reference_Device: [1.768112, 1.816034, 1.890182, 2.264023, 2.621174, 5.316019, 7.952213, 33.513784, 63.621044, 122.485161, 176.029682, 229.214668, 299.240828]
+TARGET_DEVICE_9: [29.701054, 29.911518, 29.046476, 30.238032, 30.880213, 33.611298, 35.320461, 62.096477, 88.567138, 143.225908, 186.053991, 234.477997, 295.725107]
+PRIVATE_DEVICE_9: [27.580261, 27.602732, 26.397288, 27.695537, 28.222561, 30.599535, 31.761229, 56.725979, 82.119465, 135.468721, 177.692175, 228.084087, 293.902874]
+FIRSTPRIVATE_DEVICE_9: [27.535021, 28.002024, 26.715934, 27.880967, 28.414965, 31.108975, 32.175243, 55.811405, 80.815434, 133.793116, 178.146124, 228.680134, 294.252872]
+Overheads:
+
+['27.932942', '25.812149', '25.766909', '28.095484', '25.786698', '26.185989', '27.156293', '24.507105', '24.825752', '27.974010', '25.431514', '25.616944', '28.259039', '25.601387', '25.793791', '28.295279', '25.283515', '25.792956', '27.368248', '23.809016', '24.223030', '28.582692', '23.212194', '22.297621', '24.946094', '18.498421', '17.194390', '20.740747', '12.983561', '11.307955', '10.024309', '1.662493', '2.116442', '5.263329']
+TARGET_DEVICE_9: [27.932942, 28.095484, 27.156293, 27.97401, 28.259039, 28.295279, 27.368248, 28.582692, 24.946094, 20.740747, 10.024309, 5.263329]
+PRIVATE_DEVICE_9: [25.812149, 25.786698, 24.507105, 25.431514, 25.601387, 25.283515, 23.809016, 23.212194, 18.498421, 12.983561, 1.662493]
+FIRSTPRIVATE_DEVICE_9: [25.766909, 26.185989, 24.825752, 25.616944, 25.793791, 25.792956, 24.22303, 22.297621, 17.19439, 11.307955, 2.116442]
+Plot saved to Plots/5570664/arraybench_9_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(27)_0.001
+
+arraybench_(27)_0.005
+
+arraybench_(27)_0.01
+
+arraybench_(27)_0.05
+
+arraybench_(27)_0.1
+
+arraybench_(27)_0.5
+
+arraybench_(27)_1
+
+arraybench_(27)_5
+
+arraybench_(27)_10
+
+arraybench_(27)_20
+
+arraybench_(27)_30
+
+arraybench_(27)_40
+
+arraybench_(27)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+Performance mean time:
+
+['1.702070', '28.817236', '26.400506', '27.337253', '1.754761', '29.334784', '26.416779', '27.837694', '1.876116', '29.317796', '26.514769', '27.794242', '2.262115', '30.678988', '27.972758', '29.123485', '2.609015', '31.018734', '28.244793', '29.342473', '4.986048', '33.313990', '30.447483', '31.677008', '7.948160', '35.228491', '32.218218', '33.144474', '30.617952', '59.038401', '53.989887', '54.509521', '63.538074', '87.546468', '80.980897', '80.763578', '122.371197', '140.731812', '133.027077', '131.070137', '176.345110', '187.219143', '178.875923', '179.801226', '250.269890', '253.376007', '248.533010', '249.930859', '299.342871', '297.248363', '295.419931', '296.316862']
+reference_Device: [1.70207, 1.754761, 1.876116, 2.262115, 2.609015, 4.986048, 7.94816, 30.617952, 63.538074, 122.371197, 176.34511, 250.26989, 299.342871]
+TARGET_DEVICE_27: [28.817236, 29.334784, 29.317796, 30.678988, 31.018734, 33.31399, 35.228491, 59.038401, 87.546468, 140.731812, 187.219143, 253.376007, 297.248363]
+PRIVATE_DEVICE_27: [26.400506, 26.416779, 26.514769, 27.972758, 28.244793, 30.447483, 32.218218, 53.989887, 80.980897, 133.027077, 178.875923, 248.53301, 295.419931]
+FIRSTPRIVATE_DEVICE_27: [27.337253, 27.837694, 27.794242, 29.123485, 29.342473, 31.677008, 33.144474, 54.509521, 80.763578, 131.070137, 179.801226, 249.930859, 296.316862]
+Overheads:
+
+['27.115166', '24.698436', '25.635183', '27.580023', '24.662018', '26.082933', '27.441680', '24.638653', '25.918126', '28.416872', '25.710642', '26.861370', '28.409719', '25.635779', '26.733458', '28.327942', '25.461435', '26.690960', '27.280331', '24.270058', '25.196314', '28.420448', '23.371935', '23.891568', '24.008393', '17.442822', '17.225504', '18.360615', '10.655880', '8.698940', '10.874033', '2.530813', '3.456116', '3.106117']
+TARGET_DEVICE_27: [27.115166, 27.580023, 27.44168, 28.416872, 28.409719, 28.327942, 27.280331, 28.420448, 24.008393, 18.360615, 10.874033, 3.106117]
+PRIVATE_DEVICE_27: [24.698436, 24.662018, 24.638653, 25.710642, 25.635779, 25.461435, 24.270058, 23.371935, 17.442822, 10.65588, 2.530813]
+FIRSTPRIVATE_DEVICE_27: [25.635183, 26.082933, 25.918126, 26.86137, 26.733458, 26.69096, 25.196314, 23.891568, 17.225504, 8.69894, 3.456116]
+Plot saved to Plots/5570664/arraybench_27_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(81)_0.001
+
+arraybench_(81)_0.005
+
+arraybench_(81)_0.01
+
+arraybench_(81)_0.05
+
+arraybench_(81)_0.1
+
+arraybench_(81)_0.5
+
+arraybench_(81)_1
+
+arraybench_(81)_5
+
+arraybench_(81)_10
+
+arraybench_(81)_20
+
+arraybench_(81)_30
+
+arraybench_(81)_40
+
+arraybench_(81)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+Performance mean time:
+
+['1.777887', '29.884756', '27.786016', '35.622180', '1.865149', '30.262232', '27.578235', '35.722673', '1.913071', '29.399157', '26.727498', '34.744978', '2.203226', '29.402792', '26.712000', '34.543037', '2.593994', '31.095505', '28.415978', '36.258757', '4.997015', '33.483744', '30.126929', '38.141966', '8.028507', '36.360979', '33.233464', '40.757000', '33.450842', '60.901999', '55.816531', '62.191010', '63.561916', '87.897539', '81.399918', '87.154508', '122.328997', '140.516043', '132.956028', '137.534857', '176.419020', '186.331034', '177.718878', '185.103893', '229.198933', '233.444929', '227.530718', '234.953165', '299.309254', '296.903849', '294.861078', '302.429914']
+reference_Device: [1.777887, 1.865149, 1.913071, 2.203226, 2.593994, 4.997015, 8.028507, 33.450842, 63.561916, 122.328997, 176.41902, 229.198933, 299.309254]
+TARGET_DEVICE_81: [29.884756, 30.262232, 29.399157, 29.402792, 31.095505, 33.483744, 36.360979, 60.901999, 87.897539, 140.516043, 186.331034, 233.444929, 296.903849]
+PRIVATE_DEVICE_81: [27.786016, 27.578235, 26.727498, 26.712, 28.415978, 30.126929, 33.233464, 55.816531, 81.399918, 132.956028, 177.718878, 227.530718, 294.861078]
+FIRSTPRIVATE_DEVICE_81: [35.62218, 35.722673, 34.744978, 34.543037, 36.258757, 38.141966, 40.757, 62.19101, 87.154508, 137.534857, 185.103893, 234.953165, 302.429914]
+Overheads:
+
+['28.106868', '26.008129', '33.844292', '28.397083', '25.713086', '33.857524', '27.486086', '24.814427', '32.831907', '27.199566', '24.508774', '32.339811', '28.501511', '25.821984', '33.664763', '28.486729', '25.129914', '33.144951', '28.332472', '25.204957', '32.728493', '27.451158', '22.365689', '28.740168', '24.335623', '17.838001', '23.592591', '18.187046', '10.627031', '15.205860', '9.912014', '1.299858', '8.684874', '4.245996', '5.754232', '3.120661']
+TARGET_DEVICE_81: [28.106868, 28.397083, 27.486086, 27.199566, 28.501511, 28.486729, 28.332472, 27.451158, 24.335623, 18.187046, 9.912014, 4.245996]
+PRIVATE_DEVICE_81: [26.008129, 25.713086, 24.814427, 24.508774, 25.821984, 25.129914, 25.204957, 22.365689, 17.838001, 10.627031, 1.299858, 5.754232]
+FIRSTPRIVATE_DEVICE_81: [33.844292, 33.857524, 32.831907, 32.339811, 33.664763, 33.144951, 32.728493, 28.740168, 23.592591, 15.20586, 8.684874, 3.120661]
+Plot saved to Plots/5570664/arraybench_81_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(243)_0.001
+
+arraybench_(243)_0.005
+
+arraybench_(243)_0.01
+
+arraybench_(243)_0.05
+
+arraybench_(243)_0.1
+
+arraybench_(243)_0.5
+
+arraybench_(243)_1
+
+arraybench_(243)_5
+
+arraybench_(243)_10
+
+arraybench_(243)_20
+
+arraybench_(243)_30
+
+arraybench_(243)_40
+
+arraybench_(243)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+Performance mean time:
+
+['1.699924', '28.860807', '28.161049', '53.092003', '1.765966', '28.899968', '28.166056', '53.474545', '1.910210', '29.403687', '28.252840', '53.306103', '2.214193', '30.360222', '29.431105', '54.419041', '2.551079', '29.960752', '29.048204', '53.893447', '4.936218', '32.251120', '31.395912', '56.015968', '8.027077', '36.167026', '34.475088', '60.127020', '33.506155', '61.923981', '57.945967', '82.352400', '57.939053', '82.571507', '79.061270', '101.428032', '122.319937', '140.447855', '133.660078', '155.916214', '176.432848', '187.369823', '180.136204', '204.525948', '250.276089', '253.020763', '249.583960', '274.358273', '273.489714', '272.656918', '270.555973', '295.297146']
+reference_Device: [1.699924, 1.765966, 1.91021, 2.214193, 2.551079, 4.936218, 8.027077, 33.506155, 57.939053, 122.319937, 176.432848, 250.276089, 273.489714]
+TARGET_DEVICE_243: [28.860807, 28.899968, 29.403687, 30.360222, 29.960752, 32.25112, 36.167026, 61.923981, 82.571507, 140.447855, 187.369823, 253.020763, 272.656918]
+PRIVATE_DEVICE_243: [28.161049, 28.166056, 28.25284, 29.431105, 29.048204, 31.395912, 34.475088, 57.945967, 79.06127, 133.660078, 180.136204, 249.58396, 270.555973]
+FIRSTPRIVATE_DEVICE_243: [53.092003, 53.474545, 53.306103, 54.419041, 53.893447, 56.015968, 60.12702, 82.3524, 101.428032, 155.916214, 204.525948, 274.358273, 295.297146]
+Overheads:
+
+['27.160883', '26.461124', '51.392078', '27.134001', '26.400089', '51.708579', '27.493477', '26.342630', '51.395893', '28.146029', '27.216911', '52.204847', '27.409673', '26.497126', '51.342368', '27.314901', '26.459694', '51.079750', '28.139949', '26.448011', '52.099943', '28.417826', '24.439812', '48.846245', '24.632454', '21.122217', '43.488979', '18.127918', '11.340141', '33.596277', '10.936975', '3.703356', '28.093100', '2.744675', '24.082184', '21.807432']
+TARGET_DEVICE_243: [27.160883, 27.134001, 27.493477, 28.146029, 27.409673, 27.314901, 28.139949, 28.417826, 24.632454, 18.127918, 10.936975, 2.744675]
+PRIVATE_DEVICE_243: [26.461124, 26.400089, 26.34263, 27.216911, 26.497126, 26.459694, 26.448011, 24.439812, 21.122217, 11.340141, 3.703356, 24.082184]
+FIRSTPRIVATE_DEVICE_243: [51.392078, 51.708579, 51.395893, 52.204847, 51.342368, 51.07975, 52.099943, 48.846245, 43.488979, 33.596277, 28.0931, 21.807432]
+Plot saved to Plots/5570664/arraybench_243_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(729)_0.001
+
+arraybench_(729)_0.005
+
+arraybench_(729)_0.01
+
+arraybench_(729)_0.05
+
+arraybench_(729)_0.1
+
+arraybench_(729)_0.5
+
+arraybench_(729)_1
+
+arraybench_(729)_5
+
+arraybench_(729)_10
+
+arraybench_(729)_20
+
+arraybench_(729)_30
+
+arraybench_(729)_40
+
+arraybench_(729)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+Performance mean time:
+
+['1.780987', '29.783010', '31.316042', '101.547718', '1.804113', '29.695988', '31.074047', '101.533175', '1.993179', '30.817270', '31.646013', '102.185011', '2.261162', '29.347479', '30.472279', '100.648165', '2.558947', '30.179739', '30.896902', '101.135015', '5.001068', '33.344924', '34.116983', '105.414867', '8.020878', '36.525249', '36.339045', '107.867241', '33.473253', '60.909986', '58.705807', '129.422188', '57.963133', '82.830548', '80.952168', '148.705959', '122.362852', '140.354156', '135.573864', '203.378916', '176.249027', '186.347961', '180.701971', '251.028061', '229.151964', '233.721733', '230.184793', '300.673723', '273.627758', '272.911787', '272.346973', '343.004942']
+reference_Device: [1.780987, 1.804113, 1.993179, 2.261162, 2.558947, 5.001068, 8.020878, 33.473253, 57.963133, 122.362852, 176.249027, 229.151964, 273.627758]
+TARGET_DEVICE_729: [29.78301, 29.695988, 30.81727, 29.347479, 30.179739, 33.344924, 36.525249, 60.909986, 82.830548, 140.354156, 186.347961, 233.721733, 272.911787]
+PRIVATE_DEVICE_729: [31.316042, 31.074047, 31.646013, 30.472279, 30.896902, 34.116983, 36.339045, 58.705807, 80.952168, 135.573864, 180.701971, 230.184793, 272.346973]
+FIRSTPRIVATE_DEVICE_729: [101.547718, 101.533175, 102.185011, 100.648165, 101.135015, 105.414867, 107.867241, 129.422188, 148.705959, 203.378916, 251.028061, 300.673723, 343.004942]
+Overheads:
+
+['28.002024', '29.535055', '99.766731', '27.891874', '29.269934', '99.729061', '28.824091', '29.652834', '100.191832', '27.086318', '28.211117', '98.387003', '27.620792', '28.337955', '98.576069', '28.343856', '29.115915', '100.413799', '28.504372', '28.318167', '99.846363', '27.436733', '25.232553', '95.948935', '24.867415', '22.989035', '90.742826', '17.991304', '13.211012', '81.016064', '10.098934', '4.452944', '74.779034', '4.569769', '1.032829', '71.521759', '69.377184']
+TARGET_DEVICE_729: [28.002024, 27.891874, 28.824091, 27.086318, 27.620792, 28.343856, 28.504372, 27.436733, 24.867415, 17.991304, 10.098934, 4.569769, 69.377184]
+PRIVATE_DEVICE_729: [29.535055, 29.269934, 29.652834, 28.211117, 28.337955, 29.115915, 28.318167, 25.232553, 22.989035, 13.211012, 4.452944, 1.032829]
+FIRSTPRIVATE_DEVICE_729: [99.766731, 99.729061, 100.191832, 98.387003, 98.576069, 100.413799, 99.846363, 95.948935, 90.742826, 81.016064, 74.779034, 71.521759]
+Plot saved to Plots/5570664/arraybench_729_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(2187)_0.001
+
+arraybench_(2187)_0.005
+
+arraybench_(2187)_0.01
+
+arraybench_(2187)_0.05
+
+arraybench_(2187)_0.1
+
+arraybench_(2187)_0.5
+
+arraybench_(2187)_1
+
+arraybench_(2187)_5
+
+arraybench_(2187)_10
+
+arraybench_(2187)_20
+
+arraybench_(2187)_30
+
+arraybench_(2187)_40
+
+arraybench_(2187)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+Performance mean time:
+
+['1.690865', '28.866887', '36.880970', '247.462988', '1.750946', '29.171765', '36.700010', '247.457981', '1.963139', '30.489028', '38.305044', '249.145508', '2.232075', '29.828250', '37.486792', '248.101950', '2.614737', '31.337798', '38.941860', '249.926090', '4.613876', '31.941295', '39.492846', '250.679731', '7.964134', '35.621524', '42.216063', '253.709078', '30.652046', '59.224367', '64.469814', '274.500370', '63.555002', '87.636590', '91.806650', '300.158024', '122.349977', '141.437054', '143.440962', '351.869822', '176.251888', '186.084032', '187.230825', '398.294926', '228.776693', '233.340979', '236.925125', '448.099852', '299.230099', '295.774937', '303.331137', '514.255047']
+reference_Device: [1.690865, 1.750946, 1.963139, 2.232075, 2.614737, 4.613876, 7.964134, 30.652046, 63.555002, 122.349977, 176.251888, 228.776693, 299.230099]
+TARGET_DEVICE_2187: [28.866887, 29.171765, 30.489028, 29.82825, 31.337798, 31.941295, 35.621524, 59.224367, 87.63659, 141.437054, 186.084032, 233.340979, 295.774937]
+PRIVATE_DEVICE_2187: [36.88097, 36.70001, 38.305044, 37.486792, 38.94186, 39.492846, 42.216063, 64.469814, 91.80665, 143.440962, 187.230825, 236.925125, 303.331137]
+FIRSTPRIVATE_DEVICE_2187: [247.462988, 247.457981, 249.145508, 248.10195, 249.92609, 250.679731, 253.709078, 274.50037, 300.158024, 351.869822, 398.294926, 448.099852, 514.255047]
+Overheads:
+
+['27.176023', '35.190105', '245.772123', '27.420819', '34.949064', '245.707035', '28.525889', '36.341906', '247.182369', '27.596176', '35.254717', '245.869875', '28.723061', '36.327124', '247.311354', '27.327418', '34.878969', '246.065855', '27.657390', '34.251928', '245.744944', '28.572321', '33.817768', '243.848324', '24.081588', '28.251648', '236.603022', '19.087076', '21.090984', '229.519844', '9.832144', '10.978937', '222.043037', '4.564285', '8.148432', '219.323158', '4.101038', '215.024948']
+TARGET_DEVICE_2187: [27.176023, 27.420819, 28.525889, 27.596176, 28.723061, 27.327418, 27.65739, 28.572321, 24.081588, 19.087076, 9.832144, 4.564285, 4.101038]
+PRIVATE_DEVICE_2187: [35.190105, 34.949064, 36.341906, 35.254717, 36.327124, 34.878969, 34.251928, 33.817768, 28.251648, 21.090984, 10.978937, 8.148432, 215.024948]
+FIRSTPRIVATE_DEVICE_2187: [245.772123, 245.707035, 247.182369, 245.869875, 247.311354, 246.065855, 245.744944, 243.848324, 236.603022, 229.519844, 222.043037, 219.323158]
+Plot saved to Plots/5570664/arraybench_2187_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12
+arraybench_(6561)_0.001
+
+arraybench_(6561)_0.005
+
+arraybench_(6561)_0.01
+
+arraybench_(6561)_0.05
+
+arraybench_(6561)_0.1
+
+arraybench_(6561)_0.5
+
+arraybench_(6561)_1
+
+arraybench_(6561)_5
+
+arraybench_(6561)_10
+
+arraybench_(6561)_20
+
+arraybench_(6561)_30
+
+arraybench_(6561)_40
+
+arraybench_(6561)_50
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+Performance mean time:
+
+['1.701832', '28.907001', '45.223236', '676.946878', '1.800060', '29.969513', '48.117399', '679.170847', '1.945019', '29.417515', '45.659065', '677.625895', '2.216101', '29.651523', '45.948982', '677.943230', '2.573967', '30.156195', '46.288013', '679.113150', '4.992008', '32.655239', '48.670053', '680.682182', '7.993937', '35.635293', '50.803900', '682.976723', '33.493042', '61.854959', '76.872110', '707.737207', '63.544989', '87.652922', '101.101637', '730.394602', '122.314930', '140.398026', '150.334835', '780.395985', '176.213026', '187.274933', '199.192286', '830.141068', '228.986979', '233.584166', '246.258974', '878.102303', '273.571968', '273.207188', '289.085150', '920.560122']
+reference_Device: [1.701832, 1.80006, 1.945019, 2.216101, 2.573967, 4.992008, 7.993937, 33.493042, 63.544989, 122.31493, 176.213026, 228.986979, 273.571968]
+TARGET_DEVICE_6561: [28.907001, 29.969513, 29.417515, 29.651523, 30.156195, 32.655239, 35.635293, 61.854959, 87.652922, 140.398026, 187.274933, 233.584166, 273.207188]
+PRIVATE_DEVICE_6561: [45.223236, 48.117399, 45.659065, 45.948982, 46.288013, 48.670053, 50.8039, 76.87211, 101.101637, 150.334835, 199.192286, 246.258974, 289.08515]
+FIRSTPRIVATE_DEVICE_6561: [676.946878, 679.170847, 677.625895, 677.94323, 679.11315, 680.682182, 682.976723, 707.737207, 730.394602, 780.395985, 830.141068, 878.102303, 920.560122]
+Overheads:
+
+['27.205169', '43.521404', '675.245047', '28.169453', '46.317339', '677.370787', '27.472496', '43.714046', '675.680876', '27.435422', '43.732882', '675.727129', '27.582228', '43.714046', '676.539183', '27.663231', '43.678045', '675.690174', '27.641356', '42.809963', '674.982786', '28.361917', '43.379068', '674.244165', '24.107933', '37.556648', '666.849613', '18.083096', '28.019905', '658.081055', '11.061907', '22.979259', '653.928041', '4.597187', '17.271996', '649.115324', '15.513182', '646.988153']
+TARGET_DEVICE_6561: [27.205169, 28.169453, 27.472496, 27.435422, 27.582228, 27.663231, 27.641356, 28.361917, 24.107933, 18.083096, 11.061907, 4.597187, 15.513182]
+PRIVATE_DEVICE_6561: [43.521404, 46.317339, 43.714046, 43.732882, 43.714046, 43.678045, 42.809963, 43.379068, 37.556648, 28.019905, 22.979259, 17.271996, 646.988153]
+FIRSTPRIVATE_DEVICE_6561: [675.245047, 677.370787, 675.680876, 675.727129, 676.539183, 675.690174, 674.982786, 674.244165, 666.849613, 658.081055, 653.928041, 649.115324]
+Plot saved to Plots/5570664/arraybench_6561_performance_plot.png
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 145, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 141, in main
+    plot_overhead(benchmark_overhead, delay_times, args.output_dir+'_overhead_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 50, in plot_overhead
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 167, in linregress
+    ssxm, ssxym, _, ssym = np.cov(x, y, bias=1).flat
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 2683, in cov
+    X = np.concatenate((X, y), axis=0)
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 13 and the array at index 1 has size 12

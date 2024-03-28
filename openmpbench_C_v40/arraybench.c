@@ -88,6 +88,17 @@ int main(int argc, char **argv) {
     }
 
     /****************************************************************************/
+    /* TEST offload to target */
+    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
+    {
+        sprintf(testName, "TARGET_DEVICE_%d", IDA); // 
+     
+     
+        benchmark(testName, &device_target);    // Use the device version of the test
+    }
+    /****************************************************************************/
+
+    /****************************************************************************/
     /* TEST PRIVATE on Device */
     if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
     {
@@ -141,7 +152,7 @@ void refer() {
 void device_refer() {
     int j;
     double a[1];
-#pragma omp target map(tofrom:a)
+#pragma omp target map(to:a)
     for (j = 0; j < innerreps; j++) {
 	array_delay(delaylength, a);
     }
@@ -157,13 +168,24 @@ void testprivnew() {
     }
 }
 
+void device_target() {
+    int j;
+    double a[1];
+    for (j = 0; j < innerreps; j++) {
+    
+    #pragma omp target map(to:a)
+	array_delay(delaylength, a);
+
+    }
+}
+
 void device_testprivnew()
 {
     int j;
     // Map the entire loop to the device
     for (j = 0; j < innerreps; j++)
     {
-#pragma omp target map(tofrom : atest) // Mapping 'atest'
+#pragma omp target map(to : atest) // Mapping 'atest'
 #pragma omp parallel private(atest) // Distribute the outer loop among teams
         {
             array_delay(delaylength, atest);
@@ -186,7 +208,7 @@ void device_testfirstprivnew()
     int j;
     for (j = 0; j < innerreps; j++)
     {
-#pragma omp target map(tofrom : atest) // Mapping 'atest'
+#pragma omp target map(to : atest) // Mapping 'atest'
 #pragma omp parallel firstprivate(atest) // Ensuring 'atest' array is available on the device
         {
             array_delay(delaylength, atest);
