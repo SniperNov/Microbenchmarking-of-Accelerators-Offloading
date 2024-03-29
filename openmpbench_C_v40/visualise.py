@@ -4,6 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import linregress
 import argparse
+from scipy.optimize import curve_fit
+import itertools
+
 
 def read_file(filename):
     # Reading content from the specified output file and extracting data
@@ -39,19 +42,71 @@ def plot_performance(benchmark_data, delay_times, plot_filename):
     plt.show()
     print(f"Plot saved to {plot_filename}")
 
+# def plot_overhead(benchmark_overhead, delay_times, plot_filename):
+#     # Plotting performance based on extracted data
+#     plt.figure(figsize=(10, 6))
+#     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
+#     extended_x = np.linspace(0, max(delay_times) * 1.1, 100)
+
+#     for benchmark, data in benchmark_overhead.items():
+#         color = next(colors)
+#         slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+#         extended_predictions = intercept + slope * extended_x
+
+#         plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
+#         plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)
+
+#     plt.title('Microbenchmarking OpenMP Target Offloading', fontsize=16, fontweight='bold')
+#     plt.xlabel('Delay Time (microseconds)', fontsize=14)
+#     plt.ylabel('Overhead (microseconds)', fontsize=14)
+#     plt.legend(fontsize=12)
+#     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+#     plt.minorticks_on()
+#     plt.tick_params(axis='both', which='major', labelsize=12)
+#     plt.xlim(left=0)
+#     plt.ylim(bottom=0)
+#     plt.tight_layout()
+#     plt.savefig(plot_filename)
+#     plt.show()
+#     print(f"Plot saved to {plot_filename}")
+    
 def plot_overhead(benchmark_overhead, delay_times, plot_filename):
     # Plotting performance based on extracted data
     plt.figure(figsize=(10, 6))
-    colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
+    colors = itertools.cycle(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
     extended_x = np.linspace(0, max(delay_times) * 1.1, 100)
-
+    
+    
     for benchmark, data in benchmark_overhead.items():
+        best_fit_degree = 0
+        best_fit_aic = float('inf')
         color = next(colors)
-        slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
-        extended_predictions = intercept + slope * extended_x
+        for degree in range(0, 4):  # Try polynomial degrees 1, 2, 3
+            # Fit a polynomial of the current degree to the data
+            coefficients = np.polyfit(delay_times, data, degree)
+            polynomial = np.poly1d(coefficients)
+            # extended_predictions = polynomial(extended_x)
 
-        plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
+            # Calculate AIC for the current fit
+            residuals = data - polynomial(delay_times)
+            aic = len(data) * np.log(np.mean(residuals**2)) + 2 * degree
+
+            if aic < best_fit_aic:
+                best_fit_degree = degree
+                best_fit_aic = aic
+                best_polynomial = polynomial
+                best_color = color
+
+        # Plot the best-fit polynomial
+        plt.plot(extended_x, best_polynomial(extended_x), color=best_color, linestyle='-', linewidth=2, label=f'Best({best_fit_degree}): {best_polynomial}')
+        # for benchmark, data in benchmark_overhead.items():
         plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)
+
+        # Extract the constant term for the lower limit horizontal line y = a
+        lower_limit_constant = best_polynomial(extended_x)[-1]
+
+        # Plot the lower limit horizontal line
+        plt.axhline(y=lower_limit_constant, color='gray', linestyle='--', label=f'Lower Limit (y = {lower_limit_constant:.2f})')
 
     plt.title('Microbenchmarking OpenMP Target Offloading', fontsize=16, fontweight='bold')
     plt.xlabel('Delay Time (microseconds)', fontsize=14)
@@ -66,6 +121,7 @@ def plot_overhead(benchmark_overhead, delay_times, plot_filename):
     plt.savefig(plot_filename)
     plt.show()
     print(f"Plot saved to {plot_filename}")
+
 
 def main():
     # Setting up argument parser
