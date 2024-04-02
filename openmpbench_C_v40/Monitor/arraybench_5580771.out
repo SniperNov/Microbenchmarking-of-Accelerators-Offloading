@@ -1,0 +1,549 @@
+arraybench_(1)_1000000
+
+arraybench_(1)_500000
+
+arraybench_(1)_200000
+
+arraybench_(1)_100000
+
+arraybench_(1)_50000
+
+arraybench_(1)_25000
+
+arraybench_(1)_20000
+
+arraybench_(1)_12500
+
+arraybench_(1)_10000
+
+arraybench_(1)_6250
+
+arraybench_(1)_5000
+
+arraybench_(1)_3125
+
+arraybench_(1)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+Performance mean time:
+
+['0.190800', '18.232569', '16.375363', '16.535878', '0.213148', '19.252941', '17.263874', '17.363876', '0.313650', '19.458130', '17.427623', '17.573610', '0.382311', '19.509509', '17.666444', '17.765000', '0.487881', '19.683868', '17.527431', '17.714798', '0.729473', '19.580618', '17.662689', '17.806441', '0.872827', '19.747496', '17.952189', '18.154860', '1.224492', '20.439416', '18.432990', '18.610761', '1.465012', '20.709679', '18.802494', '18.996194', '2.201376', '21.142513', '19.265950', '19.412875', '2.681814', '21.896124', '19.941449', '20.027310', '4.155113', '23.202285', '21.423876', '21.494061', '5.131501', '24.069190', '22.128746', '22.257507']
+reference_Device: [0.1908, 0.213148, 0.31365, 0.382311, 0.487881, 0.729473, 0.872827, 1.224492, 1.465012, 2.201376, 2.681814, 4.155113, 5.131501]
+TARGET_DEVICE_1: [18.232569, 19.252941, 19.45813, 19.509509, 19.683868, 19.580618, 19.747496, 20.439416, 20.709679, 21.142513, 21.896124, 23.202285, 24.06919]
+PRIVATE_DEVICE_1: [16.375363, 17.263874, 17.427623, 17.666444, 17.527431, 17.662689, 17.952189, 18.43299, 18.802494, 19.26595, 19.941449, 21.423876, 22.128746]
+FIRSTPRIVATE_DEVICE_1: [16.535878, 17.363876, 17.57361, 17.765, 17.714798, 17.806441, 18.15486, 18.610761, 18.996194, 19.412875, 20.02731, 21.494061, 22.257507]
+Overheads:
+
+['18.041769', '16.184563', '16.345078', '19.039793', '17.050726', '17.150728', '19.144480', '17.113974', '17.259960', '19.127198', '17.284133', '17.382689', '19.195987', '17.039551', '17.226918', '18.851144', '16.933216', '17.076967', '18.874669', '17.079362', '17.282032', '19.214924', '17.208498', '17.386269', '19.244666', '17.337482', '17.531182', '18.941136', '17.064573', '17.211499', '19.214310', '17.259635', '17.345495', '19.047172', '17.268763', '17.338948', '18.937689', '16.997245', '17.126006']
+TARGET_DEVICE_1: [18.041769, 19.039793, 19.14448, 19.127198, 19.195987, 18.851144, 18.874669, 19.214924, 19.244666, 18.941136, 19.21431, 19.047172, 18.937689]
+PRIVATE_DEVICE_1: [16.184563, 17.050726, 17.113974, 17.284133, 17.039551, 16.933216, 17.079362, 17.208498, 17.337482, 17.064573, 17.259635, 17.268763, 16.997245]
+FIRSTPRIVATE_DEVICE_1: [16.345078, 17.150728, 17.25996, 17.382689, 17.226918, 17.076967, 17.282032, 17.386269, 17.531182, 17.211499, 17.345495, 17.338948, 17.126006]
+Plot saved to Plots/5580771/arraybench_1_performance_plot.png
+Plot saved to Plots/5580771/arraybench_1_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_1_overhead_plot.png
+arraybench_(3)_1000000
+
+arraybench_(3)_500000
+
+arraybench_(3)_200000
+
+arraybench_(3)_100000
+
+arraybench_(3)_50000
+
+arraybench_(3)_25000
+
+arraybench_(3)_20000
+
+arraybench_(3)_12500
+
+arraybench_(3)_10000
+
+arraybench_(3)_6250
+
+arraybench_(3)_5000
+
+arraybench_(3)_3125
+
+arraybench_(3)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+Performance mean time:
+
+['0.190785', '19.223869', '17.579064', '17.775938', '0.213150', '19.334123', '17.679751', '17.848939', '0.313630', '19.422680', '17.493561', '17.739952', '0.382355', '19.498751', '17.828703', '18.067315', '0.487870', '18.613875', '16.960204', '17.104313', '0.729548', '19.658253', '18.153802', '18.429056', '0.872639', '19.813940', '18.254578', '18.551379', '1.224056', '20.348445', '18.776491', '18.932238', '1.464866', '20.592570', '19.017816', '19.311205', '2.201968', '21.203250', '19.668058', '19.932449', '2.683582', '21.738693', '20.094514', '20.250514', '4.156230', '23.259908', '21.606192', '21.934748', '5.132304', '24.292022', '22.656992', '22.886723']
+reference_Device: [0.190785, 0.21315, 0.31363, 0.382355, 0.48787, 0.729548, 0.872639, 1.224056, 1.464866, 2.201968, 2.683582, 4.15623, 5.132304]
+TARGET_DEVICE_3: [19.223869, 19.334123, 19.42268, 19.498751, 18.613875, 19.658253, 19.81394, 20.348445, 20.59257, 21.20325, 21.738693, 23.259908, 24.292022]
+PRIVATE_DEVICE_3: [17.579064, 17.679751, 17.493561, 17.828703, 16.960204, 18.153802, 18.254578, 18.776491, 19.017816, 19.668058, 20.094514, 21.606192, 22.656992]
+FIRSTPRIVATE_DEVICE_3: [17.775938, 17.848939, 17.739952, 18.067315, 17.104313, 18.429056, 18.551379, 18.932238, 19.311205, 19.932449, 20.250514, 21.934748, 22.886723]
+Overheads:
+
+['19.033084', '17.388279', '17.585153', '19.120973', '17.466601', '17.635789', '19.109050', '17.179930', '17.426321', '19.116395', '17.446348', '17.684960', '18.126005', '16.472334', '16.616443', '18.928705', '17.424253', '17.699508', '18.941301', '17.381939', '17.678741', '19.124389', '17.552435', '17.708182', '19.127704', '17.552949', '17.846338', '19.001281', '17.466089', '17.730480', '19.055111', '17.410932', '17.566932', '19.103678', '17.449962', '17.778518', '19.159718', '17.524688', '17.754419']
+TARGET_DEVICE_3: [19.033084, 19.120973, 19.10905, 19.116395, 18.126005, 18.928705, 18.941301, 19.124389, 19.127704, 19.001281, 19.055111, 19.103678, 19.159718]
+PRIVATE_DEVICE_3: [17.388279, 17.466601, 17.17993, 17.446348, 16.472334, 17.424253, 17.381939, 17.552435, 17.552949, 17.466089, 17.410932, 17.449962, 17.524688]
+FIRSTPRIVATE_DEVICE_3: [17.585153, 17.635789, 17.426321, 17.68496, 16.616443, 17.699508, 17.678741, 17.708182, 17.846338, 17.73048, 17.566932, 17.778518, 17.754419]
+Plot saved to Plots/5580771/arraybench_3_performance_plot.png
+Plot saved to Plots/5580771/arraybench_3_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_3_overhead_plot.png
+arraybench_(9)_1000000
+
+arraybench_(9)_500000
+
+arraybench_(9)_200000
+
+arraybench_(9)_100000
+
+arraybench_(9)_50000
+
+arraybench_(9)_25000
+
+arraybench_(9)_20000
+
+arraybench_(9)_12500
+
+arraybench_(9)_10000
+
+arraybench_(9)_6250
+
+arraybench_(9)_5000
+
+arraybench_(9)_3125
+
+arraybench_(9)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+Performance mean time:
+
+['0.190782', '19.238383', '17.514363', '18.065304', '0.213156', '19.243449', '17.669201', '18.197238', '0.313655', '19.494876', '17.974377', '18.365562', '0.382345', '19.616961', '17.904565', '18.436134', '0.487916', '19.573078', '17.980382', '18.399626', '0.729452', '19.746497', '18.042639', '18.555507', '0.872852', '19.716814', '18.058568', '18.624067', '1.224571', '20.447746', '18.747509', '19.200563', '1.464958', '20.637855', '19.206196', '19.549012', '2.201686', '21.119192', '19.671679', '20.108238', '2.683250', '22.076488', '20.333067', '20.948127', '4.155254', '23.146003', '21.467328', '21.984830', '5.132115', '24.080262', '22.572696', '23.015052']
+reference_Device: [0.190782, 0.213156, 0.313655, 0.382345, 0.487916, 0.729452, 0.872852, 1.224571, 1.464958, 2.201686, 2.68325, 4.155254, 5.132115]
+TARGET_DEVICE_9: [19.238383, 19.243449, 19.494876, 19.616961, 19.573078, 19.746497, 19.716814, 20.447746, 20.637855, 21.119192, 22.076488, 23.146003, 24.080262]
+PRIVATE_DEVICE_9: [17.514363, 17.669201, 17.974377, 17.904565, 17.980382, 18.042639, 18.058568, 18.747509, 19.206196, 19.671679, 20.333067, 21.467328, 22.572696]
+FIRSTPRIVATE_DEVICE_9: [18.065304, 18.197238, 18.365562, 18.436134, 18.399626, 18.555507, 18.624067, 19.200563, 19.549012, 20.108238, 20.948127, 21.98483, 23.015052]
+Overheads:
+
+['19.047601', '17.323581', '17.874522', '19.030293', '17.456045', '17.984082', '19.181221', '17.660722', '18.051907', '19.234617', '17.522220', '18.053789', '19.085162', '17.492466', '17.911710', '19.017046', '17.313187', '17.826056', '18.843962', '17.185716', '17.751215', '19.223175', '17.522937', '17.975992', '19.172897', '17.741238', '18.084054', '18.917506', '17.469992', '17.906552', '19.393237', '17.649816', '18.264876', '18.990750', '17.312074', '17.829577', '18.948146', '17.440581', '17.882937']
+TARGET_DEVICE_9: [19.047601, 19.030293, 19.181221, 19.234617, 19.085162, 19.017046, 18.843962, 19.223175, 19.172897, 18.917506, 19.393237, 18.99075, 18.948146]
+PRIVATE_DEVICE_9: [17.323581, 17.456045, 17.660722, 17.52222, 17.492466, 17.313187, 17.185716, 17.522937, 17.741238, 17.469992, 17.649816, 17.312074, 17.440581]
+FIRSTPRIVATE_DEVICE_9: [17.874522, 17.984082, 18.051907, 18.053789, 17.91171, 17.826056, 17.751215, 17.975992, 18.084054, 17.906552, 18.264876, 17.829577, 17.882937]
+Plot saved to Plots/5580771/arraybench_9_performance_plot.png
+Plot saved to Plots/5580771/arraybench_9_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_9_overhead_plot.png
+arraybench_(27)_1000000
+
+arraybench_(27)_500000
+
+arraybench_(27)_200000
+
+arraybench_(27)_100000
+
+arraybench_(27)_50000
+
+arraybench_(27)_25000
+
+arraybench_(27)_20000
+
+arraybench_(27)_12500
+
+arraybench_(27)_10000
+
+arraybench_(27)_6250
+
+arraybench_(27)_5000
+
+arraybench_(27)_3125
+
+arraybench_(27)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+Performance mean time:
+
+['0.190784', '19.582883', '18.021002', '19.342571', '0.213151', '19.678757', '18.022761', '19.369006', '0.313637', '19.632742', '18.053681', '19.335449', '0.382340', '18.935546', '17.274886', '18.661007', '0.487829', '21.614447', '19.807175', '21.303818', '0.729466', '19.865260', '18.335238', '19.530788', '0.872522', '21.979928', '20.254493', '21.595925', '1.224430', '20.299181', '18.567547', '19.959196', '1.464728', '20.591632', '18.851861', '20.247698', '2.201563', '21.780565', '19.925445', '21.235183', '2.683318', '21.745011', '20.045623', '21.353930', '4.155799', '23.238704', '21.563247', '22.971764', '5.132393', '24.147257', '22.332236', '23.751557']
+reference_Device: [0.190784, 0.213151, 0.313637, 0.38234, 0.487829, 0.729466, 0.872522, 1.22443, 1.464728, 2.201563, 2.683318, 4.155799, 5.132393]
+TARGET_DEVICE_27: [19.582883, 19.678757, 19.632742, 18.935546, 21.614447, 19.86526, 21.979928, 20.299181, 20.591632, 21.780565, 21.745011, 23.238704, 24.147257]
+PRIVATE_DEVICE_27: [18.021002, 18.022761, 18.053681, 17.274886, 19.807175, 18.335238, 20.254493, 18.567547, 18.851861, 19.925445, 20.045623, 21.563247, 22.332236]
+FIRSTPRIVATE_DEVICE_27: [19.342571, 19.369006, 19.335449, 18.661007, 21.303818, 19.530788, 21.595925, 19.959196, 20.247698, 21.235183, 21.35393, 22.971764, 23.751557]
+Overheads:
+
+['19.392098', '17.830218', '19.151787', '19.465606', '17.809610', '19.155855', '19.319105', '17.740044', '19.021812', '18.553206', '16.892546', '18.278667', '21.126618', '19.319346', '20.815989', '19.135794', '17.605772', '18.801322', '21.107406', '19.381971', '20.723403', '19.074752', '17.343117', '18.734767', '19.126903', '17.387133', '18.782970', '19.579002', '17.723882', '19.033620', '19.061693', '17.362305', '18.670612', '19.082905', '17.407448', '18.815965', '19.014864', '17.199843', '18.619164']
+TARGET_DEVICE_27: [19.392098, 19.465606, 19.319105, 18.553206, 21.126618, 19.135794, 21.107406, 19.074752, 19.126903, 19.579002, 19.061693, 19.082905, 19.014864]
+PRIVATE_DEVICE_27: [17.830218, 17.80961, 17.740044, 16.892546, 19.319346, 17.605772, 19.381971, 17.343117, 17.387133, 17.723882, 17.362305, 17.407448, 17.199843]
+FIRSTPRIVATE_DEVICE_27: [19.151787, 19.155855, 19.021812, 18.278667, 20.815989, 18.801322, 20.723403, 18.734767, 18.78297, 19.03362, 18.670612, 18.815965, 18.619164]
+Plot saved to Plots/5580771/arraybench_27_performance_plot.png
+Plot saved to Plots/5580771/arraybench_27_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_27_overhead_plot.png
+arraybench_(81)_1000000
+
+arraybench_(81)_500000
+
+arraybench_(81)_200000
+
+arraybench_(81)_100000
+
+arraybench_(81)_50000
+
+arraybench_(81)_25000
+
+arraybench_(81)_20000
+
+arraybench_(81)_12500
+
+arraybench_(81)_10000
+
+arraybench_(81)_6250
+
+arraybench_(81)_5000
+
+arraybench_(81)_3125
+
+arraybench_(81)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+Performance mean time:
+
+['0.190785', '19.193485', '17.591178', '25.706142', '0.213157', '18.444315', '17.067626', '25.131702', '0.313635', '19.542187', '17.889246', '25.921404', '0.382329', '19.591138', '17.748132', '25.772899', '0.487867', '19.799575', '18.009499', '25.894910', '0.729595', '19.878253', '18.392980', '26.518613', '0.872795', '20.039693', '18.326685', '26.508152', '1.224367', '20.626947', '18.774182', '26.659608', '1.464921', '20.682693', '19.204810', '26.966065', '2.202145', '21.324992', '19.616127', '27.503729', '2.683412', '22.010818', '20.442665', '28.373241', '4.156998', '23.164183', '21.499261', '29.401511', '5.132825', '24.370119', '22.667751', '30.513108']
+reference_Device: [0.190785, 0.213157, 0.313635, 0.382329, 0.487867, 0.729595, 0.872795, 1.224367, 1.464921, 2.202145, 2.683412, 4.156998, 5.132825]
+TARGET_DEVICE_81: [19.193485, 18.444315, 19.542187, 19.591138, 19.799575, 19.878253, 20.039693, 20.626947, 20.682693, 21.324992, 22.010818, 23.164183, 24.370119]
+PRIVATE_DEVICE_81: [17.591178, 17.067626, 17.889246, 17.748132, 18.009499, 18.39298, 18.326685, 18.774182, 19.20481, 19.616127, 20.442665, 21.499261, 22.667751]
+FIRSTPRIVATE_DEVICE_81: [25.706142, 25.131702, 25.921404, 25.772899, 25.89491, 26.518613, 26.508152, 26.659608, 26.966065, 27.503729, 28.373241, 29.401511, 30.513108]
+Overheads:
+
+['19.002701', '17.400394', '25.515358', '18.231158', '16.854469', '24.918546', '19.228552', '17.575611', '25.607769', '19.208809', '17.365804', '25.390571', '19.311708', '17.521632', '25.407043', '19.148658', '17.663385', '25.789018', '19.166898', '17.453890', '25.635358', '19.402580', '17.549814', '25.435241', '19.217772', '17.739890', '25.501144', '19.122847', '17.413982', '25.301583', '19.327407', '17.759253', '25.689830', '19.007184', '17.342263', '25.244513', '19.237294', '17.534926', '25.380283']
+TARGET_DEVICE_81: [19.002701, 18.231158, 19.228552, 19.208809, 19.311708, 19.148658, 19.166898, 19.40258, 19.217772, 19.122847, 19.327407, 19.007184, 19.237294]
+PRIVATE_DEVICE_81: [17.400394, 16.854469, 17.575611, 17.365804, 17.521632, 17.663385, 17.45389, 17.549814, 17.73989, 17.413982, 17.759253, 17.342263, 17.534926]
+FIRSTPRIVATE_DEVICE_81: [25.515358, 24.918546, 25.607769, 25.390571, 25.407043, 25.789018, 25.635358, 25.435241, 25.501144, 25.301583, 25.68983, 25.244513, 25.380283]
+Plot saved to Plots/5580771/arraybench_81_performance_plot.png
+Plot saved to Plots/5580771/arraybench_81_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_81_overhead_plot.png
+arraybench_(243)_1000000
+
+arraybench_(243)_500000
+
+arraybench_(243)_200000
+
+arraybench_(243)_100000
+
+arraybench_(243)_50000
+
+arraybench_(243)_25000
+
+arraybench_(243)_20000
+
+arraybench_(243)_12500
+
+arraybench_(243)_10000
+
+arraybench_(243)_6250
+
+arraybench_(243)_5000
+
+arraybench_(243)_3125
+
+arraybench_(243)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+Performance mean time:
+
+['0.190784', '19.165263', '18.593073', '43.961614', '0.213164', '19.409552', '18.541574', '44.215024', '0.313668', '19.508228', '18.978596', '44.247508', '0.382361', '19.681826', '18.700361', '44.239253', '0.487878', '19.672751', '18.931508', '44.155240', '0.729492', '19.659549', '19.157052', '44.206828', '0.872887', '20.019248', '19.317985', '44.539243', '1.224430', '20.412982', '19.807339', '44.877350', '1.464867', '20.395190', '19.778013', '44.890493', '2.201536', '21.551788', '20.504475', '45.949250', '2.683616', '21.719888', '20.963073', '46.093643', '4.155991', '23.271382', '22.666574', '47.733366', '5.132339', '24.433017', '23.211002', '48.425287']
+reference_Device: [0.190784, 0.213164, 0.313668, 0.382361, 0.487878, 0.729492, 0.872887, 1.22443, 1.464867, 2.201536, 2.683616, 4.155991, 5.132339]
+TARGET_DEVICE_243: [19.165263, 19.409552, 19.508228, 19.681826, 19.672751, 19.659549, 20.019248, 20.412982, 20.39519, 21.551788, 21.719888, 23.271382, 24.433017]
+PRIVATE_DEVICE_243: [18.593073, 18.541574, 18.978596, 18.700361, 18.931508, 19.157052, 19.317985, 19.807339, 19.778013, 20.504475, 20.963073, 22.666574, 23.211002]
+FIRSTPRIVATE_DEVICE_243: [43.961614, 44.215024, 44.247508, 44.239253, 44.15524, 44.206828, 44.539243, 44.87735, 44.890493, 45.94925, 46.093643, 47.733366, 48.425287]
+Overheads:
+
+['18.974479', '18.402289', '43.770831', '19.196389', '18.328411', '44.001860', '19.194560', '18.664928', '43.933840', '19.299466', '18.318001', '43.856892', '19.184874', '18.443630', '43.667362', '18.930057', '18.427560', '43.477336', '19.146362', '18.445098', '43.666356', '19.188551', '18.582908', '43.652920', '18.930323', '18.313146', '43.425626', '19.350252', '18.302939', '43.747715', '19.036272', '18.279457', '43.410027', '19.115391', '18.510583', '43.577376', '19.300677', '18.078663', '43.292948']
+TARGET_DEVICE_243: [18.974479, 19.196389, 19.19456, 19.299466, 19.184874, 18.930057, 19.146362, 19.188551, 18.930323, 19.350252, 19.036272, 19.115391, 19.300677]
+PRIVATE_DEVICE_243: [18.402289, 18.328411, 18.664928, 18.318001, 18.44363, 18.42756, 18.445098, 18.582908, 18.313146, 18.302939, 18.279457, 18.510583, 18.078663]
+FIRSTPRIVATE_DEVICE_243: [43.770831, 44.00186, 43.93384, 43.856892, 43.667362, 43.477336, 43.666356, 43.65292, 43.425626, 43.747715, 43.410027, 43.577376, 43.292948]
+Plot saved to Plots/5580771/arraybench_243_performance_plot.png
+Plot saved to Plots/5580771/arraybench_243_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_243_overhead_plot.png
+arraybench_(729)_1000000
+
+arraybench_(729)_500000
+
+arraybench_(729)_200000
+
+arraybench_(729)_100000
+
+arraybench_(729)_50000
+
+arraybench_(729)_25000
+
+arraybench_(729)_20000
+
+arraybench_(729)_12500
+
+arraybench_(729)_10000
+
+arraybench_(729)_6250
+
+arraybench_(729)_5000
+
+arraybench_(729)_3125
+
+arraybench_(729)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+Performance mean time:
+
+['0.190783', '19.574314', '19.994617', '91.168225', '0.213156', '19.575998', '20.092130', '91.104507', '0.313624', '19.760817', '20.353913', '91.476738', '0.382334', '19.483447', '20.092130', '91.035962', '0.487865', '19.711927', '20.377874', '91.431081', '0.729390', '19.909754', '20.501614', '91.553450', '0.872521', '22.051170', '22.732615', '93.551517', '1.224573', '20.369813', '21.364570', '92.139244', '1.464997', '20.730749', '21.170378', '92.362523', '2.201286', '21.614492', '21.979451', '93.137264', '2.684138', '21.956876', '22.464633', '93.493819', '4.156336', '23.279399', '23.825645', '94.782650', '5.132883', '24.360478', '25.135398', '95.848203']
+reference_Device: [0.190783, 0.213156, 0.313624, 0.382334, 0.487865, 0.72939, 0.872521, 1.224573, 1.464997, 2.201286, 2.684138, 4.156336, 5.132883]
+TARGET_DEVICE_729: [19.574314, 19.575998, 19.760817, 19.483447, 19.711927, 19.909754, 22.05117, 20.369813, 20.730749, 21.614492, 21.956876, 23.279399, 24.360478]
+PRIVATE_DEVICE_729: [19.994617, 20.09213, 20.353913, 20.09213, 20.377874, 20.501614, 22.732615, 21.36457, 21.170378, 21.979451, 22.464633, 23.825645, 25.135398]
+FIRSTPRIVATE_DEVICE_729: [91.168225, 91.104507, 91.476738, 91.035962, 91.431081, 91.55345, 93.551517, 92.139244, 92.362523, 93.137264, 93.493819, 94.78265, 95.848203]
+Overheads:
+
+['19.383531', '19.803833', '90.977442', '19.362842', '19.878974', '90.891352', '19.447193', '20.040289', '91.163114', '19.101113', '19.709796', '90.653628', '19.224062', '19.890010', '90.943217', '19.180364', '19.772224', '90.824060', '21.178650', '21.860095', '92.678996', '19.145240', '20.139996', '90.914671', '19.265752', '19.705381', '90.897526', '19.413206', '19.778166', '90.935979', '19.272738', '19.780495', '90.809681', '19.123062', '19.669309', '90.626314', '19.227595', '20.002515', '90.715320']
+TARGET_DEVICE_729: [19.383531, 19.362842, 19.447193, 19.101113, 19.224062, 19.180364, 21.17865, 19.14524, 19.265752, 19.413206, 19.272738, 19.123062, 19.227595]
+PRIVATE_DEVICE_729: [19.803833, 19.878974, 20.040289, 19.709796, 19.89001, 19.772224, 21.860095, 20.139996, 19.705381, 19.778166, 19.780495, 19.669309, 20.002515]
+FIRSTPRIVATE_DEVICE_729: [90.977442, 90.891352, 91.163114, 90.653628, 90.943217, 90.82406, 92.678996, 90.914671, 90.897526, 90.935979, 90.809681, 90.626314, 90.71532]
+Plot saved to Plots/5580771/arraybench_729_performance_plot.png
+Plot saved to Plots/5580771/arraybench_729_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_729_overhead_plot.png
+arraybench_(2187)_1000000
+
+arraybench_(2187)_500000
+
+arraybench_(2187)_200000
+
+arraybench_(2187)_100000
+
+arraybench_(2187)_50000
+
+arraybench_(2187)_25000
+
+arraybench_(2187)_20000
+
+arraybench_(2187)_12500
+
+arraybench_(2187)_10000
+
+arraybench_(2187)_6250
+
+arraybench_(2187)_5000
+
+arraybench_(2187)_3125
+
+arraybench_(2187)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+Performance mean time:
+
+['0.190785', '19.317135', '25.111914', '236.327052', '0.213161', '19.318566', '25.161028', '236.624002', '0.313658', '19.721121', '25.635123', '236.698985', '0.382337', '19.558519', '25.210142', '236.361384', '0.487927', '19.879624', '25.584936', '236.971021', '0.729622', '19.838810', '25.585532', '236.922026', '0.872592', '20.310104', '25.954485', '237.654924', '1.224634', '19.901007', '25.376081', '236.661553', '1.464966', '20.621508', '26.291609', '237.531543', '2.201756', '21.702990', '27.296066', '238.532305', '2.683220', '21.713942', '27.557850', '238.896966', '4.154658', '23.280948', '28.844476', '240.264058', '5.130001', '24.308771', '30.134916', '241.448879']
+reference_Device: [0.190785, 0.213161, 0.313658, 0.382337, 0.487927, 0.729622, 0.872592, 1.224634, 1.464966, 2.201756, 2.68322, 4.154658, 5.130001]
+TARGET_DEVICE_2187: [19.317135, 19.318566, 19.721121, 19.558519, 19.879624, 19.83881, 20.310104, 19.901007, 20.621508, 21.70299, 21.713942, 23.280948, 24.308771]
+PRIVATE_DEVICE_2187: [25.111914, 25.161028, 25.635123, 25.210142, 25.584936, 25.585532, 25.954485, 25.376081, 26.291609, 27.296066, 27.55785, 28.844476, 30.134916]
+FIRSTPRIVATE_DEVICE_2187: [236.327052, 236.624002, 236.698985, 236.361384, 236.971021, 236.922026, 237.654924, 236.661553, 237.531543, 238.532305, 238.896966, 240.264058, 241.448879]
+Overheads:
+
+['19.126350', '24.921129', '236.136267', '19.105405', '24.947867', '236.410842', '19.407463', '25.321465', '236.385327', '19.176182', '24.827805', '235.979047', '19.391697', '25.097009', '236.483094', '19.109188', '24.855911', '236.192404', '19.437512', '25.081893', '236.782333', '18.676374', '24.151448', '235.436920', '19.156543', '24.826643', '236.066577', '19.501234', '25.094311', '236.330549', '19.030722', '24.874629', '236.213746', '19.126291', '24.689818', '236.109400', '19.178770', '25.004915', '236.318878']
+TARGET_DEVICE_2187: [19.12635, 19.105405, 19.407463, 19.176182, 19.391697, 19.109188, 19.437512, 18.676374, 19.156543, 19.501234, 19.030722, 19.126291, 19.17877]
+PRIVATE_DEVICE_2187: [24.921129, 24.947867, 25.321465, 24.827805, 25.097009, 24.855911, 25.081893, 24.151448, 24.826643, 25.094311, 24.874629, 24.689818, 25.004915]
+FIRSTPRIVATE_DEVICE_2187: [236.136267, 236.410842, 236.385327, 235.979047, 236.483094, 236.192404, 236.782333, 235.43692, 236.066577, 236.330549, 236.213746, 236.1094, 236.318878]
+Plot saved to Plots/5580771/arraybench_2187_performance_plot.png
+Plot saved to Plots/5580771/arraybench_2187_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_2187_overhead_plot.png
+arraybench_(6561)_1000000
+
+arraybench_(6561)_500000
+
+arraybench_(6561)_200000
+
+arraybench_(6561)_100000
+
+arraybench_(6561)_50000
+
+arraybench_(6561)_25000
+
+arraybench_(6561)_20000
+
+arraybench_(6561)_12500
+
+arraybench_(6561)_10000
+
+arraybench_(6561)_6250
+
+arraybench_(6561)_5000
+
+arraybench_(6561)_3125
+
+arraybench_(6561)_2500
+
+Run 1: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 1, Delay Time: 0.100000 microseconds
+Run 2: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 2, Delay Time: 0.100000 microseconds
+Run 3: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 5, Delay Time: 0.100000 microseconds
+Run 4: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 10, Delay Time: 0.100000 microseconds
+Run 5: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 20, Delay Time: 0.100000 microseconds
+Run 6: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 40, Delay Time: 0.100000 microseconds
+Run 7: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 50, Delay Time: 0.100000 microseconds
+Run 8: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 80, Delay Time: 0.100000 microseconds
+Run 9: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 100, Delay Time: 0.100000 microseconds
+Run 10: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 160, Delay Time: 0.100000 microseconds
+Run 11: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 200, Delay Time: 0.100000 microseconds
+Run 12: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 320, Delay Time: 0.100000 microseconds
+Run 13: Threads: 1, Outer Repetitions: 100, Test Time: 1000.00 microseconds, Delay Length: 400, Delay Time: 0.100000 microseconds
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+Performance mean time:
+
+['0.190786', '21.010682', '33.062935', '665.955544', '0.213158', '19.645244', '31.690121', '664.690614', '0.313638', '19.652635', '31.344533', '664.844394', '0.382314', '18.965438', '29.316545', '662.807941', '0.487871', '19.665390', '31.730175', '664.469957', '0.729612', '19.895241', '31.451583', '665.071487', '0.872878', '20.150021', '32.009721', '664.586425', '1.224422', '20.539865', '32.282114', '665.737748', '1.464717', '20.518929', '32.599568', '665.361404', '2.201538', '21.441430', '33.106923', '665.812135', '2.682507', '21.742463', '33.476949', '666.131020', '4.154936', '23.355946', '35.552740', '668.456912', '5.132959', '24.223059', '36.074042', '669.249773']
+reference_Device: [0.190786, 0.213158, 0.313638, 0.382314, 0.487871, 0.729612, 0.872878, 1.224422, 1.464717, 2.201538, 2.682507, 4.154936, 5.132959]
+TARGET_DEVICE_6561: [21.010682, 19.645244, 19.652635, 18.965438, 19.66539, 19.895241, 20.150021, 20.539865, 20.518929, 21.44143, 21.742463, 23.355946, 24.223059]
+PRIVATE_DEVICE_6561: [33.062935, 31.690121, 31.344533, 29.316545, 31.730175, 31.451583, 32.009721, 32.282114, 32.599568, 33.106923, 33.476949, 35.55274, 36.074042]
+FIRSTPRIVATE_DEVICE_6561: [665.955544, 664.690614, 664.844394, 662.807941, 664.469957, 665.071487, 664.586425, 665.737748, 665.361404, 665.812135, 666.13102, 668.456912, 669.249773]
+Overheads:
+
+['20.819896', '32.872149', '665.764757', '19.432086', '31.476963', '664.477456', '19.338997', '31.030895', '664.530756', '18.583124', '28.934230', '662.425627', '19.177520', '31.242304', '663.982087', '19.165629', '30.721971', '664.341876', '19.277143', '31.136843', '663.713547', '19.315443', '31.057692', '664.513326', '19.054212', '31.134851', '663.896687', '19.239892', '30.905385', '663.610597', '19.059957', '30.794442', '663.448513', '19.201010', '31.397804', '664.301976', '19.090100', '30.941083', '664.116814']
+TARGET_DEVICE_6561: [20.819896, 19.432086, 19.338997, 18.583124, 19.17752, 19.165629, 19.277143, 19.315443, 19.054212, 19.239892, 19.059957, 19.20101, 19.0901]
+PRIVATE_DEVICE_6561: [32.872149, 31.476963, 31.030895, 28.93423, 31.242304, 30.721971, 31.136843, 31.057692, 31.134851, 30.905385, 30.794442, 31.397804, 30.941083]
+FIRSTPRIVATE_DEVICE_6561: [665.764757, 664.477456, 664.530756, 662.425627, 663.982087, 664.341876, 663.713547, 664.513326, 663.896687, 663.610597, 663.448513, 664.301976, 664.116814]
+Plot saved to Plots/5580771/arraybench_6561_performance_plot.png
+Plot saved to Plots/5580771/arraybench_6561_overhead_plot.png
+Plot saved to Plots/5580771/arraybench_6561_overhead_plot.png
