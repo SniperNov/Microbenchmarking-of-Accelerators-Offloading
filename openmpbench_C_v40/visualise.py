@@ -2,6 +2,7 @@ import os
 import re
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.interpolate import UnivariateSpline
 from scipy.stats import linregress
 import argparse
 from scipy.optimize import curve_fit
@@ -77,36 +78,52 @@ def plot_overhead(benchmark_overhead, delay_times, plot_filename):
     extended_x = np.linspace(0, max(delay_times) * 1.1, 100)
     
     
+    # for benchmark, data in benchmark_overhead.items():
+    #     best_fit_degree = 0
+    #     best_fit_aic = float('inf')
+    #     color = next(colors)
+    #     for degree in range(0, 4):  # Try polynomial degrees 1, 2, 3
+    #         # Fit a polynomial of the current degree to the data
+    #         coefficients = np.polyfit(delay_times, data, degree)
+    #         polynomial = np.poly1d(coefficients)
+    #         # extended_predictions = polynomial(extended_x)
+
+    #         # Calculate AIC for the current fit
+    #         residuals = data - polynomial(delay_times)
+    #         aic = len(data) * np.log(np.mean(residuals**2)) + 2 * degree
+
+    #         if aic < best_fit_aic:
+    #             best_fit_degree = degree
+    #             best_fit_aic = aic
+    #             best_polynomial = polynomial
+    #             best_color = color
+
+    #     # Plot the best-fit polynomial
+    #     plt.plot(extended_x, best_polynomial(extended_x), color=best_color, linestyle='-', linewidth=2, label=f'Best({best_fit_degree}): {best_polynomial}')
+    #     # for benchmark, data in benchmark_overhead.items():
+    #     plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)
+
+    #     # Extract the constant term for the lower limit horizontal line y = a
+    #     lower_limit_constant = best_polynomial(extended_x)[-1]
+
+    #     # Plot the lower limit horizontal line
+    #     plt.axhline(y=lower_limit_constant, color='gray', linestyle='--', label=f'Lower Limit (y = {lower_limit_constant:.2f})')
     for benchmark, data in benchmark_overhead.items():
-        best_fit_degree = 0
-        best_fit_aic = float('inf')
         color = next(colors)
-        for degree in range(0, 4):  # Try polynomial degrees 1, 2, 3
-            # Fit a polynomial of the current degree to the data
-            coefficients = np.polyfit(delay_times, data, degree)
-            polynomial = np.poly1d(coefficients)
-            # extended_predictions = polynomial(extended_x)
-
-            # Calculate AIC for the current fit
-            residuals = data - polynomial(delay_times)
-            aic = len(data) * np.log(np.mean(residuals**2)) + 2 * degree
-
-            if aic < best_fit_aic:
-                best_fit_degree = degree
-                best_fit_aic = aic
-                best_polynomial = polynomial
-                best_color = color
-
-        # Plot the best-fit polynomial
-        plt.plot(extended_x, best_polynomial(extended_x), color=best_color, linestyle='-', linewidth=2, label=f'Best({best_fit_degree}): {best_polynomial}')
-        # for benchmark, data in benchmark_overhead.items():
+        
+        # Use UnivariateSpline for smoothing. s is a smoothing factor.
+        spline = UnivariateSpline(delay_times, data, s=1)
+        
+        # Plot the spline fit
+        plt.plot(extended_x, spline(extended_x), color=color, linestyle='-', linewidth=2, label=f'{benchmark}')
         plt.scatter(delay_times, data, color=color, edgecolor='black', s=50)
-
-        # Extract the constant term for the lower limit horizontal line y = a
-        lower_limit_constant = best_polynomial(extended_x)[-1]
+        
+        # Determine the lower limit constant 'a' as the minimum of the smoothed data
+        lower_limit_constant = np.min(spline(extended_x))
 
         # Plot the lower limit horizontal line
         plt.axhline(y=lower_limit_constant, color='gray', linestyle='--', label=f'Lower Limit (y = {lower_limit_constant:.2f})')
+
 
     plt.title('Microbenchmarking OpenMP Target Offloading', fontsize=16, fontweight='bold')
     plt.xlabel('Delay Time (microseconds)', fontsize=14)

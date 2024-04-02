@@ -1,0 +1,423 @@
+arraybench_(1)_50000
+
+arraybench_(1)_25000
+
+arraybench_(1)_20000
+
+arraybench_(1)_12500
+
+arraybench_(1)_10000
+
+arraybench_(1)_6250
+
+arraybench_(1)_5000
+
+arraybench_(1)_3125
+
+arraybench_(1)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+Performance mean time:
+
+['0.490078', '18.873751', '16.813815', '16.897514', '0.732142', '19.691110', '17.618358', '17.793000', '0.874641', '19.904628', '17.911747', '17.974123', '1.229123', '20.773917', '19.140914', '18.932641', '1.469602', '20.398811', '18.431753', '18.620759', '2.206059', '21.411449', '19.248560', '19.453004', '2.692086', '21.799996', '19.710943', '19.699827', '4.167902', '23.324102', '21.339253', '21.415696', '5.135025', '24.043888', '22.206321', '22.277117']
+reference_Device: [0.490078, 0.732142, 0.874641, 1.229123, 1.469602, 2.206059, 2.692086, 4.167902, 5.135025]
+TARGET_DEVICE_1: [18.873751, 19.69111, 19.904628, 20.773917, 20.398811, 21.411449, 21.799996, 23.324102, 24.043888]
+PRIVATE_DEVICE_1: [16.813815, 17.618358, 17.911747, 19.140914, 18.431753, 19.24856, 19.710943, 21.339253, 22.206321]
+FIRSTPRIVATE_DEVICE_1: [16.897514, 17.793, 17.974123, 18.932641, 18.620759, 19.453004, 19.699827, 21.415696, 22.277117]
+Overheads:
+
+['18.383673', '16.323736', '16.407436', '18.958968', '16.886216', '17.060858', '19.029987', '17.037106', '17.099482', '19.544795', '17.911792', '17.703518', '18.929209', '16.962151', '17.151158', '19.205389', '17.042501', '17.246945', '19.107911', '17.018857', '17.007741', '19.156201', '17.171351', '17.247794', '18.908863', '17.071296', '17.142092']
+TARGET_DEVICE_1: [18.383673, 18.958968, 19.029987, 19.544795, 18.929209, 19.205389, 19.107911, 19.156201, 18.908863]
+PRIVATE_DEVICE_1: [16.323736, 16.886216, 17.037106, 17.911792, 16.962151, 17.042501, 17.018857, 17.171351, 17.071296]
+FIRSTPRIVATE_DEVICE_1: [16.407436, 17.060858, 17.099482, 17.703518, 17.151158, 17.246945, 17.007741, 17.247794, 17.142092]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(3)_50000
+
+arraybench_(3)_25000
+
+arraybench_(3)_20000
+
+arraybench_(3)_12500
+
+arraybench_(3)_10000
+
+arraybench_(3)_6250
+
+arraybench_(3)_5000
+
+arraybench_(3)_3125
+
+arraybench_(3)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+Performance mean time:
+
+['0.489948', '19.668981', '17.842501', '17.983243', '0.732554', '19.878939', '18.157065', '18.415019', '0.874409', '19.805998', '18.076941', '18.384799', '1.225330', '20.288810', '18.530488', '18.896818', '1.468450', '20.406693', '18.833116', '19.163951', '2.208503', '21.379381', '19.495949', '19.654870', '2.692470', '21.636128', '19.968376', '20.104557', '4.163132', '23.761049', '21.968931', '21.991625', '5.150029', '24.196699', '22.494763', '22.740856']
+reference_Device: [0.489948, 0.732554, 0.874409, 1.22533, 1.46845, 2.208503, 2.69247, 4.163132, 5.150029]
+TARGET_DEVICE_3: [19.668981, 19.878939, 19.805998, 20.28881, 20.406693, 21.379381, 21.636128, 23.761049, 24.196699]
+PRIVATE_DEVICE_3: [17.842501, 18.157065, 18.076941, 18.530488, 18.833116, 19.495949, 19.968376, 21.968931, 22.494763]
+FIRSTPRIVATE_DEVICE_3: [17.983243, 18.415019, 18.384799, 18.896818, 19.163951, 19.65487, 20.104557, 21.991625, 22.740856]
+Overheads:
+
+['19.179034', '17.352554', '17.493295', '19.146385', '17.424511', '17.682465', '18.931589', '17.202533', '17.510391', '19.063480', '17.305158', '17.671488', '18.938243', '17.364666', '17.695501', '19.170879', '17.287447', '17.446367', '18.943659', '17.275906', '17.412088', '19.597916', '17.805798', '17.828493', '19.046670', '17.344734', '17.590827']
+TARGET_DEVICE_3: [19.179034, 19.146385, 18.931589, 19.06348, 18.938243, 19.170879, 18.943659, 19.597916, 19.04667]
+PRIVATE_DEVICE_3: [17.352554, 17.424511, 17.202533, 17.305158, 17.364666, 17.287447, 17.275906, 17.805798, 17.344734]
+FIRSTPRIVATE_DEVICE_3: [17.493295, 17.682465, 17.510391, 17.671488, 17.695501, 17.446367, 17.412088, 17.828493, 17.590827]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(9)_50000
+
+arraybench_(9)_25000
+
+arraybench_(9)_20000
+
+arraybench_(9)_12500
+
+arraybench_(9)_10000
+
+arraybench_(9)_6250
+
+arraybench_(9)_5000
+
+arraybench_(9)_3125
+
+arraybench_(9)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+Performance mean time:
+
+['0.490020', '19.730628', '17.898008', '18.321618', '0.732570', '19.719020', '18.066674', '18.563569', '0.876008', '19.913942', '18.100381', '18.781945', '1.228769', '20.217761', '18.492967', '19.214571', '1.469980', '20.359010', '18.687010', '19.219249', '2.205677', '21.532506', '19.751176', '20.135373', '2.691880', '21.658927', '19.877255', '20.445451', '4.168941', '23.208067', '21.471009', '21.841496', '5.150088', '24.109051', '22.380814', '22.962108']
+reference_Device: [0.49002, 0.73257, 0.876008, 1.228769, 1.46998, 2.205677, 2.69188, 4.168941, 5.150088]
+TARGET_DEVICE_9: [19.730628, 19.71902, 19.913942, 20.217761, 20.35901, 21.532506, 21.658927, 23.208067, 24.109051]
+PRIVATE_DEVICE_9: [17.898008, 18.066674, 18.100381, 18.492967, 18.68701, 19.751176, 19.877255, 21.471009, 22.380814]
+FIRSTPRIVATE_DEVICE_9: [18.321618, 18.563569, 18.781945, 19.214571, 19.219249, 20.135373, 20.445451, 21.841496, 22.962108]
+Overheads:
+
+['19.240607', '17.407988', '17.831598', '18.986450', '17.334105', '17.830999', '19.037933', '17.224373', '17.905937', '18.988992', '17.264198', '17.985802', '18.889030', '17.217030', '17.749270', '19.326829', '17.545500', '17.929696', '18.967047', '17.185375', '17.753571', '19.039125', '17.302067', '17.672555', '18.958962', '17.230726', '17.812020']
+TARGET_DEVICE_9: [19.240607, 18.98645, 19.037933, 18.988992, 18.88903, 19.326829, 18.967047, 19.039125, 18.958962]
+PRIVATE_DEVICE_9: [17.407988, 17.334105, 17.224373, 17.264198, 17.21703, 17.5455, 17.185375, 17.302067, 17.230726]
+FIRSTPRIVATE_DEVICE_9: [17.831598, 17.830999, 17.905937, 17.985802, 17.74927, 17.929696, 17.753571, 17.672555, 17.81202]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(27)_50000
+
+arraybench_(27)_25000
+
+arraybench_(27)_20000
+
+arraybench_(27)_12500
+
+arraybench_(27)_10000
+
+arraybench_(27)_6250
+
+arraybench_(27)_5000
+
+arraybench_(27)_3125
+
+arraybench_(27)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+Performance mean time:
+
+['0.489964', '19.684061', '18.024623', '19.322306', '0.732166', '19.402608', '17.308503', '18.833011', '0.876133', '20.178884', '18.322453', '19.787997', '1.228828', '20.480812', '18.636882', '20.103753', '1.470177', '20.976186', '18.988952', '20.480260', '2.208237', '21.526501', '19.703552', '21.047488', '2.692312', '22.026509', '20.190611', '21.726757', '4.168513', '23.382083', '21.673501', '22.892505', '5.149528', '24.646848', '22.858754', '24.031505']
+reference_Device: [0.489964, 0.732166, 0.876133, 1.228828, 1.470177, 2.208237, 2.692312, 4.168513, 5.149528]
+TARGET_DEVICE_27: [19.684061, 19.402608, 20.178884, 20.480812, 20.976186, 21.526501, 22.026509, 23.382083, 24.646848]
+PRIVATE_DEVICE_27: [18.024623, 17.308503, 18.322453, 18.636882, 18.988952, 19.703552, 20.190611, 21.673501, 22.858754]
+FIRSTPRIVATE_DEVICE_27: [19.322306, 18.833011, 19.787997, 20.103753, 20.48026, 21.047488, 21.726757, 22.892505, 24.031505]
+Overheads:
+
+['19.194097', '17.534659', '18.832342', '18.670443', '16.576338', '18.100846', '19.302751', '17.446319', '18.911864', '19.251984', '17.408054', '18.874925', '19.506009', '17.518775', '19.010083', '19.318264', '17.495315', '18.839251', '19.334197', '17.498300', '19.034446', '19.213570', '17.504988', '18.723992', '19.497321', '17.709226', '18.881977']
+TARGET_DEVICE_27: [19.194097, 18.670443, 19.302751, 19.251984, 19.506009, 19.318264, 19.334197, 19.21357, 19.497321]
+PRIVATE_DEVICE_27: [17.534659, 16.576338, 17.446319, 17.408054, 17.518775, 17.495315, 17.4983, 17.504988, 17.709226]
+FIRSTPRIVATE_DEVICE_27: [18.832342, 18.100846, 18.911864, 18.874925, 19.010083, 18.839251, 19.034446, 18.723992, 18.881977]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(81)_50000
+
+arraybench_(81)_25000
+
+arraybench_(81)_20000
+
+arraybench_(81)_12500
+
+arraybench_(81)_10000
+
+arraybench_(81)_6250
+
+arraybench_(81)_5000
+
+arraybench_(81)_3125
+
+arraybench_(81)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+Performance mean time:
+
+['0.489435', '19.797683', '18.079802', '26.097357', '0.732354', '20.061255', '18.269867', '26.109129', '0.875010', '20.274177', '18.432364', '26.402682', '1.225142', '20.487562', '18.839940', '26.631862', '1.469553', '20.629570', '18.864885', '26.753753', '2.208643', '21.651939', '19.914672', '27.745247', '2.692510', '21.918759', '20.157769', '28.005362', '4.169661', '23.429066', '21.550998', '29.400498', '5.149253', '24.468273', '22.828504', '30.709118']
+reference_Device: [0.489435, 0.732354, 0.87501, 1.225142, 1.469553, 2.208643, 2.69251, 4.169661, 5.149253]
+TARGET_DEVICE_81: [19.797683, 20.061255, 20.274177, 20.487562, 20.62957, 21.651939, 21.918759, 23.429066, 24.468273]
+PRIVATE_DEVICE_81: [18.079802, 18.269867, 18.432364, 18.83994, 18.864885, 19.914672, 20.157769, 21.550998, 22.828504]
+FIRSTPRIVATE_DEVICE_81: [26.097357, 26.109129, 26.402682, 26.631862, 26.753753, 27.745247, 28.005362, 29.400498, 30.709118]
+Overheads:
+
+['19.308247', '17.590367', '25.607922', '19.328901', '17.537513', '25.376775', '19.399167', '17.557353', '25.527672', '19.262420', '17.614799', '25.406720', '19.160017', '17.395332', '25.284200', '19.443296', '17.706029', '25.536604', '19.226249', '17.465259', '25.312851', '19.259405', '17.381337', '25.230837', '19.319020', '17.679252', '25.559865']
+TARGET_DEVICE_81: [19.308247, 19.328901, 19.399167, 19.26242, 19.160017, 19.443296, 19.226249, 19.259405, 19.31902]
+PRIVATE_DEVICE_81: [17.590367, 17.537513, 17.557353, 17.614799, 17.395332, 17.706029, 17.465259, 17.381337, 17.679252]
+FIRSTPRIVATE_DEVICE_81: [25.607922, 25.376775, 25.527672, 25.40672, 25.2842, 25.536604, 25.312851, 25.230837, 25.559865]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(243)_50000
+
+arraybench_(243)_25000
+
+arraybench_(243)_20000
+
+arraybench_(243)_12500
+
+arraybench_(243)_10000
+
+arraybench_(243)_6250
+
+arraybench_(243)_5000
+
+arraybench_(243)_3125
+
+arraybench_(243)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+Performance mean time:
+
+['0.490045', '19.022211', '18.209457', '43.592483', '0.732305', '19.744143', '18.811345', '44.188023', '0.875062', '22.228986', '21.108985', '46.601504', '1.226273', '20.334288', '19.492030', '44.934362', '1.467847', '20.588934', '19.654989', '45.195371', '2.206258', '21.219760', '20.662904', '45.731336', '2.692800', '21.673948', '20.933986', '46.316475', '4.169145', '23.117751', '22.095561', '47.438890', '5.149785', '24.194881', '23.390412', '48.641473']
+reference_Device: [0.490045, 0.732305, 0.875062, 1.226273, 1.467847, 2.206258, 2.6928, 4.169145, 5.149785]
+TARGET_DEVICE_243: [19.022211, 19.744143, 22.228986, 20.334288, 20.588934, 21.21976, 21.673948, 23.117751, 24.194881]
+PRIVATE_DEVICE_243: [18.209457, 18.811345, 21.108985, 19.49203, 19.654989, 20.662904, 20.933986, 22.095561, 23.390412]
+FIRSTPRIVATE_DEVICE_243: [43.592483, 44.188023, 46.601504, 44.934362, 45.195371, 45.731336, 46.316475, 47.43889, 48.641473]
+Overheads:
+
+['18.532166', '17.719412', '43.102438', '19.011838', '18.079040', '43.455718', '21.353925', '20.233923', '45.726443', '19.108016', '18.265757', '43.708089', '19.121087', '18.187142', '43.727524', '19.013503', '18.456646', '43.525078', '18.981148', '18.241186', '43.623675', '18.948606', '17.926416', '43.269745', '19.045096', '18.240627', '43.491688']
+TARGET_DEVICE_243: [18.532166, 19.011838, 21.353925, 19.108016, 19.121087, 19.013503, 18.981148, 18.948606, 19.045096]
+PRIVATE_DEVICE_243: [17.719412, 18.07904, 20.233923, 18.265757, 18.187142, 18.456646, 18.241186, 17.926416, 18.240627]
+FIRSTPRIVATE_DEVICE_243: [43.102438, 43.455718, 45.726443, 43.708089, 43.727524, 43.525078, 43.623675, 43.269745, 43.491688]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(729)_50000
+
+arraybench_(729)_25000
+
+arraybench_(729)_20000
+
+arraybench_(729)_12500
+
+arraybench_(729)_10000
+
+arraybench_(729)_6250
+
+arraybench_(729)_5000
+
+arraybench_(729)_3125
+
+arraybench_(729)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+Performance mean time:
+
+['0.489952', '19.020811', '19.392848', '90.372026', '0.732092', '19.936740', '20.432472', '91.212034', '0.876014', '20.174012', '20.394087', '91.348112', '1.228907', '19.758806', '20.198464', '90.965271', '1.469859', '20.174250', '20.316958', '91.511726', '2.208546', '23.567185', '23.894429', '94.740927', '2.691442', '22.009179', '22.815108', '93.341589', '4.169136', '23.573697', '24.245024', '95.084190', '5.149681', '24.495363', '24.810195', '95.544219']
+reference_Device: [0.489952, 0.732092, 0.876014, 1.228907, 1.469859, 2.208546, 2.691442, 4.169136, 5.149681]
+TARGET_DEVICE_729: [19.020811, 19.93674, 20.174012, 19.758806, 20.17425, 23.567185, 22.009179, 23.573697, 24.495363]
+PRIVATE_DEVICE_729: [19.392848, 20.432472, 20.394087, 20.198464, 20.316958, 23.894429, 22.815108, 24.245024, 24.810195]
+FIRSTPRIVATE_DEVICE_729: [90.372026, 91.212034, 91.348112, 90.965271, 91.511726, 94.740927, 93.341589, 95.08419, 95.544219]
+Overheads:
+
+['18.530859', '18.902896', '89.882074', '19.204649', '19.700381', '90.479943', '19.297998', '19.518073', '90.472098', '18.529898', '18.969557', '89.736364', '18.704391', '18.847100', '90.041868', '21.358639', '21.685883', '92.532381', '19.317737', '20.123666', '90.650147', '19.404561', '20.075888', '90.915054', '19.345682', '19.660514', '90.394538']
+TARGET_DEVICE_729: [18.530859, 19.204649, 19.297998, 18.529898, 18.704391, 21.358639, 19.317737, 19.404561, 19.345682]
+PRIVATE_DEVICE_729: [18.902896, 19.700381, 19.518073, 18.969557, 18.8471, 21.685883, 20.123666, 20.075888, 19.660514]
+FIRSTPRIVATE_DEVICE_729: [89.882074, 90.479943, 90.472098, 89.736364, 90.041868, 92.532381, 90.650147, 90.915054, 90.394538]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(2187)_50000
+
+arraybench_(2187)_25000
+
+arraybench_(2187)_20000
+
+arraybench_(2187)_12500
+
+arraybench_(2187)_10000
+
+arraybench_(2187)_6250
+
+arraybench_(2187)_5000
+
+arraybench_(2187)_3125
+
+arraybench_(2187)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+Performance mean time:
+
+['0.489993', '19.676000', '25.449514', '236.403465', '0.732292', '19.984230', '25.717616', '236.602068', '0.875827', '22.158876', '27.624488', '238.793612', '1.228989', '20.362020', '26.240468', '236.970305', '1.470122', '20.887434', '26.103854', '237.210512', '2.204015', '21.554634', '27.177572', '237.948060', '2.684380', '21.798953', '27.624011', '238.291502', '4.167654', '23.281664', '29.005647', '239.917994', '5.148328', '24.541244', '30.302525', '241.036534']
+reference_Device: [0.489993, 0.732292, 0.875827, 1.228989, 1.470122, 2.204015, 2.68438, 4.167654, 5.148328]
+TARGET_DEVICE_2187: [19.676, 19.98423, 22.158876, 20.36202, 20.887434, 21.554634, 21.798953, 23.281664, 24.541244]
+PRIVATE_DEVICE_2187: [25.449514, 25.717616, 27.624488, 26.240468, 26.103854, 27.177572, 27.624011, 29.005647, 30.302525]
+FIRSTPRIVATE_DEVICE_2187: [236.403465, 236.602068, 238.793612, 236.970305, 237.210512, 237.94806, 238.291502, 239.917994, 241.036534]
+Overheads:
+
+['19.186007', '24.959522', '235.913473', '19.251939', '24.985324', '235.869776', '21.283049', '26.748661', '237.917785', '19.133030', '25.011479', '235.741316', '19.417312', '24.633732', '235.740390', '19.350619', '24.973558', '235.744045', '19.114573', '24.939631', '235.607122', '19.114009', '24.837992', '235.750339', '19.392916', '25.154197', '235.888206']
+TARGET_DEVICE_2187: [19.186007, 19.251939, 21.283049, 19.13303, 19.417312, 19.350619, 19.114573, 19.114009, 19.392916]
+PRIVATE_DEVICE_2187: [24.959522, 24.985324, 26.748661, 25.011479, 24.633732, 24.973558, 24.939631, 24.837992, 25.154197]
+FIRSTPRIVATE_DEVICE_2187: [235.913473, 235.869776, 237.917785, 235.741316, 235.74039, 235.744045, 235.607122, 235.750339, 235.888206]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical
+arraybench_(6561)_50000
+
+arraybench_(6561)_25000
+
+arraybench_(6561)_20000
+
+arraybench_(6561)_12500
+
+arraybench_(6561)_10000
+
+arraybench_(6561)_6250
+
+arraybench_(6561)_5000
+
+arraybench_(6561)_3125
+
+arraybench_(6561)_2500
+
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+Performance mean time:
+
+['0.489976', '19.576833', '31.800508', '663.334131', '0.732458', '19.942895', '32.770395', '664.089441', '0.876030', '20.161182', '32.140136', '664.282203', '1.227322', '20.529762', '32.257557', '664.389014', '1.470142', '20.881429', '32.573581', '664.608836', '2.208784', '21.654174', '33.012390', '665.671587', '2.683824', '21.925256', '33.787370', '666.015148', '4.169053', '25.253862', '36.816597', '668.861151', '5.148245', '24.472445', '37.987351', '668.484569']
+reference_Device: [0.489976, 0.732458, 0.87603, 1.227322, 1.470142, 2.208784, 2.683824, 4.169053, 5.148245]
+TARGET_DEVICE_6561: [19.576833, 19.942895, 20.161182, 20.529762, 20.881429, 21.654174, 21.925256, 25.253862, 24.472445]
+PRIVATE_DEVICE_6561: [31.800508, 32.770395, 32.140136, 32.257557, 32.573581, 33.01239, 33.78737, 36.816597, 37.987351]
+FIRSTPRIVATE_DEVICE_6561: [663.334131, 664.089441, 664.282203, 664.389014, 664.608836, 665.671587, 666.015148, 668.861151, 668.484569]
+Overheads:
+
+['19.086857', '31.310533', '662.844156', '19.210437', '32.037938', '663.356984', '19.285152', '31.264106', '663.406173', '19.302440', '31.030235', '663.161692', '19.411287', '31.103439', '663.138694', '19.445389', '30.803606', '663.462803', '19.241432', '31.103546', '663.331324', '21.084809', '32.647544', '664.692098', '19.324200', '32.839107', '663.336324']
+TARGET_DEVICE_6561: [19.086857, 19.210437, 19.285152, 19.30244, 19.411287, 19.445389, 19.241432, 21.084809, 19.3242]
+PRIVATE_DEVICE_6561: [31.310533, 32.037938, 31.264106, 31.030235, 31.103439, 30.803606, 31.103546, 32.647544, 32.839107]
+FIRSTPRIVATE_DEVICE_6561: [662.844156, 663.356984, 663.406173, 663.161692, 663.138694, 663.462803, 663.331324, 664.692098, 663.336324]
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 219, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 214, in main
+    plot_performance(benchmark_data, delay_times, args.output_dir+'_performance_plot.png')
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise.py", line 26, in plot_performance
+    slope, intercept, r_value, p_value, std_err = linregress(delay_times, data)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py", line 157, in linregress
+    raise ValueError("Cannot calculate a linear regression "
+ValueError: Cannot calculate a linear regression if all x values are identical

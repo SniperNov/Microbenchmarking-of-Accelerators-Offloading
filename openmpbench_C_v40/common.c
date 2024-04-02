@@ -52,7 +52,7 @@ int outerreps = -1;          // Outer repetitions
 double delaytime = -1.0;     // Length of time to delay for in microseconds
 double targettesttime = 0.0; // The length of time in microseconds that the test
                              // should run for.
-unsigned long innerreps; // Inner repetitions
+unsigned long innerreps = -1; // Inner repetitions
 double *times;           // Array of doubles storing the benchmark times in microseconds
 char type[120]="ALL";
 double referencetime;    // The average reference time in microseconds to perform
@@ -75,10 +75,12 @@ void usage(char *argv[]) {
 	   "\t--outer-repetitions <outer-repetitions> (default %d)\n"
 	   "\t--test-time <target-test-time> (default %0.2f microseconds)\n"
 	   "\t--delay-time <delay-time> (default %0.4f microseconds)\n"
-	   "\t--delay-length <delay-length> "
-	   "(default auto-generated based on processor speed)\n",
+	   "\t--delay-length <delay-length> (default %d and then auto-generated based on processor speed)\n"
+        "\t if delay length set, then delay time not vaid;\n"
+       "\t--inner-repetition <inner-repetitions> (default %d and then auto-generated based on test time)\n"
+       "\t if inner repetition set, then test time not valid;",
 	   argv[0],
-	   DEFAULT_OUTER_REPS, DEFAULT_TEST_TARGET_TIME, DEFAULT_DELAY_TIME);
+	   DEFAULT_OUTER_REPS, DEFAULT_TEST_TARGET_TIME, DEFAULT_DELAY_TIME, DEFAULT_DELAY_LENGTH, DEFAULT_INNER_REPS);
 }
 
 void parse_args(int argc, char *argv[]) {
@@ -97,6 +99,22 @@ void parse_args(int argc, char *argv[]) {
 	    outerreps = atoi(argv[++arg]);
 	    if (outerreps == 0) {
 		printf("Invalid integer:--outer-repetitions: %s\n", argv[arg]);
+		usage(argv);
+		exit(EXIT_FAILURE);
+	    }
+
+    } else if (strcmp(argv[arg], "--delay-length") == 0) {
+	    delaylength = atoi(argv[++arg]);
+	    if (delaylength <= 0 & delaylength != -1) {
+		printf("Invalid integer:--deay-length: %s\n", argv[arg]);
+		usage(argv);
+		exit(EXIT_FAILURE);
+	    }
+
+    } else if (strcmp(argv[arg], "--inner-repetitions") == 0) {
+	    innerreps = atoi(argv[++arg]);
+	    if (innerreps <= 0) {
+		printf("Invalid integer:--inner-repetitions: %s\n", argv[arg]);
 		usage(argv);
 		exit(EXIT_FAILURE);
 	    }
@@ -329,7 +347,9 @@ void init(int argc, char **argv)
     if (delaytime == -1.0) {
 	delaytime = DEFAULT_DELAY_TIME;
     }
-    delaylength = getdelaylengthfromtime(delaytime); 
+    if (delaylength == DEFAULT_DELAY_LENGTH){
+        delaylength = getdelaylengthfromtime(delaytime);
+    }
 
     times = malloc((outerreps) * sizeof(double));
 
@@ -360,7 +380,10 @@ void reference(char *name, void (*refer)(void)) {
     double start;
 
     // Calculate the required number of innerreps
-    innerreps = getinnerreps(refer);
+    if (innerreps == DEFAULT_INNER_REPS){
+        innerreps = getinnerreps(refer);
+    }
+    
 
     initreference(name);
 
