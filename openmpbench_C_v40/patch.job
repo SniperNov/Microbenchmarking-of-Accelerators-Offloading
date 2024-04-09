@@ -1,0 +1,10 @@
+#!/bin/bash
+JOB_ID=5593346
+for IDA in 27 729 6561; do
+    for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
+    do 
+        data_file="${coe_file/coe/data}"
+    
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID}
+    done
+done
