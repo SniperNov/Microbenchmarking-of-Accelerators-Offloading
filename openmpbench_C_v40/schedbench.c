@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
     if((strcmp("STATICN",type)==0)||(strcmp("ALL",type)==0)){
       cksz = 1024;
       while (cksz <= itersperthr) {
-        sprintf(testName, "STATIC %d", cksz);
+        sprintf(testName, "STATIC %d", cksz);                                 
         benchmark(testName, &teststaticn);
         cksz *= 2;
       }
@@ -178,8 +178,8 @@ void refer() {
 
 void device_refer() {
     int i, j;
+    #pragma omp target
     for (j = 0; j < innerreps; j++) {
-      #pragma omp target
       for (i = 0; i < itersperthr; i++) {
         delay(delaylength);
       }
@@ -187,7 +187,6 @@ void device_refer() {
 }
 
 void teststatic() {
-
     int i, j;
 #pragma omp parallel private(j)
     {
@@ -203,20 +202,16 @@ void teststatic() {
 void device_teststatic() {
 
   int i, j;
-  // calculated before the offloaded region to ensure that the total number of iterations aligns with your intended distribution across threads and iterations per thread.
-#pragma omp parallel private(j)
-  for (j = 0; j < innerreps; j++)
+// #pragma omp target teams distribute num_teams(nthreads) parallel for schedule(static) thread_limit(1)
+#pragma omp target 
+  for (i = 0; i < itersperthr * nthreads; i++)
   {
-// Offload the entire parallel region to the device
-#pragma omp target
-#pragma omp teams distribute parallel for schedule(static)
-    for (i = 0; i < itersperthr * nthreads; i++)
+  #pragma omp parallel for schedule(static) thread_limit(nthreads)
+    for (j = 0; j < innerreps; j++)
     {
       delay(delaylength);
     }
   }
-  // because GPU threads (within the same warp or wavefront, depending on the architecture) naturally 
-  // synchronize at the end of the kernel execution or are managed differently through the hardware and runtime environment. 
 }
 
 void teststaticmono() {

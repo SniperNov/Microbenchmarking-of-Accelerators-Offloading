@@ -1,0 +1,420 @@
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	20 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               1.578450   1.549721   1.490116   2.598763   0.111160   1
+reference_Device mean time    = 1.578450 microseconds +/- 0.217874
+reference_Device median time  = 1.549721 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 160 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               19.387498   19.237399   18.461049   20.219386   0.498157   0
+TARGET_DEVICE_27 mean time    = 19.387498 microseconds +/- 0.976387
+TARGET_DEVICE_27 overhead     = 17.809048 microseconds +/- 1.194261
+TARGET_DEVICE_27 median_ovrhd = 17.687678 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 160 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               17.171934   17.199665   16.805530   17.568469   0.202695   0
+PRIVATE_DEVICE_27 mean time    = 17.171934 microseconds +/- 0.397283
+PRIVATE_DEVICE_27 overhead     = 15.593484 microseconds +/- 0.615156
+PRIVATE_DEVICE_27 median_ovrhd = 15.649945 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 160 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               18.530011   18.531084   18.143654   18.931925   0.211694   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 18.530011 microseconds +/- 0.414920
+FIRSTPRIVATE_DEVICE_27 overhead     = 16.951561 microseconds +/- 0.632794
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 16.981363 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	520 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               8.565664   8.547306   8.499622   9.500980   0.101865   1
+reference_Device mean time    = 8.565664 microseconds +/- 0.199656
+reference_Device median time  = 8.547306 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               27.267992   27.523935   26.011467   28.523803   0.683995   0
+TARGET_DEVICE_27 mean time    = 27.267992 microseconds +/- 1.340631
+TARGET_DEVICE_27 overhead     = 18.702328 microseconds +/- 1.540287
+TARGET_DEVICE_27 median_ovrhd = 18.976629 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 160 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               24.062708   24.009496   23.500621   24.974346   0.357608   0
+PRIVATE_DEVICE_27 mean time    = 24.062708 microseconds +/- 0.700912
+PRIVATE_DEVICE_27 overhead     = 15.497044 microseconds +/- 0.900568
+PRIVATE_DEVICE_27 median_ovrhd = 15.462190 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               25.216490   25.200844   24.887919   25.972724   0.237544   1
+FIRSTPRIVATE_DEVICE_27 mean time    = 25.216490 microseconds +/- 0.465586
+FIRSTPRIVATE_DEVICE_27 overhead     = 16.650826 microseconds +/- 0.665243
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 16.653538 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	1020 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               15.503407   15.497208   15.401840   16.498566   0.116079   2
+reference_Device mean time    = 15.503407 microseconds +/- 0.227516
+reference_Device median time  = 15.497208 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               33.075392   32.450259   31.661987   34.686923   1.158255   0
+TARGET_DEVICE_27 mean time    = 33.075392 microseconds +/- 2.270179
+TARGET_DEVICE_27 overhead     = 17.571986 microseconds +/- 2.497695
+TARGET_DEVICE_27 median_ovrhd = 16.953051 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               29.419214   29.361248   28.848648   30.648708   0.401158   1
+PRIVATE_DEVICE_27 mean time    = 29.419214 microseconds +/- 0.786269
+PRIVATE_DEVICE_27 overhead     = 13.915807 microseconds +/- 1.013785
+PRIVATE_DEVICE_27 median_ovrhd = 13.864040 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               30.741334   30.799210   30.249357   31.512976   0.254751   1
+FIRSTPRIVATE_DEVICE_27 mean time    = 30.741334 microseconds +/- 0.499312
+FIRSTPRIVATE_DEVICE_27 overhead     = 15.237927 microseconds +/- 0.726828
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 15.302002 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	1520 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               22.454500   22.447109   22.351742   23.496151   0.148494   3
+reference_Device mean time    = 22.454500 microseconds +/- 0.291049
+reference_Device median time  = 22.447109 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               39.096534   38.495660   36.573410   41.535497   1.515136   0
+TARGET_DEVICE_27 mean time    = 39.096534 microseconds +/- 2.969667
+TARGET_DEVICE_27 overhead     = 16.642034 microseconds +/- 3.260716
+TARGET_DEVICE_27 median_ovrhd = 16.048551 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               35.248369   35.277009   34.749508   35.738945   0.228569   0
+PRIVATE_DEVICE_27 mean time    = 35.248369 microseconds +/- 0.447995
+PRIVATE_DEVICE_27 overhead     = 12.793869 microseconds +/- 0.739044
+PRIVATE_DEVICE_27 median_ovrhd = 12.829900 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               36.626667   36.662817   36.150217   37.100911   0.203045   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 36.626667 microseconds +/- 0.397968
+FIRSTPRIVATE_DEVICE_27 overhead     = 14.172167 microseconds +/- 0.689017
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 14.215708 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	2020 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               29.399991   29.397011   29.289722   30.350685   0.106305   1
+reference_Device mean time    = 29.399991 microseconds +/- 0.208359
+reference_Device median time  = 29.397011 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               45.096397   44.730306   42.700768   48.488379   1.871384   0
+TARGET_DEVICE_27 mean time    = 45.096397 microseconds +/- 3.667913
+TARGET_DEVICE_27 overhead     = 15.696406 microseconds +/- 3.876272
+TARGET_DEVICE_27 median_ovrhd = 15.333295 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               41.405290   41.419268   40.924549   42.513013   0.262297   1
+PRIVATE_DEVICE_27 mean time    = 41.405290 microseconds +/- 0.514103
+PRIVATE_DEVICE_27 overhead     = 12.005299 microseconds +/- 0.722461
+PRIVATE_DEVICE_27 median_ovrhd = 12.022257 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               42.766899   42.811036   42.352080   43.237209   0.210336   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 42.766899 microseconds +/- 0.412259
+FIRSTPRIVATE_DEVICE_27 overhead     = 13.366908 microseconds +/- 0.620618
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 13.414025 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	2520 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               36.357999   36.346912   36.299229   37.300587   0.137288   3
+reference_Device mean time    = 36.357999 microseconds +/- 0.269085
+reference_Device median time  = 36.346912 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               52.384675   51.122904   50.252676   55.503845   1.950494   0
+TARGET_DEVICE_27 mean time    = 52.384675 microseconds +/- 3.822969
+TARGET_DEVICE_27 overhead     = 16.026676 microseconds +/- 4.092054
+TARGET_DEVICE_27 median_ovrhd = 14.775991 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               47.102779   46.962500   46.437979   49.138069   0.602445   3
+PRIVATE_DEVICE_27 mean time    = 47.102779 microseconds +/- 1.180792
+PRIVATE_DEVICE_27 overhead     = 10.744780 microseconds +/- 1.449877
+PRIVATE_DEVICE_27 median_ovrhd = 10.615587 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 80 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               48.231512   48.212707   47.710538   48.887730   0.238043   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 48.231512 microseconds +/- 0.466565
+FIRSTPRIVATE_DEVICE_27 overhead     = 11.873513 microseconds +/- 0.735650
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 11.865795 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	3020 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               43.341041   43.344498   43.249130   44.298172   0.109024   2
+reference_Device mean time    = 43.341041 microseconds +/- 0.213688
+reference_Device median time  = 43.344498 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               59.485972   58.424473   56.499243   63.145161   1.965816   0
+TARGET_DEVICE_27 mean time    = 59.485972 microseconds +/- 3.853000
+TARGET_DEVICE_27 overhead     = 16.144931 microseconds +/- 4.066688
+TARGET_DEVICE_27 median_ovrhd = 15.079975 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               53.996980   53.977966   53.399801   55.003166   0.295847   1
+PRIVATE_DEVICE_27 mean time    = 53.996980 microseconds +/- 0.579861
+PRIVATE_DEVICE_27 overhead     = 10.655940 microseconds +/- 0.793549
+PRIVATE_DEVICE_27 median_ovrhd = 10.633469 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               55.152535   55.104494   54.705143   55.825710   0.280339   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 55.152535 microseconds +/- 0.549465
+FIRSTPRIVATE_DEVICE_27 overhead     = 11.811495 microseconds +/- 0.763153
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 11.759996 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	3520 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               50.310969   50.294399   50.246716   51.105022   0.091038   1
+reference_Device mean time    = 50.310969 microseconds +/- 0.178435
+reference_Device median time  = 50.294399 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               65.324306   64.736605   61.374903   70.852041   2.622219   0
+TARGET_DEVICE_27 mean time    = 65.324306 microseconds +/- 5.139548
+TARGET_DEVICE_27 overhead     = 15.013337 microseconds +/- 5.317983
+TARGET_DEVICE_27 median_ovrhd = 14.442205 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               60.046971   60.063601   59.449673   61.172247   0.318777   1
+PRIVATE_DEVICE_27 mean time    = 60.046971 microseconds +/- 0.624802
+PRIVATE_DEVICE_27 overhead     = 9.736001 microseconds +/- 0.803237
+PRIVATE_DEVICE_27 median_ovrhd = 9.769201 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               61.289251   61.273575   60.772896   62.376261   0.303791   1
+FIRSTPRIVATE_DEVICE_27 mean time    = 61.289251 microseconds +/- 0.595431
+FIRSTPRIVATE_DEVICE_27 overhead     = 10.978281 microseconds +/- 0.773866
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 10.979176 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	4020 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               57.232380   57.208538   57.148933   58.197975   0.103952   1
+reference_Device mean time    = 57.232380 microseconds +/- 0.203746
+reference_Device median time  = 57.208538 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               70.098042   70.136786   66.298246   76.603889   2.780786   0
+TARGET_DEVICE_27 mean time    = 70.098042 microseconds +/- 5.450341
+TARGET_DEVICE_27 overhead     = 12.865663 microseconds +/- 5.654087
+TARGET_DEVICE_27 median_ovrhd = 12.928247 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               65.294504   65.302849   64.796209   65.976381   0.239035   0
+PRIVATE_DEVICE_27 mean time    = 65.294504 microseconds +/- 0.468508
+PRIVATE_DEVICE_27 overhead     = 8.062124 microseconds +/- 0.672254
+PRIVATE_DEVICE_27 median_ovrhd = 8.094311 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               66.528022   66.536665   65.994263   67.150593   0.256230   0
+FIRSTPRIVATE_DEVICE_27 mean time    = 66.528022 microseconds +/- 0.502210
+FIRSTPRIVATE_DEVICE_27 overhead     = 9.295642 microseconds +/- 0.705956
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 9.328127 microseconds 
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	100 outer repetitions
+	1000.00 test time (microseconds)
+	4520 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               64.214587   64.206123   64.146519   65.004826   0.087916   1
+reference_Device mean time    = 64.214587 microseconds +/- 0.172316
+reference_Device median time  = 64.206123 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               76.258302   76.901913   73.021650   83.780289   2.701264   0
+TARGET_DEVICE_27 mean time    = 76.258302 microseconds +/- 5.294478
+TARGET_DEVICE_27 overhead     = 12.043715 microseconds +/- 5.466794
+TARGET_DEVICE_27 median_ovrhd = 12.695789 microseconds 
+
+--------------------------------------------------------
+Computing PRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               71.961522   71.948767   71.525574   72.777271   0.278801   0
+PRIVATE_DEVICE_27 mean time    = 71.961522 microseconds +/- 0.546449
+PRIVATE_DEVICE_27 overhead     = 7.746935 microseconds +/- 0.718765
+PRIVATE_DEVICE_27 median_ovrhd = 7.742643 microseconds 
+
+--------------------------------------------------------
+Computing FIRSTPRIVATE_DEVICE_27 time using 40 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 100               73.246777   73.236227   72.777271   74.148178   0.286623   1
+FIRSTPRIVATE_DEVICE_27 mean time    = 73.246777 microseconds +/- 0.561782
+FIRSTPRIVATE_DEVICE_27 overhead     = 9.032190 microseconds +/- 0.734098
+FIRSTPRIVATE_DEVICE_27 median_ovrhd = 9.030104 microseconds 
