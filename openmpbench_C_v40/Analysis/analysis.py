@@ -32,7 +32,7 @@ def runs_dist(data_content, job, filename):
     
     # Adjust the x-axis limit to ensure space for text annotations
     ax.set_xlim(min(all_means)*0.8, max(all_means) * 1.2) 
-
+    # ax.set_xscale("")
     # Set labels and title
     ax.set_xlabel('Performance (microseconds)')
     ax.set_ylabel('Density')
@@ -95,8 +95,9 @@ def main():
     args = parser.parse_args()
     # Extract 'filename' from the input file name using string methods
     parts = args.data_filename.split('_')
-    filename = '_'.join(parts[1:])  # This joins all parts between 'data' and '27.txt'
+    filename = '_'.join(parts[1:])[:-4]  # This joins all parts between 'data' and '.txt'
     print(filename)
+
 
     data_content = np.transpose(np.loadtxt(args.data_filename))
     coe_content = np.loadtxt(args.coe_filename)
