@@ -15,7 +15,7 @@ def read_file(filename):
         content = file.read()
     return content
 
-def plot_performance(benchmark_data, delays, job, IDA, graph):
+def plot_performance(benchmark_data, delays, job, MIDA, graph):
     # Plotting performance based on extracted data
     plt.figure(figsize=(10, 6))
     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
@@ -41,13 +41,13 @@ def plot_performance(benchmark_data, delays, job, IDA, graph):
         plt.xlim(left=0)
         plt.ylim(bottom=0)
         plt.tight_layout()
-        output_name = "Plots/" + job + "/arraybench_" + IDA + "_performance.png"
+        output_name = "Plots/" + job + "/" + MIDA + "_performance.png"
         plt.savefig(output_name)
         plt.show()
         print(f"Plot saved to {output_name}")
 
 
-def plot_overhead(benchmark_overhead, delays, job, IDA, graph):
+def plot_overhead(benchmark_overhead, delays, job, MIDA, graph):
     # Plotting performance based on extracted data
     plt.figure(figsize=(10, 6))
     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
@@ -72,7 +72,7 @@ def plot_overhead(benchmark_overhead, delays, job, IDA, graph):
         plt.xlim(left=0)
         plt.ylim(bottom=0)
         plt.tight_layout()
-        output_name = "Plots/" + job + "/arraybench_" + IDA + "_overhead.png"
+        output_name = "Plots/" + job + "/" + MIDA + "_overhead.png"
         plt.savefig(output_name)
         plt.show()
         print(f"Plot saved to {output_name}")
@@ -99,6 +99,7 @@ def analyse_dist(benchmark_name, job, gradient, interception, error):
 def main():
     # Setting up argument parser
     parser = argparse.ArgumentParser(description='Parse and plot data from OpenMP benchmark output.')
+    parser.add_argument('method',type=str,help='arraybench/schedbench/synchbench')
     parser.add_argument('filename', type=str, help='Name of the output file to parse')
     parser.add_argument('job',type=str,default='0',help='The Script JOB ID')
     parser.add_argument('IDA', type=str, default='1', help='Array Length')
@@ -108,6 +109,7 @@ def main():
     content = read_file(args.filename)
     job = args.job
     IDA = args.IDA
+    method = args.method
     # Extract parameters
     param_pattern = r"Running OpenMP benchmark version \d+\.\d+\s+(\d+) thread\(s\)\s+(\d+) outer repetitions\s+([\d.]+) test time \(microseconds\)\s+(\d+) delay length \(iterations\)\s+([\d.]+) delay time \(microseconds\)"
     params = re.findall(param_pattern, content, re.DOTALL)
@@ -170,8 +172,8 @@ def main():
         exit()        
     
 
-    plot_performance(benchmark_data, delays, job, IDA, True)
-    plot_overhead(benchmark_overhead, delays, job, IDA, True)
+    plot_performance(benchmark_data, delays, job, method+'_'+IDA, True)
+    plot_overhead(benchmark_overhead, delays, job, method+'_'+IDA, True)
 
 
 if __name__ == "__main__":

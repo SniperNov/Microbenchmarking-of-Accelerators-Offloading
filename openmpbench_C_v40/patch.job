@@ -1,10 +1,22 @@
 #!/bin/bash
-JOB_ID=5593346
-for IDA in 27 729 6561; do
-    for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
-    do 
-        data_file="${coe_file/coe/data}"
+JOB_ID=5640654
+# for IDA in 27; do
+#     for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
+#     do 
+#         data_file="${coe_file/coe/data}"
     
-    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID}
-    done
+#     python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "linear"
+#     done
+# done
+
+# for ((i=0; i<10;i++)); do
+#     output_file=Raw_data/${JOB_ID}/schedbench_${i}.out
+#     python visualise2.py 'schedbench' $output_file ${JOB_ID} ${i}
+# done
+
+for coe_file in Analysis/${JOB_ID}/coe_*.txt;
+do 
+    data_file="${coe_file/coe/data}"
+
+python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "booooottop"
 done

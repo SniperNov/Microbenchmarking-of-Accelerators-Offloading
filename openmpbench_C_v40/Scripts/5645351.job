@@ -1,0 +1,59 @@
+#!/bin/bash
+
+#SBATCH --account=d403-wt
+#SBATCH --job-name=schedbench
+#SBATCH --time=4:00:00
+#SBATCH --nodes=1
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --exclusive
+
+
+#SBATCH --output=Monitor/%x_%j.out
+
+module load gcc
+module load intel-license
+module load intel-20.4/cc
+module load intel-20.4/fc
+module load intel-20.4/compilers 
+module load mpt
+module load nvidia/nvhpc
+module load openmpi/4.1.6
+module load python
+# module load anaconda3
+export OMP_NUM_THREADS=4
+
+# Capture the SLURM job ID
+JOB_ID=$SLURM_JOB_ID
+
+# Create a directory with the job ID
+mkdir -p Raw_data/${JOB_ID}
+mkdir -p Plots/${JOB_ID}
+mkdir -p Scripts
+cat $0 > Scripts/${JOB_ID}.job
+mkdir -p Analysis/${JOB_ID}
+
+export MPLCONFIGDIR=/work/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots
+
+for ((i=0; i<1;i++)); do
+# File to store results for the current IDA value
+    output_file=Raw_data/${JOB_ID}/schedbench_${i}.out
+
+    # Clear previous data for this IDA, if any (to ensure fresh start for each IDA)
+    : > $output_file
+
+        for delaylength in 20 4860 4880 4890 4900 4920 4940 4960 4980 5000; do
+        innerreps=20
+        echo "schedbench_$delaylength"  # Just to ensure there is a newline at the end of the file, if needed
+        echo "************************************************************************************************************************************************************************" >> $output_file
+        # Direct the output of srun into the appropriate file in the raw_data directory
+        # srun schedbench --measureonly STATIC --outer-repetitions 10000 --test-time 1000.00 --delay-time $delaytime >> $output_file
+        # srun schedbench --measureonly STATIC_MONOTONIC --outer-repetitions 10000 --test-time 1000.00 --delay-time $delaytime >> $output_file
+        srun schedbench --measureonly DEVICE --outer-repetitions 40 --delay-length $delaylength --inner-repetitions $innerreps >> $output_file
+
+        echo ""  # Just to ensure there is a newline at the end of the file, if needed
+    done
+    # Save the script to the Script directory after each IDA loop iteration
+    python visualise2.py 'schedbench' $output_file ${JOB_ID} ${i}
+done
