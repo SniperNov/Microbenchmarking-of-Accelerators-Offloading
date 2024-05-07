@@ -89,7 +89,7 @@ int main(int argc, char **argv) {
 
     /****************************************************************************/
     /* TEST offload to target */
-    if ((strcmp("DEVICE", type) == 0) || (strcmp("ALL", type) == 0))
+    if ((strcmp("DEVICE", type) == 0) ||(strcmp("TARGET", type) == 0)|| (strcmp("ALL", type) == 0))
     {
         sprintf(testName, "TARGET_DEVICE_%d", IDA); // 
      

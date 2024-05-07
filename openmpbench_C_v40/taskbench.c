@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
 
     /* GENERATE REFERENCE TIME */
 
-    reference("reference time 1", &refer);
+    reference("reference time", &refer);
 
     /* TEST PARALLEL TASK GENERATION */
 

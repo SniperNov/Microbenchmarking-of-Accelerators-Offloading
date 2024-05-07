@@ -191,7 +191,7 @@ void teststatic() {
 #pragma omp parallel private(j)
     {
 	for (j = 0; j < innerreps; j++) {
-#pragma omp for schedule(static)
+#pragma omp parallel for schedule(static)
 	    for (i = 0; i < itersperthr * nthreads; i++) {
 		delay(delaylength);
 	    }
@@ -204,10 +204,10 @@ void device_teststatic() {
   int i, j;
 // #pragma omp target teams distribute num_teams(nthreads) parallel for schedule(static) thread_limit(1)
 #pragma omp target 
-  for (i = 0; i < itersperthr * nthreads; i++)
-  {
-  #pragma omp parallel for schedule(static) thread_limit(nthreads)
-    for (j = 0; j < innerreps; j++)
+#pragma omp parallel private(j)
+  for (j = 0; j < innerreps; j++) {
+#pragma omp parallel for schedule(static) num_threads(nthreads)
+    for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);
     }
@@ -232,12 +232,11 @@ void device_teststaticmono()
 {
 
   int i, j;
+#pragma omp target
 #pragma omp parallel private(j)
   for (j = 0; j < innerreps; j++)
   {
-// Offload the entire parallel region to the device
-#pragma omp target
-#pragma omp teams distribute parallel for schedule(monotonic : static)
+#pragma omp parallel for schedule(monotonic:static) num_threads(nthreads)
     for (i = 0; i < itersperthr * nthreads; i++)
     {
       delay(delaylength);
