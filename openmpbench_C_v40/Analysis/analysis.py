@@ -5,42 +5,43 @@ import seaborn as sns
 import keyboard
 
 def std_diagram(data_content, job, filename):
-    # delaylength = np.concatenate((np.linspace(20,1020, num=99),np.linspace(4900,5000,num=50)))
-    # delaylength = np.linspace(20,50020,num=100)
-    # delaylength = np.concatenate((np.linspace(20,1000, num=99),np.array([50000])))
-    delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99)))
+    # delaylength = np.concatenate((np.linspace(20,1020, num=99),np.linspace(4900,5000,num=50))) #bot-top
+    # delaylength = np.linspace(20,50000,num=100) #linear
+    delaylength = np.logspace(np.log10(20), np.log10(50000), num=100) #logarithmic
+    # delaylength = np.concatenate((np.linspace(20,1000, num=99),np.array([50000]))) #booooot-top
+    # delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99))) #bot-tooooop
 
-    f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
-    # plt.figure(figsize=(12, 6))
+    # f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
+    plt.figure(figsize=(12, 6))
     std=[]
     for data in data_content:
         std.append(np.std(data))
-    # plt.plot(delaylength, std)
-    ax.plot(delaylength, std)
-    ax2.plot(delaylength, std)
+    plt.plot(delaylength, std)
+    # ax.plot(delaylength, std)
+    # ax2.plot(delaylength, std)
 
-    ax.set_xlim(0, 40)
-    ax2.set_xlim(49000, 50020)
+    # ax.set_xlim(0, 40)
+    # ax2.set_xlim(49000, 50020)
 
-    ax.spines['right'].set_visible(False)
-    ax2.spines['left'].set_visible(False)
-    ax.yaxis.tick_left()
-    ax.tick_params(labelright='off')
-    ax2.yaxis.tick_right()
+    # ax.spines['right'].set_visible(False)
+    # ax2.spines['left'].set_visible(False)
+    # ax.yaxis.tick_left()
+    # ax.tick_params(labelright='off')
+    # ax2.yaxis.tick_right()
 
-    d = .015  # how big to make the diagonal lines in axes coordinates
-    # arguments to pass plot, just so we don't keep repeating them
-    kwargs = dict(transform=ax.transAxes, color='k', clip_on=False)
-    ax.plot((1-d, 1+d), (-d, +d), **kwargs)
-    ax.plot((1-d, 1+d), (1-d, 1+d), **kwargs)
+    # d = .015  # how big to make the diagonal lines in axes coordinates
+    # # arguments to pass plot, just so we don't keep repeating them
+    # kwargs = dict(transform=ax.transAxes, color='k', clip_on=False)
+    # ax.plot((1-d, 1+d), (-d, +d), **kwargs)
+    # ax.plot((1-d, 1+d), (1-d, 1+d), **kwargs)
 
-    # plt.title(f'Change of std of 100 distributions composed by 1000 independent runs')
-    # plt.xlabel('Delay length (microsecond)')
-    # plt.ylabel('Standard Deviation')
-    ax.set_ylabel('Standard Deviation')
-    f.suptitle('Change of std of 100 distributions composed by 1000 independent runs')
-    ax.set_xlabel('Delay length (microsecond)')
-    ax2.set_xlabel('Delay length (microsecond)')
+    plt.title(f'Change of std of 100 distributions composed by 1000 independent runs')
+    plt.xlabel('Delay length (microsecond)')
+    plt.ylabel('Standard Deviation')
+    # ax.set_ylabel('Standard Deviation')
+    # f.suptitle('Change of std of 100 distributions composed by 1000 independent runs')
+    # ax.set_xlabel('Delay length (microsecond)')
+    # ax2.set_xlabel('Delay length (microsecond)')
 
 
     plt.savefig(f"Analysis/{job}/std_{filename}.png")
