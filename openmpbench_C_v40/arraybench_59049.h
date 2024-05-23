@@ -1,75 +1,11 @@
 # 1 "arraybench.h"
-# 1 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_macros.h" 1 3
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 410 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
 # 1 "arraybench.h" 2
-# 1 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 1 3
- 
-
-
-
-
- 
-
-struct __va_list_tag {
-  unsigned int gp_offset;
-  unsigned int fp_offset;
-  char *overflow_arg_area;
-  char *reg_save_area;
-};
-
-# 27 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
-
-typedef struct __va_list_tag __pgi_va_list[1];
-
-
-
-# 41 "/mnt/lustre/e1000/home/y07/shared/cirrus-software/nvidia/hpcsdk-22.11/Linux_x86_64/22.11/compilers/include/_cplus_preinclude.h" 3
-
-
-
-
-
-
-
-
-
-
-
-# 1 "arraybench.h" 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
+# 36 "arraybench.h"
 void refer();
 void device_refer();
 void device_target();
@@ -85,4 +21,3 @@ void testcopyprivnew();
 void testthrprivnew();
 
 void stats(double*, double*);
-

@@ -1,0 +1,33 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"mpt"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "mpt"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: The following module(s) are unknown:
+"openmpi/4.1.6"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "openmpi/4.1.6"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+Lmod has detected the following error: Cannot load module "seaborn/0.12.2"
+without these module(s) loaded:
+   matplotlib
+
+While processing the following module(s):
+    Module fullname  Module Filename
+    ---------------  ---------------
+    seaborn/0.12.2   /work/y07/shared/archer2-lmod/python/core/seaborn/0.12.2.lua
+

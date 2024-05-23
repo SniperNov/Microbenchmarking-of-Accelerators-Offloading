@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 import seaborn as sns
-import keyboard
+# import keyboard
 
 def std_diagram(data_content, job, filename):
     # delaylength = np.concatenate((np.linspace(20,1020, num=99),np.linspace(4900,5000,num=50))) #bot-top

@@ -1,0 +1,599 @@
+arraybench_(1)_0.001
+
+arraybench_(1)_0.005
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_0.01
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_0.05
+
+arraybench_(1)_0.1
+
+arraybench_(1)_0.5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_10
+
+arraybench_(1)_20
+
+arraybench_(1)_30
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_40
+
+arraybench_(1)_50
+
+arraybench_(1)_60
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_70
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(1)_80
+
+arraybench_(1)_90
+
+arraybench_(1)_100
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-86l9wi6z because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_1': [], 'PRIVATE_DEVICE_1': [], 'FIRSTPRIVATE_DEVICE_1': []}
+Performance mean time:
+
+['0.003897', '0.009750', '0.078004', '0.083095', '0.007624', '0.011684', '0.084307', '0.086059', '0.013354', '0.019610', '0.089569', '0.090558', '0.076569', '0.071927', '0.155971', '0.156833', '0.123941', '0.119640', '0.202820', '0.203774', '0.553765', '0.550250', '0.633211', '0.634245', '1.100674', '1.097128', '1.180973', '1.181220', '5.169465', '5.171818', '5.250966', '5.251034', '10.101443', '10.098714', '10.182323', '10.190996', '21.688586', '21.683518', '21.767144', '21.765909', '31.769060', '31.786930', '31.842552', '31.854537', '42.308440', '42.294097', '42.389464', '42.430307', '51.176180', '51.172955', '51.265941', '51.248870', '61.964886', '61.921826', '62.008004', '62.012307', '75.002863', '74.939259', '75.026023', '75.022408', '82.447951', '82.452746', '82.647950', '82.555557', '90.682049', '90.670796', '90.757082', '90.799544', '109.715885', '109.712040', '109.805211', '109.801743']
+reference_Device: [0.003897, 0.007624, 0.013354, 0.076569, 0.123941, 0.553765, 1.100674, 5.169465, 10.101443, 21.688586, 31.76906, 42.30844, 51.17618, 61.964886, 75.002863, 82.447951, 90.682049, 109.715885]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/1/data_reference_Device.txt'
+arraybench_(3)_0.001
+
+arraybench_(3)_0.005
+
+arraybench_(3)_0.01
+
+arraybench_(3)_0.05
+
+arraybench_(3)_0.1
+
+arraybench_(3)_0.5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(3)_1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(3)_5
+
+arraybench_(3)_10
+
+arraybench_(3)_20
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(3)_30
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(3)_40
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(3)_50
+
+arraybench_(3)_60
+
+arraybench_(3)_70
+
+arraybench_(3)_80
+
+arraybench_(3)_90
+
+arraybench_(3)_100
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-1xjx29x0 because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_3': [], 'PRIVATE_DEVICE_3': [], 'FIRSTPRIVATE_DEVICE_3': []}
+Performance mean time:
+
+['0.004175', '0.009748', '0.079276', '0.079316', '0.007822', '0.012116', '0.084795', '0.085474', '0.011908', '0.019196', '0.089941', '0.091340', '0.076081', '0.072084', '0.157193', '0.160065', '0.122722', '0.120380', '0.203394', '0.204102', '0.553593', '0.550676', '0.633890', '0.634962', '1.099093', '1.098783', '1.182527', '1.181767', '5.170302', '5.169221', '5.251556', '5.252626', '10.101324', '10.110225', '10.182068', '10.183328', '21.684874', '21.686913', '21.783386', '21.773410', '31.756940', '31.763788', '31.854453', '31.843075', '42.298411', '42.296580', '42.385916', '42.368446', '51.171762', '51.215272', '51.261098', '51.255269', '61.929805', '61.926767', '62.042348', '62.003101', '74.935758', '74.953652', '75.009440', '75.093113', '82.444378', '82.424071', '82.528991', '82.534219', '90.744969', '90.721354', '90.795437', '90.779333', '109.797887', '109.766205', '109.816404', '109.821520']
+reference_Device: [0.004175, 0.007822, 0.011908, 0.076081, 0.122722, 0.553593, 1.099093, 5.170302, 10.101324, 21.684874, 31.75694, 42.298411, 51.171762, 61.929805, 74.935758, 82.444378, 90.744969, 109.797887]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/3/data_reference_Device.txt'
+arraybench_(9)_0.001
+
+arraybench_(9)_0.005
+
+arraybench_(9)_0.01
+
+arraybench_(9)_0.05
+
+arraybench_(9)_0.1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_0.5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_1
+
+arraybench_(9)_5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_10
+
+arraybench_(9)_20
+
+arraybench_(9)_30
+
+arraybench_(9)_40
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_50
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_60
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(9)_70
+
+arraybench_(9)_80
+
+arraybench_(9)_90
+
+arraybench_(9)_100
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-w7qc41o3 because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_9': [], 'PRIVATE_DEVICE_9': [], 'FIRSTPRIVATE_DEVICE_9': []}
+Performance mean time:
+
+['0.004157', '0.009749', '0.078082', '0.081988', '0.006583', '0.010415', '0.081551', '0.084508', '0.011878', '0.019044', '0.089329', '0.092686', '0.063296', '0.062546', '0.145994', '0.149449', '0.120816', '0.120318', '0.203060', '0.206593', '0.552159', '0.549019', '0.633383', '0.638314', '1.099607', '1.097351', '1.180905', '1.184020', '5.168873', '5.167436', '5.252806', '5.260064', '10.101696', '10.098343', '10.184870', '10.188006', '21.691157', '21.704102', '21.772520', '21.774549', '31.770314', '31.771634', '31.908898', '31.932499', '42.323649', '42.301803', '42.366968', '42.379166', '51.173784', '51.213122', '51.262118', '51.276815', '61.928776', '61.973278', '62.017496', '62.038624', '74.940187', '74.936801', '75.092279', '75.048888', '82.432224', '82.443908', '82.516844', '82.523391', '90.740362', '90.692027', '90.752727', '90.778768', '109.812990', '109.739065', '109.838518', '109.839458']
+reference_Device: [0.004157, 0.006583, 0.011878, 0.063296, 0.120816, 0.552159, 1.099607, 5.168873, 10.101696, 21.691157, 31.770314, 42.323649, 51.173784, 61.928776, 74.940187, 82.432224, 90.740362, 109.81299]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/9/data_reference_Device.txt'
+arraybench_(27)_0.001
+
+arraybench_(27)_0.005
+
+arraybench_(27)_0.01
+
+arraybench_(27)_0.05
+
+arraybench_(27)_0.1
+
+arraybench_(27)_0.5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(27)_1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(27)_5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(27)_10
+
+arraybench_(27)_20
+
+arraybench_(27)_30
+
+arraybench_(27)_40
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(27)_50
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(27)_60
+
+arraybench_(27)_70
+
+arraybench_(27)_80
+
+arraybench_(27)_90
+
+arraybench_(27)_100
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-13ypwdm1 because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_27': [], 'PRIVATE_DEVICE_27': [], 'FIRSTPRIVATE_DEVICE_27': []}
+Performance mean time:
+
+['0.004184', '0.009746', '0.078083', '0.081957', '0.006504', '0.010388', '0.080179', '0.084234', '0.011926', '0.019320', '0.089238', '0.093428', '0.065802', '0.062792', '0.146472', '0.150895', '0.122812', '0.120079', '0.202582', '0.207104', '0.552753', '0.550494', '0.633865', '0.638866', '1.098745', '1.098974', '1.180686', '1.185329', '5.169781', '5.168905', '5.250548', '5.260590', '10.102861', '10.098393', '10.181216', '10.187252', '21.692911', '21.705327', '21.771383', '21.776136', '31.763318', '31.766413', '31.856609', '31.889920', '42.279318', '42.288183', '42.368630', '42.374319', '51.173274', '51.166460', '51.251302', '51.263885', '61.965601', '61.946053', '62.003514', '62.019516', '75.007354', '74.954657', '75.028074', '75.034878', '82.422306', '82.438656', '82.601777', '82.513298', '90.705987', '90.686343', '90.778332', '90.758019', '109.751032', '109.727570', '109.834374', '109.860128']
+reference_Device: [0.004184, 0.006504, 0.011926, 0.065802, 0.122812, 0.552753, 1.098745, 5.169781, 10.102861, 21.692911, 31.763318, 42.279318, 51.173274, 61.965601, 75.007354, 82.422306, 90.705987, 109.751032]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/27/data_reference_Device.txt'
+arraybench_(81)_0.001
+
+arraybench_(81)_0.005
+
+arraybench_(81)_0.01
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(81)_0.05
+
+arraybench_(81)_0.1
+
+arraybench_(81)_0.5
+
+arraybench_(81)_1
+
+arraybench_(81)_5
+
+arraybench_(81)_10
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(81)_20
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(81)_30
+
+arraybench_(81)_40
+
+arraybench_(81)_50
+
+arraybench_(81)_60
+
+arraybench_(81)_70
+
+arraybench_(81)_80
+
+arraybench_(81)_90
+
+arraybench_(81)_100
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-h5iujd8t because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_81': [], 'PRIVATE_DEVICE_81': [], 'FIRSTPRIVATE_DEVICE_81': []}
+Performance mean time:
+
+['0.004180', '0.009740', '0.078296', '0.086719', '0.007817', '0.011580', '0.082904', '0.091646', '0.011875', '0.019435', '0.089408', '0.097975', '0.075733', '0.072104', '0.155954', '0.164193', '0.122749', '0.120049', '0.202649', '0.210655', '0.553284', '0.551056', '0.633501', '0.642151', '1.099899', '1.098456', '1.180526', '1.189318', '5.177071', '5.167088', '5.251933', '5.262453', '10.098032', '10.099568', '10.190877', '10.194493', '21.680514', '21.687805', '21.777607', '21.795271', '31.772133', '31.760963', '31.854689', '31.853688', '42.287988', '42.290272', '42.411005', '42.382313', '51.183598', '51.174422', '51.253320', '51.301870', '61.917072', '61.924038', '62.009948', '62.057686', '74.949993', '74.964500', '75.039806', '75.031425', '82.455400', '82.525474', '82.527258', '82.548465', '90.682404', '90.688730', '90.833377', '90.782509', '109.733521', '109.742915', '109.825150', '109.904231']
+reference_Device: [0.00418, 0.007817, 0.011875, 0.075733, 0.122749, 0.553284, 1.099899, 5.177071, 10.098032, 21.680514, 31.772133, 42.287988, 51.183598, 61.917072, 74.949993, 82.4554, 90.682404, 109.733521]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/81/data_reference_Device.txt'
+arraybench_(243)_0.001
+
+arraybench_(243)_0.005
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(243)_0.01
+
+arraybench_(243)_0.05
+
+arraybench_(243)_0.1
+
+arraybench_(243)_0.5
+
+arraybench_(243)_1
+
+arraybench_(243)_5
+
+arraybench_(243)_10
+
+arraybench_(243)_20
+
+arraybench_(243)_30
+
+arraybench_(243)_40
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(243)_50
+
+arraybench_(243)_60
+
+arraybench_(243)_70
+
+arraybench_(243)_80
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(243)_90
+
+arraybench_(243)_100
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-ukvy5f6_ because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_243': [], 'PRIVATE_DEVICE_243': [], 'FIRSTPRIVATE_DEVICE_243': []}
+Performance mean time:
+
+['0.004198', '0.009741', '0.078554', '0.099053', '0.007814', '0.011586', '0.084626', '0.102580', '0.011920', '0.019495', '0.089611', '0.110355', '0.065961', '0.062918', '0.145939', '0.166016', '0.122840', '0.119989', '0.202718', '0.223490', '0.553076', '0.550773', '0.633120', '0.654207', '1.098799', '1.097830', '1.181872', '1.200598', '5.169196', '5.166549', '5.251079', '5.276246', '10.100925', '10.098884', '10.181560', '10.204065', '21.681845', '21.702735', '21.775053', '21.789942', '31.763845', '31.765805', '31.857013', '31.877835', '42.276811', '42.293927', '42.374076', '42.394192', '51.209992', '51.174418', '51.255677', '51.282183', '61.927086', '61.966601', '62.004773', '62.031797', '74.917666', '74.929946', '75.083582', '75.063327', '82.430727', '82.425508', '82.521415', '82.651918', '90.685455', '90.725349', '90.762439', '90.783621', '109.807123', '109.729511', '109.814735', '109.846389']
+reference_Device: [0.004198, 0.007814, 0.01192, 0.065961, 0.12284, 0.553076, 1.098799, 5.169196, 10.100925, 21.681845, 31.763845, 42.276811, 51.209992, 61.927086, 74.917666, 82.430727, 90.685455, 109.807123]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/243/data_reference_Device.txt'
+arraybench_(729)_0.001
+
+arraybench_(729)_0.005
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_0.01
+
+arraybench_(729)_0.05
+
+arraybench_(729)_0.1
+
+arraybench_(729)_0.5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_10
+
+arraybench_(729)_20
+
+arraybench_(729)_30
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_40
+
+arraybench_(729)_50
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_60
+
+arraybench_(729)_70
+
+arraybench_(729)_80
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_90
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(729)_100
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-m9idq760 because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_729': [], 'PRIVATE_DEVICE_729': [], 'FIRSTPRIVATE_DEVICE_729': []}
+Performance mean time:
+
+['0.004178', '0.009741', '0.078065', '0.138171', '0.006524', '0.010951', '0.080108', '0.141359', '0.011891', '0.019185', '0.089252', '0.151117', '0.065838', '0.062841', '0.145947', '0.207824', '0.122822', '0.120436', '0.202734', '0.264974', '0.552984', '0.550483', '0.633852', '0.694686', '1.099192', '1.099227', '1.181240', '1.243013', '5.168254', '5.167153', '5.251739', '5.318131', '10.101719', '10.098473', '10.181892', '10.242230', '21.684599', '21.706353', '21.843071', '21.833115', '31.762239', '31.760147', '31.848869', '31.941277', '42.279028', '42.284897', '42.368131', '42.454912', '51.202505', '51.171339', '51.259246', '51.309574', '61.959047', '61.918878', '62.007793', '62.070383', '74.944979', '75.018916', '75.030676', '75.079408', '82.442550', '82.428751', '82.508648', '82.674377', '90.684241', '90.668545', '90.755870', '90.845091', '109.754645', '109.742643', '109.818608', '109.878046']
+reference_Device: [0.004178, 0.006524, 0.011891, 0.065838, 0.122822, 0.552984, 1.099192, 5.168254, 10.101719, 21.684599, 31.762239, 42.279028, 51.202505, 61.959047, 74.944979, 82.44255, 90.684241, 109.754645]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/729/data_reference_Device.txt'
+arraybench_(2187)_0.001
+
+arraybench_(2187)_0.005
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(2187)_0.01
+
+arraybench_(2187)_0.05
+
+arraybench_(2187)_0.1
+
+arraybench_(2187)_0.5
+
+arraybench_(2187)_1
+
+arraybench_(2187)_5
+
+arraybench_(2187)_10
+
+arraybench_(2187)_20
+
+arraybench_(2187)_30
+
+arraybench_(2187)_40
+
+arraybench_(2187)_50
+
+arraybench_(2187)_60
+
+arraybench_(2187)_70
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(2187)_80
+
+arraybench_(2187)_90
+
+arraybench_(2187)_100
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-7yr08yfz because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_2187': [], 'PRIVATE_DEVICE_2187': [], 'FIRSTPRIVATE_DEVICE_2187': []}
+Performance mean time:
+
+['0.004176', '0.009739', '0.077981', '0.271644', '0.006513', '0.010446', '0.079902', '0.263690', '0.011879', '0.019497', '0.089516', '0.280898', '0.075768', '0.072109', '0.156067', '0.334579', '0.122906', '0.120053', '0.203459', '0.383450', '0.553257', '0.550517', '0.633449', '0.818126', '1.099479', '1.097378', '1.180564', '1.358231', '5.169598', '5.167104', '5.256274', '5.442715', '10.100235', '10.099048', '10.183619', '10.364078', '21.708936', '21.687030', '21.770141', '21.958853', '31.764234', '31.760819', '31.846732', '32.057135', '42.286551', '42.290938', '42.375246', '42.545418', '51.218075', '51.173491', '51.264440', '51.440145', '61.935056', '61.964262', '62.007742', '62.188446', '74.931376', '75.015362', '75.020368', '75.208397', '82.704479', '82.419740', '82.524491', '82.777295', '90.675846', '90.678986', '90.749915', '90.932421', '109.744550', '109.712718', '109.825233', '110.041599']
+reference_Device: [0.004176, 0.006513, 0.011879, 0.075768, 0.122906, 0.553257, 1.099479, 5.169598, 10.100235, 21.708936, 31.764234, 42.286551, 51.218075, 61.935056, 74.931376, 82.704479, 90.675846, 109.74455]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/2187/data_reference_Device.txt'
+arraybench_(6561)_0.001
+
+arraybench_(6561)_0.005
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_0.01
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_0.05
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_0.1
+
+arraybench_(6561)_0.5
+
+arraybench_(6561)_1
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_5
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_10
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_20
+
+arraybench_(6561)_30
+
+arraybench_(6561)_40
+
+arraybench_(6561)_50
+
+arraybench_(6561)_60
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_70
+
+arraybench_(6561)_80
+
+arraybench_(6561)_90
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+arraybench_(6561)_100
+srun: Job 6619618 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for job 6619618
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-nhppju_7 because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_6561': [], 'PRIVATE_DEVICE_6561': [], 'FIRSTPRIVATE_DEVICE_6561': []}
+Performance mean time:
+
+['0.004149', '0.009614', '0.078054', '1.028267', '0.007810', '0.012022', '0.082686', '1.102809', '0.011903', '0.019309', '0.089228', '1.003230', '0.065850', '0.062594', '0.145918', '1.107856', '0.122830', '0.119867', '0.203230', '1.129368', '0.553137', '0.550376', '0.633239', '1.559185', '1.099221', '1.098383', '1.181695', '2.168422', '5.167853', '5.171681', '5.258285', '6.179104', '10.099029', '10.098923', '10.182204', '11.105274', '21.706242', '21.692470', '21.769193', '22.737884', '31.760551', '31.768088', '31.848530', '32.867137', '42.287034', '42.294380', '42.363684', '43.322703', '51.206544', '51.177577', '51.258415', '52.177060', '61.957713', '61.913616', '62.006523', '62.943759', '74.923196', '75.003737', '75.023331', '75.986095', '82.427309', '82.439795', '82.525948', '83.518009', '90.669470', '90.678795', '90.753235', '91.753581', '109.798861', '109.712870', '109.829867', '110.739773']
+reference_Device: [0.004149, 0.00781, 0.011903, 0.06585, 0.12283, 0.553137, 1.099221, 5.167853, 10.099029, 21.706242, 31.760551, 42.287034, 51.206544, 61.957713, 74.923196, 82.427309, 90.66947, 109.798861]
+Traceback (most recent call last):
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 174, in <module>
+    main()
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 148, in main
+    analyse_data(benchmark, job, mean_times)
+  File "/mnt/lustre/a2fs-work1/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/visualise.py", line 86, in analyse_data
+    with open(file_name, 'w') as data_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'Analysis/6561/data_reference_Device.txt'
