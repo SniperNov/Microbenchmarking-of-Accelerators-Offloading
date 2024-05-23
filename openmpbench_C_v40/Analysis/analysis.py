@@ -10,7 +10,7 @@ def std_diagram(data_content, job, filename):
     delaylength = np.logspace(np.log10(20), np.log10(50000), num=100) #logarithmic
     # delaylength = np.concatenate((np.linspace(20,1000, num=99),np.array([50000]))) #booooot-top
     # delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99))) #bot-tooooop
-
+    delaylength = delaylength[::-1]
     # f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
     plt.figure(figsize=(12, 6))
     std=[]
