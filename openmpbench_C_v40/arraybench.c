@@ -38,8 +38,10 @@
 #include "common.h"
 #include "arraybench.h"
 
-double btest[IDA];
+// double btest[IDA];
 double atest[IDA];
+double btest[IDA];
+#pragma omp threadprivate(btest)
 double atest_device[IDA]; // Consider that on the device, we work with pointers.
 
 int main(int argc, char **argv) {
@@ -49,32 +51,7 @@ int main(int argc, char **argv) {
     char testName[32];
     extern char type[120];
 
-// /****************************************************************************/
-//     int hostdev, targetdev, numdevs;
 
-//     numdevs = omp_get_num_devices();
-//     hostdev = omp_get_initial_device();
-//     targetdev = -9999;
-
-// #pragma omp target map(from : targetdev)
-//     {
-//         targetdev = omp_is_initial_device();
-//     }
-
-//     printf("There are  %d available devices\n", numdevs);
-//     printf("Host device is %d\n", hostdev);
-
-//     if (targetdev)
-//     {
-//         printf("Target region executed on host\n");
-//     }
-//     else
-//     {
-//         printf("Target region executed on device\n");
-//     }
-// /****************************************************************************/
-
-#pragma omp threadprivate(btest)
 
     /* GENERATE REFERENCE TIME */
     // reference("reference", &refer);
@@ -131,11 +108,11 @@ int main(int argc, char **argv) {
       benchmark(testName, &testcopyprivnew);
     }
 
-    /* TEST  THREADPRIVATE - COPYIN */
-    if((strcmp("COPYIN",type)==0)||(strcmp("ALL",type)==0)){
-      sprintf(testName, "COPYIN_%d", IDA);
-      benchmark(testName, &testthrprivnew);
-    }
+    // /* TEST  THREADPRIVATE - COPYIN */
+    // if((strcmp("COPYIN",type)==0)||(strcmp("ALL",type)==0)){
+    //   sprintf(testName, "COPYIN_%d", IDA);
+    //   benchmark(testName, &testthrprivnew);
+    // }
 
     finalise();
     return EXIT_SUCCESS;
@@ -231,14 +208,14 @@ void testcopyprivnew()
 }
 
 
-void testthrprivnew() {
-    int j;
-    for (j = 0; j < innerreps; j++) {
-#pragma omp parallel copyin(btest)
-	{
-	    array_delay(delaylength, btest);
-	}
-    }
+// void testthrprivnew() {
+//     int j;
+//     for (j = 0; j < innerreps; j++) {
+// #pragma omp parallel copyin(btest)
+// 	{
+// 	    array_delay(delaylength, btest);
+// 	}
+//     }
 
-}
+// }
 

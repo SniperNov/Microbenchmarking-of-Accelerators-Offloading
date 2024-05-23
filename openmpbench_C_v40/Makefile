@@ -1,4 +1,4 @@
-include Makefile.defs
+include Makefile.defs.cray
 
 .c.o:
 	${CC} ${CFLAGS} -c $*.c
