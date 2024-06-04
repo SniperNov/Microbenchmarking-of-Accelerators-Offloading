@@ -1,5 +1,5 @@
 #!/bin/bash
-JOB_ID=6623660
+JOB_ID=6697853
 # for IDA in 27; do
 #     for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
 #     do 
@@ -18,5 +18,5 @@ for coe_file in Analysis/${JOB_ID}/coe_*.txt;
 do 
     data_file="${coe_file/coe/data}"
 
-python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "log"
+python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "linearRe"
 done

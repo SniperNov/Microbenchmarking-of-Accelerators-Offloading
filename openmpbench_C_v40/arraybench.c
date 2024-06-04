@@ -129,7 +129,7 @@ void refer() {
 void device_refer() {
     int j;
     double a[1];
-#pragma omp target map(to:a)
+#pragma omp target map(tofrom:a)
     for (j = 0; j < innerreps; j++) {
 	array_delay(delaylength, a);
     }
@@ -150,7 +150,7 @@ void device_target() {
     double a[1];
     for (j = 0; j < innerreps; j++) {
     
-    #pragma omp target map(to:a)
+    #pragma omp target map(tofrom:a)
 	array_delay(delaylength, a);
 
     }
@@ -162,7 +162,7 @@ void device_testprivnew()
     // Map the entire loop to the device
     for (j = 0; j < innerreps; j++)
     {
-#pragma omp target map(to : atest) // Mapping 'atest'
+#pragma omp target map(from : atest) // Mapping 'atest'
 #pragma omp parallel private(atest) // Distribute the outer loop among teams
         {
             array_delay(delaylength, atest);
@@ -185,7 +185,7 @@ void device_testfirstprivnew()
     int j;
     for (j = 0; j < innerreps; j++)
     {
-#pragma omp target map(to : atest) // Mapping 'atest'
+#pragma omp target map(tofrom : atest) // Mapping 'atest'
 #pragma omp parallel firstprivate(atest) // Ensuring 'atest' array is available on the device
         {
             array_delay(delaylength, atest);

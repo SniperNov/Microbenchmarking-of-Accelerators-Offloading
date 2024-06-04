@@ -94,7 +94,7 @@ def coe_dist(coe_content, job, filename, method):
     # axs[0].violinplot(slope, vert=False, showmeans=True, showmedians=False, showextrema=False)
     sns.violinplot(y=slope, inner='quartile', ax=axs[0], color="lightgreen")
     # sns.pointplot(y=slope, ax=axs[0], color='red', scale=0.5, label='Mean')
-    axs[0].set_title('Violin Plot of Slopes - Samples spaced in Linear')
+    axs[0].set_title(f'Violin Plot of Slopes - Samples spaced in {method}')
     axs[0].set_ylabel('Slope Value')
     axs[0].grid(True) 
 
