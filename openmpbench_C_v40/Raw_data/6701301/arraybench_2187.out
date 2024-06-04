@@ -1,0 +1,24 @@
+************************************************************************************************************************************************************************
+Running OpenMP benchmark version 4.0
+	1 thread(s)
+	40 outer repetitions
+	1000.00 test time (microseconds)
+	19 delay length (iterations) 
+	0.100000 delay time (microseconds)
+
+--------------------------------------------------------
+Computing reference_Device time using 20 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 40               0.057144   0.057602   0.053598   0.058103   0.001049   1
+reference_Device mean time    = 0.057144 microseconds +/- 0.002056
+reference_Device median time  = 0.057602 microseconds
+
+--------------------------------------------------------
+Computing TARGET_DEVICE_2187 time using 40960 reps
+
+Sample_size       Mean       Median     Min        Max        StdDev     Outliers
+ 40               0.053078   0.052932   0.052391   0.054369   0.000592   0
+TARGET_DEVICE_2187 mean time    = 0.053078 microseconds +/- 0.001161
+TARGET_DEVICE_2187 overhead     = -0.004066 microseconds +/- 0.003217
+TARGET_DEVICE_2187 median_ovrhd = -0.004671 microseconds 
