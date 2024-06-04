@@ -1,0 +1,26 @@
+arraybench_(2187)_20
+
+Matplotlib created a temporary cache directory at /tmp/matplotlib-jbhruc6g because the default path (/mnt/lustre/a2fs-work1/work-sl/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+/opt/cray/pe/python/3.9.13.1/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py:160: RuntimeWarning: invalid value encountered in double_scalars
+  slope = ssxym / ssxm
+/opt/cray/pe/python/3.9.13.1/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py:174: RuntimeWarning: invalid value encountered in sqrt
+  t = r * np.sqrt(df / ((1.0 - r + TINY)*(1.0 + r + TINY)))
+/opt/cray/pe/python/3.9.13.1/lib/python3.9/site-packages/scipy/stats/_stats_mstats_common.py:176: RuntimeWarning: invalid value encountered in double_scalars
+  slope_stderr = np.sqrt((1 - r**2) * ssym / ssxm / df)
+The Performance extracted:
+
+{'reference_Device': [], 'TARGET_DEVICE_2187': []}
+The Overheads extracted:
+
+{'TARGET_DEVICE_2187': []}
+Performance mean time:
+
+['0.057144', '0.053078']
+reference_Device: [0.057144]
+TARGET_DEVICE_2187: [0.053078]
+Overheads:
+
+['-0.004066']
+TARGET_DEVICE_2187: [-0.004066]
+Plot saved to Plots/6701301/arraybench_2187_performance.png
+Plot saved to Plots/6701301/arraybench_2187_overhead.png
