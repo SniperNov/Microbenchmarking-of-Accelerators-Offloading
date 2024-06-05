@@ -2,15 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 import seaborn as sns
-import keyboard
 
-def std_diagram(data_content, job, filename):
+def std_diagram(data_content, job, filename, method, delaylength, machine):
     # delaylength = np.concatenate((np.linspace(20,1020, num=99),np.linspace(4900,5000,num=50))) #bot-top
     # delaylength = np.linspace(20,50000,num=100) #linear
-    delaylength = np.logspace(np.log10(20), np.log10(50000), num=100) #logarithmic
+    # delaylength = np.logspace(np.log10(20), np.log10(50000), num=100) #logarithmic
     # delaylength = np.concatenate((np.linspace(20,1000, num=99),np.array([50000]))) #booooot-top
     # delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99))) #bot-tooooop
-    delaylength = delaylength[::-1]
+    # delaylength = delaylength[::-1]
     # f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
     plt.figure(figsize=(12, 6))
     std=[]
@@ -35,7 +34,7 @@ def std_diagram(data_content, job, filename):
     # ax.plot((1-d, 1+d), (-d, +d), **kwargs)
     # ax.plot((1-d, 1+d), (1-d, 1+d), **kwargs)
 
-    plt.title(f'Change of std of 100 distributions composed by 1000 independent runs')
+    plt.title(f'Change of standard deviation on {machine} of 100 dist, sampled by {method}, job={job}')
     plt.xlabel('Delay length (microsecond)')
     plt.ylabel('Standard Deviation')
     # ax.set_ylabel('Standard Deviation')
@@ -44,12 +43,12 @@ def std_diagram(data_content, job, filename):
     # ax2.set_xlabel('Delay length (microsecond)')
 
 
-    plt.savefig(f"Analysis/{job}/std_{filename}.png")
-    print(f"File has been saved to {job}/std_{filename}.png")
+    plt.savefig(f"Analysis/{machine}/{job}/std_{filename}_{method}.png")
+    print(f"File has been saved to {machine}/{job}/std_{filename}_{method}.png")
 
 
-def runs_dist(data_content, job, filename, method):
-    new_centers = np.linspace(0, 100, num=len(data_content))
+def runs_dist(data_content, job, filename, method, delaylength, machine):
+    new_centers = np.linspace(0, 100, num=len(delaylength))
     plt.figure(figsize=(12, 6))
     for data, center in zip(data_content, new_centers):
         # Standardize each dataset
@@ -59,16 +58,18 @@ def runs_dist(data_content, job, filename, method):
         
         # Plot the adjusted distribution
         sns.kdeplot(shifted_data, bw_adjust=0.5)
+        
 
-    plt.title(f'Frequency diagram for 100 runs using {method} spcaed samples')
-    plt.xlabel('Order - linear spaced')
+    plt.title(f'Frequency for 100 runs on {machine}, {method} spaced, job={job}')
+    plt.xticks(ticks=range(len(delaylength)), labels=delaylength, rotation=90)
+    plt.xlabel('Order been linear scaled')
     plt.ylabel('Frequency')
     # Save the graph
-    plt.savefig(f"Analysis/{job}/freq_{method}_{filename}.png")
+    plt.savefig(f"Analysis/{machine}/{job}/freq_{method}_{filename}.png")
     plt.show()
-    print(f"File has been saved to {job}/freq_{method}_{filename}.png")
+    print(f"File has been saved to {machine}/{job}/freq_{method}_{filename}.png")
 
-def coe_dist(coe_content, job, filename, method):
+def coe_dist(coe_content, job, filename, method, machine):
     # Extract slope and interception values
     slope = coe_content[:, 0]
     interception = coe_content[:, 1]
@@ -94,20 +95,20 @@ def coe_dist(coe_content, job, filename, method):
     # axs[0].violinplot(slope, vert=False, showmeans=True, showmedians=False, showextrema=False)
     sns.violinplot(y=slope, inner='quartile', ax=axs[0], color="lightgreen")
     # sns.pointplot(y=slope, ax=axs[0], color='red', scale=0.5, label='Mean')
-    axs[0].set_title('Violin Plot of Slopes - Samples spaced in Linear')
+    axs[0].set_title(f'Violin Plot of Slopes {method} spaced running on {machine}, job={job}')
     axs[0].set_ylabel('Slope Value')
     axs[0].grid(True) 
 
     # axs[1].violinplot(interception, vert=False, showmeans=True, showmedians=False, showextrema=False)
     sns.violinplot(y=interception,  inner='quartile', ax=axs[1], color="skyblue")
     # sns.pointplot(y=interception, ax=axs[0], color='red', scale=0.5, label='Mean')
-    axs[1].set_title(f'Violin Plot of Interceptions - Samples spaced in {method}')
-    axs[1].set_ylabel('Interception Value')
+    axs[1].set_title(f'Violin Plot of Intercepts {method} spaced running on {machine}, job={job}')
+    axs[1].set_ylabel('Intercept Value')
     axs[1].grid(True) 
 
-    plt.savefig(f"Analysis/{job}/dist_{method}_{filename}.png")
+    plt.savefig(f"Analysis/{machine}/{job}/dist_{method}_{filename}.png")
     plt.show()
-    print(f"File has been saved to {job}/dist_{method}_{filename}.png")
+    print(f"File has been saved to {machine}/{job}/dist_{method}_{filename}.png")
 
 
 def main():
@@ -116,20 +117,25 @@ def main():
     parser.add_argument('coe_filename', type=str, help='Name of the coeficient to parse')
     parser.add_argument('job',type=str, help='The output diagrams directory')
     parser.add_argument('method',type=str, help='Descriptions',default='unspecified')
+    parser.add_argument('machine',type=str, help='GPU model',default='unspecified')
 
     args = parser.parse_args()
     method = args.method
+    machine = args.machine
     # Extract 'filename' from the input file name using string methods
     parts = args.data_filename.split('_')
     filename = '_'.join(parts[1:])[:-4]  # This joins all parts between 'data' and '.txt'
     print(filename)
 
+    # Read the first line separately which is the 'delaylength'
+    with open(args.data_filename, 'r') as file:
+        delays = file.readline().strip()
+    data_content = np.transpose(np.loadtxt(args.data_filename, skiprows=1))
 
-    data_content = np.transpose(np.loadtxt(args.data_filename))
     coe_content = np.loadtxt(args.coe_filename)
-    std_diagram(data_content, args.job, filename)
-    runs_dist(data_content, args.job, filename, method)
-    coe_dist(coe_content, args.job, filename, method)
+    std_diagram(data_content, args.job, filename, method, delays, machine)
+    runs_dist(data_content, args.job, filename, method, delays, machine)
+    coe_dist(coe_content, args.job, filename, method, delays, machine)
 
 if __name__ == "__main__":
     main()
