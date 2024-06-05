@@ -152,44 +152,66 @@ void refer() {
 void device_refer() {
     int j;
     double a[1];
-#pragma omp target map(to:a)
+    a[0]=0;
+#pragma omp target map(tofrom:a)
     for (j = 0; j < innerreps; j++) {
-	array_delay(delaylength, a);
+        array_delay(delaylength, a);
+        a[0]+=1;
+    }
+    if (a[0] < 0)
+    {
+        printf("%f \n", a[0]);
     }
 }
 
 void testprivnew() {
     int j;
+    atest[0] = 0;
     for (j = 0; j < innerreps; j++) {
 #pragma omp parallel private(atest)
 	{
 	    array_delay(delaylength, atest);
+        atest[0]+=1;
 	}
+    }
+    if (atest[0] < 0)
+    {
+        printf("%f \n", atest[0]);
     }
 }
 
 void device_target() {
     int j;
     double a[1];
+    a[0]=0;
     for (j = 0; j < innerreps; j++) {
     
-    #pragma omp target map(to:a)
-	array_delay(delaylength, a);
-
+ #pragma omp target map(tofrom:a)
+        array_delay(delaylength, a);
+        a[0]+=1;
+    }
+    if (a[0]<0){
+        printf("%f \n", a[0]);
     }
 }
 
 void device_testprivnew()
 {
     int j;
+    atest[0]=0;
     // Map the entire loop to the device
     for (j = 0; j < innerreps; j++)
     {
-#pragma omp target map(to : atest) // Mapping 'atest'
+#pragma omp target map(tofrom : atest) // Mapping 'atest'
 #pragma omp parallel private(atest) // Distribute the outer loop among teams
         {
             array_delay(delaylength, atest);
         }
+        atest[0] += 1;
+    }
+    if (atest[0] < 0)
+    {
+        printf("%f \n", atest[0]);
     }
 }
 

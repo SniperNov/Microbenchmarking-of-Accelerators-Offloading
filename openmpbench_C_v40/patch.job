@@ -1,5 +1,6 @@
 #!/bin/bash
 JOB_ID=5692116-logR
+machine=cirrus
 # for IDA in 27; do
 #     for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
 #     do 
@@ -14,9 +15,8 @@ JOB_ID=5692116-logR
 #     python visualise2.py 'schedbench' $output_file ${JOB_ID} ${i}
 # done
 
-for coe_file in Analysis/${JOB_ID}/coe_*.txt;
+for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
 do 
     data_file="${coe_file/coe/data}"
-
-python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "logarithmicReverse"
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "logRe" machine
 done
