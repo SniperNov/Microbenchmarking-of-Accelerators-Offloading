@@ -41,7 +41,7 @@ def plot_performance(benchmark_data, delays, job, MIDA, graph, machine):
         plt.xlim(left=0)
         plt.ylim(bottom=0)
         plt.tight_layout()
-        output_name = "Plots/" + job + "/" + MIDA + "_performance.png"
+        output_name = "Plots/" + machine + "/"+ job + "/" + MIDA + "_performance.png"
         plt.savefig(output_name)
         plt.show()
         print(f"Plot saved to {output_name}")
@@ -72,7 +72,7 @@ def plot_overhead(benchmark_overhead, delays, job, MIDA, graph, machine):
         plt.xlim(left=0)
         plt.ylim(bottom=0)
         plt.tight_layout()
-        output_name = "Plots/" + job + "/" + MIDA + "_overhead.png"
+        output_name = "Plots/" + machine + "/"+ job + "/" + MIDA + "_overhead.png"
         plt.savefig(output_name)
         plt.show()
         print(f"Plot saved to {output_name}")
