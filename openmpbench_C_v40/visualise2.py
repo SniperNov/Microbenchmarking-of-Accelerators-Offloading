@@ -20,11 +20,12 @@ def plot_performance(benchmark_data, delays, job, MIDA, graph, machine):
     plt.figure(figsize=(10, 6))
     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
     extended_x = np.linspace(0, max(delays) * 1.1, 100)
+    directory = os.path.join("Analysis", machine, job)
 
     for benchmark, data in benchmark_data.items():
         color = next(colors)
         slope, intercept, r_value, p_value, std_err = linregress(delays, data)
-        analyse_dist(benchmark, job, slope, intercept, std_err, delays)
+        analyse_dist(benchmark, directory, slope, intercept, std_err, delays)
         extended_predictions = intercept + slope * extended_x
 
         plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
@@ -80,8 +81,7 @@ def plot_overhead(benchmark_overhead, delays, job, MIDA, graph, machine):
 def ensure_directory_exists(directory):
     os.makedirs(directory, exist_ok=True)
 
-def analyse_data(benchmark_name, job, data, delays):
-    directory = os.path.join("Analysis", job)
+def analyse_data(benchmark_name, directory, data, delays):
     ensure_directory_exists(directory)
     file_name = os.path.join(directory, f"data_{benchmark_name}.txt")
     with open(file_name, 'a') as data_file:
@@ -94,8 +94,7 @@ def analyse_data(benchmark_name, job, data, delays):
             data_file.write(str(item) + ' ')
         data_file.write('\n')
 
-def analyse_dist(benchmark_name, job, gradient, intercept, error, delays):
-    directory = os.path.join("Analysis", job)
+def analyse_dist(benchmark_name, directory, gradient, intercept, error, delays):
     ensure_directory_exists(directory)
     file_name = os.path.join(directory, f"coe_{benchmark_name}.txt")
     with open(file_name, 'a') as coe_file:
@@ -121,6 +120,7 @@ def main():
     IDA = args.IDA
     method = args.method
     machine = args.machine
+    directory = os.path.join("Analysis", machine, job)
     # Extract parameters
     param_pattern = r"Running OpenMP benchmark version \d+\.\d+\s+(\d+) thread\(s\)\s+(\d+) outer repetitions\s+([\d.]+) test time \(microseconds\)\s+(\d+) delay length \(iterations\)\s+([\d.]+) delay time \(microseconds\)"
     params = re.findall(param_pattern, content, re.DOTALL)
@@ -162,7 +162,7 @@ def main():
             benchmark_data[benchmark].append(float(mean_time))
         for benchmark, mean_times in benchmark_data.items():
             print(f"{benchmark}: {mean_times}")
-            analyse_data(benchmark, job, mean_times)
+            analyse_data(benchmark, directory, mean_times, delays)
     else:
         print("Data not found in the file.")
         exit()    
@@ -182,7 +182,7 @@ def main():
         print("Overhead not found in the file.")
         exit()        
     
-
+    print(f'delay lengths are {delays}!\n')
     plot_performance(benchmark_data, delays, job, method+'_'+IDA, True, machine)
     plot_overhead(benchmark_overhead, delays, job, method+'_'+IDA, True, machine)
 
