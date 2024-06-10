@@ -1,5 +1,5 @@
 #!/bin/bash
-JOB_ID=5692116-logR
+JOB_ID=5715590
 machine=cirrus
 # for IDA in 27; do
 #     for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
@@ -15,8 +15,19 @@ machine=cirrus
 #     python visualise2.py 'schedbench' $output_file ${JOB_ID} ${i}
 # done
 
+# for IDA in 27; do
+#     for ((i=0; i<100;i++)); do
+#         # File to store results for the current IDA value
+#         output_file=Raw_data/${machine}/${JOB_ID}/arraybench_${IDA}_${i}.out
+    
+#         # Save the script to the Script directory after each IDA loop iteration
+#         python visualise2.py 'arraybench' $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+            
+#     done
+# done
+
 for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
 do 
     data_file="${coe_file/coe/data}"
-    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "logRe" machine
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "linRe" ${machine}
 done

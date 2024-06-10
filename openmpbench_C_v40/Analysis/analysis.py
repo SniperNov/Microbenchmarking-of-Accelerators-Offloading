@@ -11,11 +11,24 @@ def std_diagram(data_content, job, filename, method, delaylength, machine):
     # delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99))) #bot-tooooop
     # delaylength = delaylength[::-1]
     # f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
+    # Convert delaylength to numeric values and sort them along with std
+    delaylength_numeric = list(map(int, delaylength))
+    sorted_indices = np.argsort(delaylength_numeric)
+    sorted_delaylength = [delaylength[i] for i in sorted_indices]
+
+    # Compute standard deviation for each data set and sort
+    std = [np.std(data) for data in data_content]
+    sorted_std = [std[i] for i in sorted_indices]
+
+    # Plotting
     plt.figure(figsize=(12, 6))
-    std=[]
-    for data in data_content:
-        std.append(np.std(data))
-    plt.plot(delaylength, std)
+    plt.plot(sorted_delaylength, sorted_std)
+    plt.xticks(rotation=90, fontsize=8)  # Reduce font size by half (assuming default is 12 or 10)
+    plt.xlabel('Delay Length')
+    plt.ylabel('Standard Deviation')
+    plt.title('Standard Deviation by Sorted Delay Length')
+    plt.tight_layout()  # Adjust layout to make room for rotated x-ticks
+    
     # ax.plot(delaylength, std)
     # ax2.plot(delaylength, std)
 
@@ -129,13 +142,14 @@ def main():
 
     # Read the first line separately which is the 'delaylength'
     with open(args.data_filename, 'r') as file:
-        delays = file.readline().strip()
+        delays = list(file.readline().strip().split())
+    print(f'Analysing datasets ...... read delay lengths are {delays}\n')
     data_content = np.transpose(np.loadtxt(args.data_filename, skiprows=1))
 
     coe_content = np.loadtxt(args.coe_filename)
     std_diagram(data_content, args.job, filename, method, delays, machine)
     runs_dist(data_content, args.job, filename, method, delays, machine)
-    coe_dist(coe_content, args.job, filename, method, delays, machine)
+    coe_dist(coe_content, args.job, filename, method, machine)
 
 if __name__ == "__main__":
     main()
