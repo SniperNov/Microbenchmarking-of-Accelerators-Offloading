@@ -17,6 +17,7 @@ def std_diagram(data_content, job, filename):
     for data in data_content:
         std.append(np.std(data))
     plt.plot(delaylength, std)
+    # plt.scatter(delaylength, std)
     # ax.plot(delaylength, std)
     # ax2.plot(delaylength, std)
 
