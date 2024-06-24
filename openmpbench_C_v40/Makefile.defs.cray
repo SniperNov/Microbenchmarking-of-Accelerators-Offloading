@@ -1,6 +1,6 @@
 
 CC=cc
-CFLAGS = -fopenmp 
-LDFLAGS = -fopenmp  
+CFLAGS = -fopenmp -O0
+LDFLAGS = -fopenmp -O0
 CPPFLAGS = -E 
 LIBS = -lm  
