@@ -1,7 +1,6 @@
 
-CC=nvc
-CFLAGS = -mp=gpu 
-#-Minfo=mp
-LDFLAGS = -mp=gpu
-CPPFLAGS = -E 
-LIBS = -lm  
+CC = nvc
+CFLAGS = -mp=gpu -O0
+LDFLAGS = -mp=gpu -O0
+CPPFLAGS = -E
+LIBS = -lm
