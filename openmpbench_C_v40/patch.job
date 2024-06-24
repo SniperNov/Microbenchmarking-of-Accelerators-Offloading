@@ -1,19 +1,7 @@
 #!/bin/bash
-JOB_ID=5715590
+JOB_ID=5744677-logRe
 machine=cirrus
-# for IDA in 27; do
-#     for coe_file in Analysis/${JOB_ID}/coe_*_${IDA}.txt;
-#     do 
-#         data_file="${coe_file/coe/data}"
-    
-#     python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "linear"
-#     done
-# done
-
-# for ((i=0; i<10;i++)); do
-#     output_file=Raw_data/${JOB_ID}/schedbench_${i}.out
-#     python visualise2.py 'schedbench' $output_file ${JOB_ID} ${i}
-# done
+method=logRe
 
 # for IDA in 27; do
 #     for ((i=0; i<100;i++)); do
@@ -29,5 +17,72 @@ machine=cirrus
 for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
 do 
     data_file="${coe_file/coe/data}"
-    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} "linRe" ${machine}
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
+done
+
+
+#############################
+JOB_ID=5744673-lin
+machine=cirrus
+method=lin
+
+# for IDA in 27; do
+#     for ((i=0; i<100;i++)); do
+#         # File to store results for the current IDA value
+#         output_file=Raw_data/${machine}/${JOB_ID}/arraybench_${IDA}_${i}.out
+    
+#         # Save the script to the Script directory after each IDA loop iteration
+#         python visualise2.py 'arraybench' $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+            
+#     done
+# done
+
+for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
+do 
+    data_file="${coe_file/coe/data}"
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
+done
+
+#############################
+JOB_ID=5744674-log
+machine=cirrus
+method=log
+
+# for IDA in 27; do
+#     for ((i=0; i<100;i++)); do
+#         # File to store results for the current IDA value
+#         output_file=Raw_data/${machine}/${JOB_ID}/arraybench_${IDA}_${i}.out
+    
+#         # Save the script to the Script directory after each IDA loop iteration
+#         python visualise2.py 'arraybench' $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+            
+#     done
+# done
+
+for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
+do 
+    data_file="${coe_file/coe/data}"
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
+done
+
+#############################
+JOB_ID=5744676-linRe
+machine=cirrus
+method=linRe
+
+# for IDA in 27; do
+#     for ((i=0; i<100;i++)); do
+#         # File to store results for the current IDA value
+#         output_file=Raw_data/${machine}/${JOB_ID}/arraybench_${IDA}_${i}.out
+    
+#         # Save the script to the Script directory after each IDA loop iteration
+#         python visualise2.py 'arraybench' $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+            
+#     done
+# done
+
+for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
+do 
+    data_file="${coe_file/coe/data}"
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
 done
