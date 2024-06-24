@@ -2,68 +2,49 @@ import numpy as np
 import matplotlib.pyplot as plt
 import argparse
 import seaborn as sns
+import pandas as pd
+
+import os
 
 def std_diagram(data_content, job, filename, method, delaylength, machine):
-    # delaylength = np.concatenate((np.linspace(20,1020, num=99),np.linspace(4900,5000,num=50))) #bot-top
-    # delaylength = np.linspace(20,50000,num=100) #linear
-    # delaylength = np.logspace(np.log10(20), np.log10(50000), num=100) #logarithmic
-    # delaylength = np.concatenate((np.linspace(20,1000, num=99),np.array([50000]))) #booooot-top
-    # delaylength = np.concatenate((np.array([20]),np.linspace(49020,50000, num=99))) #bot-tooooop
-    # delaylength = delaylength[::-1]
-    # f, (ax, ax2) = plt.subplots(1, 2, sharey=True, facecolor='w')
-    # Convert delaylength to numeric values and sort them along with std
     delaylength_numeric = list(map(int, delaylength))
     sorted_indices = np.argsort(delaylength_numeric)
-    sorted_delaylength = [delaylength[i] for i in sorted_indices]
+    sorted_delaylength = [float(delaylength[i]) for i in sorted_indices]
 
     # Compute standard deviation for each data set and sort
     std = [np.std(data) for data in data_content]
     sorted_std = [std[i] for i in sorted_indices]
-
+    _, quantity = data_content.shape
     # Plotting
-    plt.figure(figsize=(12, 6))
-    plt.plot(sorted_delaylength, sorted_std)
+    plt.figure(figsize=(12, 10))
+    plt.plot(sorted_delaylength, sorted_std, marker='o')
+
+    plt.xlabel('Delay Length (Linear Scale)')
+
     plt.xticks(rotation=90, fontsize=8)  # Reduce font size by half (assuming default is 12 or 10)
-    plt.xlabel('Delay Length')
     plt.ylabel('Standard Deviation')
-    plt.title('Standard Deviation by Sorted Delay Length')
+    plt.title(f'Change of standard deviation on {machine} of {quantity} dist, sampled by {method}, job={job}')
     plt.tight_layout()  # Adjust layout to make room for rotated x-ticks
-    
-    # ax.plot(delaylength, std)
-    # ax2.plot(delaylength, std)
 
-    # ax.set_xlim(0, 40)
-    # ax2.set_xlim(49000, 50020)
+    # Ensure the directory exists
+    output_dir = f"Analysis/{machine}/{job}"
+    os.makedirs(output_dir, exist_ok=True)
+    plt.savefig(f"{output_dir}/std_{filename}_{method}.png")
+    print(f"File has been saved to {output_dir}/std_{filename}_{method}.png")
 
-    # ax.spines['right'].set_visible(False)
-    # ax2.spines['left'].set_visible(False)
-    # ax.yaxis.tick_left()
-    # ax.tick_params(labelright='off')
-    # ax2.yaxis.tick_right()
-
-    # d = .015  # how big to make the diagonal lines in axes coordinates
-    # # arguments to pass plot, just so we don't keep repeating them
-    # kwargs = dict(transform=ax.transAxes, color='k', clip_on=False)
-    # ax.plot((1-d, 1+d), (-d, +d), **kwargs)
-    # ax.plot((1-d, 1+d), (1-d, 1+d), **kwargs)
-
-    plt.title(f'Change of standard deviation on {machine} of 100 dist, sampled by {method}, job={job}')
-    plt.xlabel('Delay length (microsecond)')
-    plt.ylabel('Standard Deviation')
-    # ax.set_ylabel('Standard Deviation')
-    # f.suptitle('Change of std of 100 distributions composed by 1000 independent runs')
-    # ax.set_xlabel('Delay length (microsecond)')
-    # ax2.set_xlabel('Delay length (microsecond)')
-
-
-    plt.savefig(f"Analysis/{machine}/{job}/std_{filename}_{method}.png")
-    print(f"File has been saved to {machine}/{job}/std_{filename}_{method}.png")
 
 
 def runs_dist(data_content, job, filename, method, delaylength, machine):
-    new_centers = np.linspace(0, 100, num=len(delaylength))
+    new_centers = np.linspace(0, len(delaylength)-1, len(delaylength))
     plt.figure(figsize=(12, 6))
-    for data, center in zip(data_content, new_centers):
+
+    delaylength_numeric = list(map(int, delaylength))
+    sorted_indices = np.argsort(delaylength_numeric)
+    sorted_delaylength = [delaylength[i] for i in sorted_indices]
+
+    sorted_data = [data_content[i] for i in sorted_indices]
+
+    for data, center in zip(sorted_data, new_centers):
         # Standardize each dataset
         standardized_data = data - np.mean(data)  # Centering at 0
         # Shift data to the new center
@@ -73,9 +54,10 @@ def runs_dist(data_content, job, filename, method, delaylength, machine):
         sns.kdeplot(shifted_data, bw_adjust=0.5)
         
 
-    plt.title(f'Frequency for 100 runs on {machine}, {method} spaced, job={job}')
-    plt.xticks(ticks=range(len(delaylength)), labels=delaylength, rotation=90)
-    plt.xlabel('Order been linear scaled')
+    plt.title(f'50 runs Probability Density Frequency on {machine}, {method} spaced, job={job}')
+    plt.xticks(ticks=range(len(delaylength)), labels=sorted_delaylength, rotation=90, fontsize=8)
+    plt.xlim(-1, len(delaylength))
+    plt.xlabel('Delaylength in microseconds (Order been linear scaled)')
     plt.ylabel('Frequency')
     # Save the graph
     plt.savefig(f"Analysis/{machine}/{job}/freq_{method}_{filename}.png")
