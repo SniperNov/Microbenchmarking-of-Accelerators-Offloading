@@ -1,0 +1,310 @@
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 193, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 188, in main
+    plot_performance(reference_dict, all_dict, 'refall', delays, job, method + '_' + IDA, True, machine)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 36, in plot_performance
+    data1, delays1 = remove_outliers_iqr(data1, delays)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 20, in remove_outliers_iqr
+    Q1 = np.percentile(data, 25)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4722, in _quantile_ureduce_func
+    result = _quantile(arr,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4841, in _quantile
+    result = _lerp(previous,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4655, in _lerp
+    diff_b_a = subtract(b, a)
+TypeError: unsupported operand type(s) for -: 'dict' and 'dict'
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 193, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 188, in main
+    plot_performance(reference_dict, all_dict, 'refall', delays, job, method + '_' + IDA, True, machine)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 36, in plot_performance
+    data1, delays1 = remove_outliers_iqr(data1, delays)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 20, in remove_outliers_iqr
+    Q1 = np.percentile(data, 25)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4722, in _quantile_ureduce_func
+    result = _quantile(arr,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4841, in _quantile
+    result = _lerp(previous,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4655, in _lerp
+    diff_b_a = subtract(b, a)
+TypeError: unsupported operand type(s) for -: 'dict' and 'dict'
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 193, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 188, in main
+    plot_performance(reference_dict, all_dict, 'refall', delays, job, method + '_' + IDA, True, machine)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 36, in plot_performance
+    data1, delays1 = remove_outliers_iqr(data1, delays)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 20, in remove_outliers_iqr
+    Q1 = np.percentile(data, 25)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4722, in _quantile_ureduce_func
+    result = _quantile(arr,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4841, in _quantile
+    result = _lerp(previous,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4655, in _lerp
+    diff_b_a = subtract(b, a)
+TypeError: unsupported operand type(s) for -: 'dict' and 'dict'
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 193, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 188, in main
+    plot_performance(reference_dict, all_dict, 'refall', delays, job, method + '_' + IDA, True, machine)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 36, in plot_performance
+    data1, delays1 = remove_outliers_iqr(data1, delays)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 20, in remove_outliers_iqr
+    Q1 = np.percentile(data, 25)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4722, in _quantile_ureduce_func
+    result = _quantile(arr,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4841, in _quantile
+    result = _lerp(previous,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4655, in _lerp
+    diff_b_a = subtract(b, a)
+TypeError: unsupported operand type(s) for -: 'dict' and 'dict'
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+arraybench_(27)_20
+
+Traceback (most recent call last):
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 193, in <module>
+    main()
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 188, in main
+    plot_performance(reference_dict, all_dict, 'refall', delays, job, method + '_' + IDA, True, machine)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 36, in plot_performance
+    data1, delays1 = remove_outliers_iqr(data1, delays)
+  File "/mnt/lustre/e1000/home/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/visualise2.py", line 20, in remove_outliers_iqr
+    Q1 = np.percentile(data, 25)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4283, in percentile
+    return _quantile_unchecked(
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4555, in _quantile_unchecked
+    return _ureduce(a,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 3823, in _ureduce
+    r = func(a, **kwargs)
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4722, in _quantile_ureduce_func
+    result = _quantile(arr,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4841, in _quantile
+    result = _lerp(previous,
+  File "/work/y07/shared/cirrus-software/miniconda3/4.12.0-py39/lib/python3.9/site-packages/numpy/lib/function_base.py", line 4655, in _lerp
+    diff_b_a = subtract(b, a)
+TypeError: unsupported operand type(s) for -: 'dict' and 'dict'

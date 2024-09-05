@@ -1,0 +1,83 @@
+#!/bin/bash
+#
+# For more than 2 nodes:
+#
+# replace "--qos=short" with "--qos=standard"
+# delete "--reservation=shortqos"
+
+#SBATCH --account=d403-wt
+#SBATCH --job-name=host_arraybench
+#SBATCH --time=00:30:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --partition=standard
+#SBATCH --qos=standard
+
+#SBATCH --output=Monitor/%x_%j.out
+#SBATCH --exclusive
+#SBATCH --tasks-per-node=36
+#SBATCH --cpus-per-task=1
+
+
+module load gcc
+module load intel-license
+module load intel-20.4/cc
+module load intel-20.4/fc
+module load intel-20.4/compilers 
+module load mpt
+module load nvidia/nvhpc
+module load openmpi/4.1.6
+module load python
+# module load anaconda3
+export OMP_NUM_THREADS=1
+
+# Capture the SLURM job ID
+JOB_ID=$SLURM_JOB_ID
+machine=cirrusCPU
+
+# Create a directory with the job ID
+mkdir -p Raw_data/${machine}/${JOB_ID}
+mkdir -p Plots/${machine}/${JOB_ID}
+mkdir -p Scripts/${machine}
+cat $0 > Scripts/${machine}/${JOB_ID}.job
+mkdir -p Analysis/${machine}/${JOB_ID}
+
+export MPLCONFIGDIR=/work/d403/d403/weiyu2024/PhDProject/epcc-openmp-microbenchmarks/openmpbench_C_v40/Plots/${machine}
+
+# Iterate over IDA and delaytime values
+# for IDA in 1 3 9 27 81 243 729 2187 6561; do
+
+for IDA in 27; do
+    for ((i=0; i<5;i++)); do
+        # File to store results for the current IDA value
+        output_file=Raw_data/${machine}/${JOB_ID}/arraybench_${IDA}_${i}.out
+        # Clear previous data for this IDA, if any (to ensure fresh start for each IDA)
+        : > $output_file
+
+        # for delaylength in 20 4860 4880 4890 4900 4920 4940 4960 4980 5000; do
+        for j in $(seq 0 19); do
+            # Defining delay lengths in equal linear increments.
+            # delaylength=$(awk -v start=20 -v end=20000 -v num=20 -v j=$j 'BEGIN {print int(start + j * (end - start) / (num - 1))}')
+
+            # Defining delay lengths in equal logarithmic increments.
+            # delaylength=$(awk -v start=20 -v end=2000 -v num=20 -v j=$j 'BEGIN {print int(exp(log(end) - j * (log(end) - log(start)) / (num - 1)))}')
+
+            # Defining delay lengths in reversed equal linear increments, arranged in descending order.
+            delaylength=$(awk -v start=20 -v end=20000 -v num=20 -v j=$j 'BEGIN {print int(end - j * (end - start) / (num - 1))}')
+
+            # Defining delay lengths in equal logarithmic increments, arranged in descending order.
+            #delaylength=$(awk -v start=20 -v end=20000 -v num=20 -v j=$j 'BEGIN {print int(exp(log(start) + j * (log(end) - log(start)) / (num - 1)))}')
+
+            innerreps=20
+            echo "arraybench_($IDA)_$delaylength_$innerreps"  # Just to ensure there is a newline at the end of the file, if needed
+            echo "************************************************************************************************************************************************************************" >> $output_file
+            # Direct the output of srun into the appropriate file in the raw_data directory
+            srun arraybench_27 --outer-repetitions 40 --delay-length $delaylength --inner-repetitions $innerreps >> $output_file
+            
+            echo ""  # Just to ensure there is a newline at the end of the file, if needed
+        done
+        # Save the script to the Script directory after each IDA loop iteration
+            python visualise2.py 'On_CPU' $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+            
+    done
+done

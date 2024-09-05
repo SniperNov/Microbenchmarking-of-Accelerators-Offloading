@@ -443,6 +443,32 @@ void benchmark(char *name, void (*test)(void))
 
 }
 
+void benchmark2(char *name, void (*test1)(void), void (*test2)(void))
+{
+    int k;
+    double start;
+
+    // Calculate the required number of innerreps
+    innerreps = getinnerreps(test1);
+
+    inittest(name);
+
+    // ignore timing for first time through
+    test1();
+    test2();
+
+    // do outerreps timed tests
+    for (k = 0; k < outerreps; k++)
+    {
+        start = getclock();
+        test1();
+        test2();
+        times[k] = (getclock() - start) * 1.0e6 / (double)innerreps;
+    }
+
+    finalisetest(name);
+}
+
 void delay(int delaylength) {
 
     int i;
