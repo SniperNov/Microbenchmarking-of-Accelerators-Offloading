@@ -52,10 +52,10 @@ for IDA in 2187; do
         
     #     echo ""  # Just to ensure there is a newline at the end of the file, if needed
     # done
-    for j in $(seq 0 9); do
-    delaylength=$(awk -v start=20 -v end=50000 -v num=10 -v j=$j 'BEGIN {print int(exp(log(start) + j * (log(end) - log(start)) / (num - 1)))}')
+    for j in $(seq 0 19); do
+    delaylength=$(awk -v start=20 -v end -v num=2000 -v j=$j 'BEGIN {print int(exp(log(start) + j * (log(end) - log(start)) / (num - 1)))}')
 
-            innerreps=20
+            innerreps=1
             echo "arraybench_($IDA)_$delaylength_$innerreps"  # Just to ensure there is a newline at the end of the file, if needed
             echo "************************************************************************************************************************************************************************" >> $output_file
             # Direct the output of srun into the appropriate file in the raw_data directory

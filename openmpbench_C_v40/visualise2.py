@@ -15,68 +15,66 @@ def read_file(filename):
         content = file.read()
     return content
 
-def plot_performance(benchmark_data, delays, job, MIDA, graph, machine):
+def remove_outliers_iqr(data, delays, switch):
+    if switch is 0:
+        return data,delays
+    # Calculate Q1 (25th percentile) and Q3 (75th percentile)
+    Q1 = np.percentile(data, 25)
+    Q3 = np.percentile(data, 75)
+    IQR = Q3 - Q1
+    
+    # Define the acceptable range for non-outliers
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    
+    # Filter data and corresponding delays
+    filtered_data = [d for d, delay in zip(data, delays) if lower_bound <= d <= upper_bound]
+    filtered_delays = [delay for d, delay in zip(data, delays) if lower_bound <= d <= upper_bound]
+    
+    return filtered_data, filtered_delays
+
+def plot_performance(*datasets, tag, delays, job, MIDA, graph, machine):
     # Plotting performance based on extracted data
     plt.figure(figsize=(10, 6))
     colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
     extended_x = np.linspace(0, max(delays) * 1.1, 100)
     directory = os.path.join("Analysis", machine, job)
 
-    for benchmark, data in benchmark_data.items():
-        color = next(colors)
-        slope, intercept, r_value, p_value, std_err = linregress(delays, data)
-        analyse_dist(benchmark, directory, slope, intercept, std_err, delays)
-        extended_predictions = intercept + slope * extended_x
+    all_y_values = []
 
-        plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
-        plt.scatter(delays, data, color=color, edgecolor='black', s=50)
+    for dataset in datasets:
+        for label, data in dataset.items():
+            filtered_data, filtered_delays = remove_outliers_iqr(data, delays,0)
 
-    if (graph==True):
+            color = next(colors)
+            slope, intercept, r_value, p_value, std_err = linregress(filtered_delays, filtered_data)
+            analyse_dist(label, directory, slope, intercept, std_err, filtered_delays)
+            extended_predictions = intercept + slope * extended_x
+
+            plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{label} (y = {slope:.4f}x + {intercept:.4f})')
+            plt.scatter(filtered_delays, filtered_data, color=color, edgecolor='black', s=50)
+            all_y_values.extend(data)
+
+    # Debugging output to check if negative values exist
+    if graph:
         plt.title(f'Performance, JOB={job}, Sampled in {MIDA} spacing on {machine}', fontsize=16, fontweight='bold')
-        plt.xlabel('Delay Length (iterations))', fontsize=14)
-        plt.ylabel('Mean execution time (microseconds)', fontsize=14)
-        plt.legend(fontsize=12)
-        plt.grid(True, which='both', linestyle='--', linewidth=0.5)
-        plt.minorticks_on()
-        plt.tick_params(axis='both', which='major', labelsize=12)
-        plt.xlim(left=0)
-        plt.ylim(bottom=0)
-        plt.tight_layout()
-        output_name = "Plots/" + machine + "/"+ job + "/" + MIDA + "_performance.png"
-        plt.savefig(output_name)
-        plt.show()
-        print(f"Plot saved to {output_name}")
-
-
-def plot_overhead(benchmark_overhead, delays, job, MIDA, graph, machine):
-    # Plotting performance based on extracted data
-    plt.figure(figsize=(10, 6))
-    colors = iter(['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2'])
-    extended_x = np.linspace(0, max(delays) * 1.1, 100)
-
-    for benchmark, data in benchmark_overhead.items():
-        color = next(colors)
-        slope, intercept, r_value, p_value, std_err = linregress(delays, data)
-        extended_predictions = intercept + slope * extended_x
-
-        plt.plot(extended_x, extended_predictions, color=color, linestyle='-', linewidth=2, label=f'{benchmark} (y = {slope:.4f}x + {intercept:.4f})')
-        plt.scatter(delays, data, color=color, edgecolor='black', s=50)
-
-    if(graph==True):
-        plt.title(f'Overhead, JOB={job}, Sampled in {MIDA} spacing on {machine}', fontsize=16, fontweight='bold')
         plt.xlabel('Delay Length (iterations)', fontsize=14)
-        plt.ylabel('Overhead (microseconds)', fontsize=14)
+        plt.ylabel('Execution time (microseconds)', fontsize=14)
         plt.legend(fontsize=12)
         plt.grid(True, which='both', linestyle='--', linewidth=0.5)
         plt.minorticks_on()
         plt.tick_params(axis='both', which='major', labelsize=12)
         plt.xlim(left=0)
-        plt.ylim(bottom=0)
+        
+
         plt.tight_layout()
-        output_name = "Plots/" + machine + "/"+ job + "/" + MIDA + "_overhead.png"
+        output_name = os.path.join("Plots", machine, job, f"{tag}_{MIDA}_performance.png")
+        os.makedirs(os.path.dirname(output_name), exist_ok=True)
         plt.savefig(output_name)
-        plt.show()
         print(f"Plot saved to {output_name}")
+
+
+
 
 def ensure_directory_exists(directory):
     os.makedirs(directory, exist_ok=True)
@@ -137,54 +135,43 @@ def main():
         print("Parameters not found in the file.")
         exit()
 
-    benchmark_pattern = r"Computing (\w+) time using \d+ reps"
-    benchmarks = re.findall(benchmark_pattern, content, re.DOTALL)
-    if benchmarks:
-        benchmark_data = {benchmark: [] for benchmark in benchmarks}
-        benchmark_overhead = {benchmark: [] for benchmark in benchmarks if 'reference' not in benchmark}
-        
-        print("The Performance extracted:\n")
-        print(benchmark_data)
+    # benchmark_pattern = r"Computing (\w+) time using \d+ reps"
+    # benchmarks = re.findall(benchmark_pattern, content, re.DOTALL)
+    # if benchmarks:
+    #     benchmark_data = {benchmark: [] for benchmark in benchmarks}
+    #     benchmark_overhead = {benchmark: [] for benchmark in benchmarks if 'reference' not in benchmark}
+    reference_pattern = r"reference time mean time\s+=\s+([\d.]+)"
+    all_pattern = r"testall mean time\s+=\s+([\d.]+)"
+    observed_pattern = r"test1 mean time\s+=\s+([\d.]+)"
+    expected_pattern = r"testall overhead\s+=\s+(-?[\d.]+)"
 
-        print("The Overheads extracted:\n")
-        print(benchmark_overhead)
-    else:
-        print("Benchmarks not found in the file.")
+    reference_data = re.findall(reference_pattern, content)
+    all_data = re.findall(all_pattern, content)
+    observed_data = re.findall(observed_pattern, content)
+    expected_data = re.findall(expected_pattern, content)
+
+    if not observed_data or not expected_data or not reference_data or not all_data:
+        print("Required data not found in the file.")
         exit()
-
-    # data_pattern = r"Sample_size\s+Mean\s+Median\s+Min\s+Max\s+StdDev\s+Outliers\n\s*\d+\s+([\d.]+)"
-    data_pattern = r"mean time\s+=\s+([\d.]+)"
-    all_data = re.findall(data_pattern, content, re.DOTALL)
-    print("Performance mean time:\n")
-    print(all_data)
-    if all_data:
-        for benchmark, mean_time in zip(benchmarks, all_data):
-            benchmark_data[benchmark].append(float(mean_time))
-        for benchmark, mean_times in benchmark_data.items():
-            print(f"{benchmark}: {mean_times}")
-            analyse_data(benchmark, directory, mean_times, delays)
-    else:
-        print("Data not found in the file.")
-        exit()    
-
-    overhead_pattern = r"overhead\s+=\s+(-?[\d.]+)"
-    all_overhead = re.findall(overhead_pattern, content, re.DOTALL)
-    print("Overheads:\n")
-    print(all_overhead)
-    benchmark_filtered = [item for item in benchmarks if 'reference' not in item]
-
-    if all_overhead:
-        for benchmark, overhead in zip(benchmark_filtered, all_overhead):
-            benchmark_overhead[benchmark].append(float(overhead))
-        for benchmark, overheads in benchmark_overhead.items():
-            print(f"{benchmark}: {overheads}")
-    else:
-        print("Overhead not found in the file.")
-        exit()        
     
-    print(f'delay lengths are {delays}!\n')
-    plot_performance(benchmark_data, delays, job, method+'_'+IDA, True, machine)
-    plot_overhead(benchmark_overhead, delays, job, method+'_'+IDA, True, machine)
+    reference_data = [float(x) for x in reference_data]
+    all_data = [float(x) for x in all_data]
+    observed_data = [float(x) for x in observed_data]
+    expected_data = [float(x) for x in expected_data]
+
+    reference_dict = {"test2_measured": reference_data}
+    all_dict = {"test1and2_measured": all_data}
+    observed_dict = {"test1_measured": observed_data}
+    expected_dict = {"test1_subtracted": expected_data}
+
+    # Analyzing data and plotting
+    analyse_data("test2_measured", directory, reference_data, delays)
+    analyse_data("test1and2_measured", directory, all_data, delays)
+    analyse_data("test1_measured", directory, observed_data, delays)
+    analyse_data("test1_subtracted", directory, expected_data, delays)
+
+    plot_performance(reference_dict, all_dict, tag='refall',delays=delays, job=job, MIDA=method + '_' + IDA, graph=True, machine=machine)
+    plot_performance(observed_dict, expected_dict, tag='func1', delays=delays, job=job, MIDA=method + '_' + IDA, graph=True, machine=machine)
 
 
 if __name__ == "__main__":

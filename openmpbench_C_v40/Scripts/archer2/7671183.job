@@ -1,0 +1,96 @@
+#!/bin/bash
+#SBATCH --account=d35-wt
+#SBATCH --job-name=microbenchmark
+#SBATCH --time=8:00:00
+#SBATCH --nodes=1
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu-exc
+#SBATCH --gres=gpu:1
+#SBATCH --exclusive
+benchmark=cpu_validate
+JOB_ID=$SLURM_JOB_ID
+machine=archer2
+method=lin
+num_samples=20
+min_delaylength=20
+max_delaylength=20000
+innerreps=20
+IDA=27
+outer_repetitions=40
+benchmark=cpu_validate
+compiler=cray
+remark1="Have seperate the cpu_validate as a another source file instesd of using the arraybench.c"
+remark2=None
+remark3=None
+remark4=None
+#SBATCH --output=Monitor/%x_%j.out
+
+
+module load load-epcc-module
+module load matplotlib
+module load seaborn/0.12.2 
+module load cray-python/3.9.13.1
+
+export OMP_NUM_THREADS=1
+
+
+
+# Create a directory with the job ID
+mkdir -p Raw_data/${machine}/${JOB_ID}
+mkdir -p Plots/${machine}/${JOB_ID}
+mkdir -p Scripts/${machine}
+cat $0 > Scripts/${machine}/${JOB_ID}.job
+mkdir -p Analysis/${machine}/${JOB_ID}
+export MPLCONFIGDIR=/work/d35/d35/weiyu24/Microbenchmarking-of-Accelerators-Offloading/openmpbench_C_v40/Plots/${machine}
+
+# Specify the path to your CSV file
+csv_file="dataset.csv"
+
+# Check if the file exists
+if [ ! -f "$csv_file" ]; then
+    headers="Machine,Test Name,JOB_ID,Compiler,Min_Delaylength,Max_Delaylength,Number_of_Samples,Spacing_Method,Benchmark,IDA,Remark_1,Remark_2,Remark_3,Remark_4"
+    # "$machine,$testname,$JOB_ID,$compiler,$min_delaylength,$max_delaylength,$num_samples,$method,$benchmark,$IDA,$remark1,$remark2,$remark3,$remark4"
+    echo "$headers" > "$csv_file"
+    echo "CSV file '$csv_file' created with headers."
+else
+    echo "CSV file '$csv_file' already exists."
+fi
+
+for ((i=0; i<5;i++)); do
+    # File to store results for the current IDA value
+    output_file=Raw_data/${machine}/${JOB_ID}/${benchmark}_${IDA}_${i}.out
+    # Clear previous data for this IDA, if any (to ensure fresh start for each IDA)
+    : > $output_file
+
+    # for delaylength in 20 4860 4880 4890 4900 4920 4940 4960 4980 5000; do
+    for j in $(seq 0 $((num_samples-1))); do
+        if ["$method"=="linRe"]; then delaylength=$(awk -v start=$min_delaylength -v end=$max_delaylength -v num=$num_samples -v j=$j 'BEGIN {print int(end - j * (end - start) / (num - 1))}')
+        fi
+        if ["$method"=="lin"]; then delaylength=$(awk -v start=$min_delaylength -v end=$max_delaylength -v num=$num_samples -v j=$j 'BEGIN {print int(start + j * (end - start) / (num - 1))}')
+        fi
+        if ["$method"=="logRe"];then delaylength=$(awk -v start=$min_delaylength -v end=$max_delaylength -v num=$num_samples -v j=$j 'BEGIN {print int(exp(log(end) - j * (log(end) - log(start)) / (num - 1)))}')
+        fi
+        if ["$method"=="lin"];then delaylength=$(awk -v start=$min_delaylength -v end=$max_delaylength -v num=$num_samples -v j=$j 'BEGIN {print int(exp(log(start) + j * (log(end) - log(start)) / (num - 1)))}')
+        fi
+
+        echo "arraybench_($IDA)_$delaylength_$innerreps"  # Just to ensure there is a newline at the end of the file, if needed
+        echo "************************************************************************************************************************************************************************" >> $output_file
+        # Direct the output of srun into the appropriate file in the raw_data directory
+        srun $benchmark --outer-repetitions $outer_repetitions --delay-length $delaylength --inner-repetitions $innerreps >> $output_file
+        
+        echo ""  # Just to ensure there is a newline at the end of the file, if needed
+    done
+    # Save the script to the Script directory after each IDA loop iteration
+    python visualise2.py "$benchmark" $output_file ${JOB_ID} ${IDA}_${i} ${machine}
+done
+
+for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
+do 
+    data_file="${coe_file/coe/data}"
+    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
+done
+
+newline="$machine,$testname,$JOB_ID,$compiler,$min_delaylength,$max_delaylength,$num_samples,$method,$benchmark,$IDA,$remark1,$remark2,$remark3,$remark4"
+# Append the sentence to the CSV file
+echo "$newline" >> "$csv_file"
+
