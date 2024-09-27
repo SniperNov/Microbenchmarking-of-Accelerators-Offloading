@@ -1,0 +1,20 @@
+Test Name,Machine,Git Branch,JOB_ID,Compiler,Min_Delaylength,Max_Delaylength,Number_of_Samples,Spacing_Method,Benchmark,IDA,Remark_1,Remark_2,Remark_3,Remark_4
+Func1Func2 Test,archer2,cpu_validate,7678636,cray,20,20000,20,linRe,cpuvalidate,27,Have seperate the cpu_validate as a another source file instesd of using the arraybench.c,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7678676,cray,20,20000,20,linRe,cpuvalidate,27,Have seperate the cpu_validate as a another source file instesd of using the arraybench.c,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7680396,cray,20,20000,20,logRe,cpuvalidate,27,Have seperate the cpu_validate as a another source file instesd of using the arraybench.c,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7680517,gcc,20,20000,20,logRe,cpuvalidate,27,Have seperate the cpu_validate as a another source file instesd of using the arraybench.c,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7680612,gcc,20,20000,100,lin,cpuvalidate,27,Changed the compiler from cray to gcc,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7680947,gcc,20,20000,100,linRe,cpuvalidate,27,Changed the compiler from cray to gcc,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7680949,gcc,20,20000,100,log,cpuvalidate,27,Changed the compiler from cray to gcc,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7681023,gcc,20,20000,100,logRe,cpuvalidate,27,Changed the compiler from cray to gcc,None,None,None
+Func1Func2 Test,archer2,cpu_validate,7681072,gcc,20,20000,100,lin,cpuvalidate,27,cc (GCC) 10.2.0,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984358,gcc,20,20000,20,lin,cpuvalidate,27,cc (GCC) 10.2.0,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984361,gcc,20,20000,100,lin,cpuvalidate,27,cc (GCC) 10.2.0,None,No INTERQUATILE RANGE removing outliers,None
+Func1Func2 Test,cirrus,cpu_validate,5984445,gcc,20,20000,100,log,cpuvalidate,27,cc (GCC) 10.2.0,None,No INTERQUATILE RANGE removing outliers,None
+Func1Func2 Test,cirrus,cpu_validate,5984476,nvc,10000,20000,100,lin,cpuvalidate,27,Test which func2 has larger delaylength from 10k to 20k,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984477,nvc,1,500,100,lin,cpuvalidate,27,Test which func2 has small delaylength from 1 to 500,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984540,gcc,10000,20000,100,lin,cpuvalidate,27,Test which func2 has larger delaylength from 10k to 20k,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984542,gcc,1,500,100,lin,cpuvalidate,27,Test which func2 has small delaylength from 1 to 500,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5984549,nvc,20,20000,100,lin,cpuvalidate,27,None,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5986258,nvc,20,20000,100,lin,cpuvalidate,27,The fixed delaylength is func2 is now 5000,None,None,None
+Func1Func2 Test,cirrus,cpu_validate,5986325,nvc,20,20000,100,lin,cpuvalidate,27,The fixed delaylength is func2 is now 5000,None,None,None
