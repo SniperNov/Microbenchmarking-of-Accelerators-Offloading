@@ -38,4 +38,4 @@ void func1();
 void func2();
 void stats(double *, double *);
 
-#endif // ARRAYBENCH_H
+#endif // CPU_VALIDATE_H

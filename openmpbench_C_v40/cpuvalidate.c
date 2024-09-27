@@ -87,6 +87,6 @@ void func2()
         array_delay(delaylength, a);
         a[0] += 2.0; // Simulate a subset or different operations
         // Print the current value of 'a' to force sequential execution
-        printf("func1: Iteration %d, a[0] = %f\n", j, a[0]);
+        printf("func2: Iteration %d, a[0] = %f\n", j, a[0]);
     }
 }

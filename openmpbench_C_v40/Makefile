@@ -1,4 +1,4 @@
-include Makefile.defs.cray
+include Makefile.defs.gcc
 
 # Variables
 ASMFLAGS = -S # Add any additional flags for assembly generation if needed
