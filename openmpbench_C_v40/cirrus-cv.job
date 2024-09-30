@@ -24,10 +24,10 @@ IDA=27
 outer_repetitions=40
 benchmark=cpuvalidate
 compiler=nvc
-remark1="The fixed delaylength is func2 is now 5000"
+remark1="Implicit the print statement prevent from overlapping"
 remark2=None
-remark3=None
-remark4=None
+remark3="Remember to test linRe"
+remark4="Set all flags to -O0"
 
 export OMP_NUM_THREADS=1
 
@@ -90,11 +90,11 @@ for ((i=0; i<5;i++)); do
     python visualise2.py "$benchmark" $output_file ${JOB_ID} ${IDA}_${i} ${machine}
 done
 
-for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
-do 
-    data_file="${coe_file/coe/data}"
-    python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
-done
+# for coe_file in Analysis/${machine}/${JOB_ID}/coe_*.txt;
+# do 
+#     data_file="${coe_file/coe/data}"
+#     python Analysis/analysis.py "$data_file" "$coe_file" ${JOB_ID} ${method} ${machine}
+# done
 
 newline="$testname,$machine,$branchname,$JOB_ID,$compiler,$min_delaylength,$max_delaylength,$num_samples,$method,$benchmark,$IDA,$remark1,$remark2,$remark3,$remark4"
 # Append the sentence to the CSV file

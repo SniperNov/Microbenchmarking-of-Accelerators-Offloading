@@ -4,7 +4,7 @@
 
 
 CC=icc
-CFLAGS = -qopenmp 
-LDFLAGS = -qopenmp  
-CPPFLAGS = -P 
+CFLAGS = -qopenmp -O0
+LDFLAGS = -qopenmp  -O0
+CPPFLAGS = -P -O0
 LIBS = -lm  

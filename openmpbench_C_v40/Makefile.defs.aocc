@@ -1,6 +1,6 @@
 
 CC=clang
-CFLAGS = -fopenmp 
-LDFLAGS = -fopenmp  
-CPPFLAGS = -E 
+CFLAGS = -fopenmp -O0
+LDFLAGS = -fopenmp  -O0
+CPPFLAGS = -E -O0
 LIBS = -lm  
