@@ -1,4 +1,4 @@
-include Makefile.defs
+include Makefile.defs.gcc
 
 # Variables
 ASMFLAGS = -S # Add any additional flags for assembly generation if needed

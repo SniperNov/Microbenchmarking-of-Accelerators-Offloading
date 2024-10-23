@@ -30,8 +30,8 @@
  *                                                                           *
  ****************************************************************************/
 
-#ifndef ARRAYBENCH_H
-#define ARRAYBENCH_H
+#ifndef CPU_VALIDATE_H
+#define CPU_VALIDATE_H
 
 void refer();
 void func1();
