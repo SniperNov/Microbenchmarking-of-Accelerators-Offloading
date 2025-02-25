@@ -1,0 +1,41 @@
+#pragma omp parallel num_threads(4) results:
+
+---------------------------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------------------------
+| target teams parallel        |     47.777 ±   2.297 μs          |
+---------------------------------------------------------------
+| target teams parallel        |     48.390 ±   2.112 μs          |
+---------------------------------------------------------------
+
+
+#pragma omp parallel num_threads(2) results:
+
+---------------------------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------------------------
+| target teams parallel        |     19.510 ±   1.207 μs          |
+---------------------------------------------------------------
+| target teams parallel        |     19.593 ±   1.247 μs          |
+---------------------------------------------------------------
+
+
+#pragma omp parallel num_threads(1) results:
+
+---------------------------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------------------------
+| target teams parallel        |      0.380 ±   0.140 μs          |
+---------------------------------------------------------------
+| target teams parallel        |      0.355 ±   0.230 μs          |
+
+This test used thread number control to prevent exponentially increased workload which were mean to execute concurrently.
+
+With 1 threads per team: Offloading overhead = 0.380ms
+With 2 threads per team: Offloading overhead = 19.592ms
+With 4 threads per team: Offloading overhead = 48ms
+
+The observations suggests that increasing the number of threads per team increases kernel launch and scheduling overhead disproportionately.
+
+Next step: further refine thread-to-team balancing based on task size.
+

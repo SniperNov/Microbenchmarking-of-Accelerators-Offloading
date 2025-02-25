@@ -1,0 +1,60 @@
+There are  1 available devices
+Host device is -1
+Target region executed on device
+
+Compiler GCC 
+
+
+Benchmark results:
+---------------------------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------------------------
+| target map(tofrom: a)        |      0.041 ±   0.021 μs          |
+| target map(to: a)            |      0.042 ±   0.023 μs          |
+| target map(from: a)          |      0.041 ±   0.021 μs          |
+| target map(alloc: a)         |      0.041 ±   0.020 μs          |
+| target                       |      0.039 ±   0.021 μs          |
+| target teams                 |      0.038 ±   0.022 μs          |
+| target teams parallel num_threads(2)|     19.078 ±   1.676 μs          |
+| target teams distribute parallel for |      0.042 ±   0.006 μs          |
+| target nowait                |      0.108 ±   0.021 μs          |
+| target map(to: a[0:N])       |      0.040 ±   0.022 μs          |
+| target map(tofrom: a[0:N])   |      0.042 ±   0.020 μs          |
+| num_teams(8) thread_limit(256) |      0.077 ±   0.041 μs          |
+---------------------------------------------------------------
+Finalizing benchmark.
+
+
+Benchmark results:
+---------------------------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------------------------
+| target map(tofrom: a)        |      0.052 ±   0.021 μs          |
+| target map(to: a)            |      0.050 ±   0.021 μs          |
+| target map(from: a)          |      0.056 ±   0.030 μs          |
+| target map(alloc: a)         |      0.049 ±   0.019 μs          |
+| target                       |      0.046 ±   0.023 μs          |
+| target teams                 |      0.049 ±   0.023 μs          |
+| target teams parallel num_threads(2)|     19.190 ±   1.234 μs          |
+| target teams distribute parallel for |      0.041 ±   0.006 μs          |
+| target nowait                |      0.116 ±   0.022 μs          |
+| target map(to: a[0:N])       |      0.050 ±   0.021 μs          |
+| target map(tofrom: a[0:N])   |      0.050 ±   0.020 μs          |
+| num_teams(8) thread_limit(256) |      0.091 ±   0.043 μs          |
+---------------------------------------------------------------
+Finalizing benchmark.
+
+when increase the num_teams
+from (4 * num_devices): 
+| target teams distribute parallel for |      0.042 ±   0.006 μs          |
+
+to (16 * num_devices):
+| target teams distribute parallel for |      0.040 ±   0.004 μs          |
+| target teams distribute parallel for |      0.041 ±   0.006 μs          |
+
+to (32*num_devices):
+| target teams distribute parallel for |      0.041 ±   0.006 μs          |
+
+to (64*num_devices):
+| target teams distribute parallel for |      0.040 ±   0.006 μs          |
+

@@ -1,6 +1,5 @@
-
 CC=gcc
-CFLAGS = -fopenmp 
-LDFLAGS = -fopenmp  
-CPPFLAGS = -E 
+CFLAGS = -fopenmp -O0 
+LDFLAGS = -fopenmp 
+CPPFLAGS = -E -O0
 LIBS = -lm  

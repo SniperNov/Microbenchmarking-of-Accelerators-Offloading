@@ -1,50 +1,52 @@
-include Makefile.defs
+include Makefile.defs.gcc
 
-.c.o:
-	${CC} ${CFLAGS} -c $*.c
+TARGET = microbenchmark
+SRCS = microbenchmark.c common.c
+OBJS = $(SRCS:.c=.o)
 
-SYNCOBJS =  syncbench.o common.o
-SCHEDOBJS = schedbench.o common.o
-ARRAYOBJS = arraybench_$(IDA).o common.o
-TASKOBJS =  taskbench.o common.o
+# Default value for N (array size)
+N ?= 1024
 
-all:      syncbench schedbench taskbench
-	$(MAKE) IDA=1 prog
-	$(MAKE) IDA=3 prog
-	$(MAKE) IDA=9 prog
-	$(MAKE) IDA=27 prog
-	$(MAKE) IDA=81 prog
-	$(MAKE) IDA=243 prog
-	$(MAKE) IDA=729 prog
-	$(MAKE) IDA=2187 prog
-	$(MAKE) IDA=6561 prog
-	$(MAKE) IDA=19683 prog
-	$(MAKE) IDA=59049 prog
+all: $(TARGET)
 
-prog: arraybench_$(IDA)
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
-# Multiple header files due to multiple array sizes, makes header file arraybench_*.h
-arraybench_$(IDA).h: arraybench.h
-	$(CC) -DIDA=$(IDA) $(CPPFLAGS) arraybench.h -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Multiple object files due to multiple array sizes, makes object file arraybench_*.o
-arraybench_$(IDA).o: arraybench_$(IDA).h arraybench.c
-	$(CC) $(CFLAGS) -DIDA=$(IDA) arraybench.c -c -o $@
+help:
+	@echo "Available make commands:"
+	@echo "  make           - Compile microbenchmark"
+	@echo "  make clean     - Remove compiled files"
+	@echo "  make help      - Show this help message"
+	@echo ""
+	@echo "Usage: ./microbenchmark [method ...] [N]"
+	@echo "  No arguments - Runs all benchmarks with default N=$(N) and outputs a table"
+	@echo "  1 2 3       - Runs only the specified methods and outputs results in a table"
+	@echo ""
+	@echo "Available Methods:"
+	@echo "  1  - map(tofrom: a)"
+	@echo "  2  - map(to: a)"
+	@echo "  3  - map(from: a)"
+	@echo "  4  - map(alloc: a)"
+	@echo "  5  - target"
+	@echo "  6  - target teams"
+	@echo "  7  - target teams parallel"
+	@echo "  8  - target teams distribute parallel for"
+	@echo "  9  - target nowait"
+	@echo " 10  - target map(to: a[0:N])"
+	@echo " 11  - target map(tofrom: a[0:N])"
+	@echo " 12  - target teams num_teams(8) thread_limit(256)"
+	@echo ""
+	@echo "Example:"
+	@echo "  ./microbenchmark 1 2 4 12 $(N)"
+	@echo "    (Runs methods 1, 2, 4, 12 with array size N=$(N))"
 
-# Multiple executables due to multiple array sizes, makes exe file arraybench_*
-arraybench_$(IDA): $(ARRAYOBJS) arraybench.c
-	$(CC) $(LDFLAGS) $(ARRAYOBJS) $(LIBS) -o $@
-
-syncbench: $(SYNCOBJS)
-	$(CC) -o $@ $(LDFLAGS) $(SYNCOBJS) $(LIBS) 
-
-schedbench: $(SCHEDOBJS)
-	$(CC) -o $@ $(LDFLAGS) $(SCHEDOBJS) $(LIBS) 
-
-taskbench: $(TASKOBJS)
-	$(CC) -o $@ $(LDFLAGS) $(TASKOBJS) $(LIBS) 
+run_all:
+	@echo "Running all benchmarks with N=$(N) and generating results table..."
+	@./microbenchmark 1 2 3 4 5 6 7 8 9 10 11 12 $(N) > results.txt
+	@cat results.txt
 
 clean:
-	-rm  syncbench schedbench taskbench arraybench_* syncbench.o schedbench.o taskbench.o common.o 
-
-
+	rm -f $(TARGET) *.o results.txt

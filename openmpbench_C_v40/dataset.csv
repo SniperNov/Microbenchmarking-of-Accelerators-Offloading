@@ -1,0 +1,9 @@
+Test Name,Machine,Git Branch,JOB_ID,Compiler,Min_Delaylength,Max_Delaylength,Number_of_Samples,Spacing_Method,Benchmark,IDA,Remark_1,Remark_2,Remark_3,Remark_4
+Func1Func2 Test,cirrus,cpu_validate,6185300,gcc,20,1000,100,lin,cpuvalidate,27,Implicit the print statement prevent from overlapping,None,test log,Set all flags to -O0
+Func1Func2 Test on GPU,cirrus,gpu_validate,6190094,gcc,20,1000,100,lin,gpuvalidate,27,Just test if the offloading code can run on GPU,None,offload the whole for loops to the GPU,Set all gcc flags to -O0
+Func1Func2 Test on GPU,cirrus,gpu_validate,6190137,gcc,20,1000,100,lin,gpuvalidate,27,Make 'a' become a global variable for serial execution,None,offload the whole for loops to the GPU,Set all gcc flags to -O0, gcc/12-offloading
+Func1Func2 Test on GPU,cirrus,gpu_validate,6190138,gcc,20,1000,100,lin,gpuvalidate,27,Make 'a' become a global variable for serial execution,No filtered,offload the whole for loops to the GPU,Set all gcc flags to -O0, gcc/12-offloading
+Func1Func2 Test on GPU,cirrus,gpu_validate,6192137,nvc,20,1000,100,lin,gpuvalidate,27,Make 'a' become a global variable for serial execution,None,offload the whole for loops to the GPU,using nvc
+Func1Func2 Test on GPU,cirrus,gpu_validate,6192309,nvc,20,1000,100,lin,gpuvalidate,27,'a' is defined inside each function',None,offload the whole for loops to the GPU,using nvc
+TargetOffloading,cirrus,target_offloading,6700435,nvc,20,1000,50,lin,arraybench_27,27,None,None,None,None
+TargetOffloading,cirrus,target_offloading,6700436,nvc,20,1000,50,log,arraybench_27,27,None,None,None,None

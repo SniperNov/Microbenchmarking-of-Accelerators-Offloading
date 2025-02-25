@@ -79,6 +79,7 @@ void quickSort(double *a, int low, int high);
 void swap(double *p, double *q);
 
 void benchmark(char *name, void (*test)(void));
+void benchmark2(char *name, void (*test1)(void), void (*test2)(void));
 
 void reference(char *name, void (*refer)(void));
 

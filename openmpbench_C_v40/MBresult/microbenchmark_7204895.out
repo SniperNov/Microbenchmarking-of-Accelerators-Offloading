@@ -1,0 +1,49 @@
+Benchmark results:
+---------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------
+| target map(tofrom: a)        |      0.046 ±   0.017 μs          |
+| target map(to: a)            |      0.042 ±   0.013 μs          |
+| target map(from: a)          |      0.046 ±   0.015 μs          |
+| target map(alloc: a)         |      0.047 ±   0.013 μs          |
+| parallel for             |     19.603 ±   2.098 μs          |
+| target                       |      0.048 ±   0.026 μs          |
+| target teams                 |      0.044 ±   0.017 μs          |
+| target teams parallel        |   3121.751 ±  34.239 μs          |
+| target teams distribute parallel for |      0.046 ±   0.013 μs          |
+| target teams parallel (repetitions) |   6383.425 ±  27.091 μs          |
+| target teams nested parallel |      0.113 ±   0.023 μs          |
+| target nowait                |      0.047 ±   0.014 μs          |
+| target map(to: a[0:N])       |      0.045 ±   0.015 μs          |
+| target map(tofrom: a[0:N])   |      0.017 ±   0.017 μs          |
+---------------------------------------------
+Finalizing benchmark.
+
+1. How to prevent variations in how the GPU schedules these kernels?
+   - ✅ Isolating the Benchmark 
+   - Stream Prioritization and Synchronization: Use explicit synchronization calls 
+        (for example, inserting synchronization barriers after kernel launches)
+   - Consistent Kernel Configuration: grid and block sizes remain constant?
+   - ✅ Multiple Iterations
+
+2. (Infeasible) How to control the GPU driver and the OS for lower non-deterministic delays? 
+   - Disabling Power Management Features: Turn off Cirrus's DVFS; Maximise performance mode using vendor-specific tools (e.g., NVIDIA’s nvidia-smi).  
+   - System Isolation: with minimal background activity
+   - Using a more stable driver version
+
+3. Is there anything I can do to change the measurement granularity as it is a microbenchmark with a precision requirement?
+   - ✅ Increase Iteration Count 100 -> 400
+   - ✅ High-Resolution Timers: Already use high-precision timer `omp_get_wtime()`. Otherwise we'll introduce hardware timer.
+   - Calibrate Timer Overhead？cost of calling omp_get_wtime()?
+
+4. How could the asynchronous execution affect the results? How much percentage of the fluctuations will be introduced?
+
+5. Are the workload distribution and scheduling determined by any other factors?
+   - GPU Architecture: The internal design of the GPU (such as the number of streaming multiprocessors, warp scheduling, available registers, and shared memory) plays a significant role.  
+   - Kernel Configuration: The chosen grid and block sizes (or team sizes in OpenMP terms) affect occupancy and how the workload is distributed.  
+      See the two new microbenchmark_72.out 
+      How could we tell using chosen team size stablelised the distribution or not?
+   - Resource Contention: Is exclusive really exclusive.  
+   - Driver and Runtime Decisions
+   - Thermal and Power Conditions
+

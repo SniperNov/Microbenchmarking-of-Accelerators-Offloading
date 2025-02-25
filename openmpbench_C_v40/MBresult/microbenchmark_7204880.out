@@ -1,0 +1,107 @@
+GPU Benchmark results:
+---------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------
+| target map(tofrom: a)        |      0.042 ±   0.022 μs          |
+| target map(to: a)            |      0.041 ±   0.023 μs          |
+| target map(from: a)          |      0.043 ±   0.020 μs          |
+| target map(alloc: a)         |      0.044 ±   0.022 μs          |
+| parallel for             |      5.486 ±   2.474 μs          |
+| target                       |      0.047 ±   0.030 μs          |
+| target teams                 |      0.039 ±   0.020 μs          |
+| target teams parallel        |   1058.320 ±  13.763 μs          |
+| target teams distribute parallel for |      0.043 ±   0.010 μs          |
+| target teams parallel (repetitions) |   2667.877 ±  60.495 μs          |
+| target teams nested parallel |      0.112 ±   0.026 μs          |
+| target nowait                |      0.040 ±   0.013 μs          |
+| target map(to: a[0:N])       |      0.044 ±   0.021 μs          |
+| target map(tofrom: a[0:N])   |      0.011 ±   0.021 μs          |
+---------------------------------------------
+Finalizing benchmark.
+
+CPU2.24
+Benchmark results:
+---------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------
+| target map(tofrom: a)        |      0.027 ±   0.122 μs          |
+| target map(to: a)            |      0.018 ±   0.066 μs          |
+| target map(from: a)          |      0.023 ±   0.060 μs          |
+| target map(alloc: a)         |      0.026 ±   0.063 μs          |
+| omp parallel for             |     43.450 ±  45.732 μs          |
+| target                       |      0.027 ±   0.069 μs          |
+| target teams                 |      0.020 ±   0.085 μs          |
+| target teams parallel        |     46.145 ±  42.967 μs          |
+| target teams distribute parallel for |      0.041 ±   0.021 μs          |
+| target teams parallel (repetitions) |   1042.055 ± 526.254 μs          |
+| target nowait                |      0.035 ±   0.064 μs          |
+| target map(to: a[0:N])       |      0.024 ±   0.069 μs          |
+| target map(tofrom: a[0:N])   |      0.028 ±   0.077 μs          |
+| num_teams(8) thread_limit(256) |      0.032 ±   0.123 μs          |
+---------------------------------------------
+Finalizing benchmark.
+
+CPU 
+---------------------------------------------
+| Method                       | Estimated Offloading Time ± Error |
+---------------------------------------------
+| target map(tofrom: a)        |      0.048 ±   0.062 μs          |
+| target map(to: a)            |      0.047 ±   0.057 μs          |
+| target map(from: a)          |      0.043 ±   0.062 μs          |
+| target map(alloc: a)         |      0.051 ±   0.069 μs          |
+| omp parallel for             |   4754.694 ± 127.119 μs          |
+| target                       |      0.043 ±   0.041 μs          |
+| target teams                 |      0.045 ±   0.065 μs          |
+| target teams parallel        |   4253.281 ±  97.184 μs          |
+| target teams distribute parallel for |      0.050 ±   0.015 μs          |
+| target teams parallel (repetitions) |   8609.776 ± 100.866 μs          |
+| target teams nested parallel |      0.150 ±   0.094 μs          |
+| target nowait                |      0.049 ±   0.068 μs          |
+| target map(to: a[0:N])       |      0.057 ±   0.084 μs          |
+| target map(tofrom: a[0:N])   |      0.019 ±   0.081 μs          |
+---------------------------------------------
+
+The table shows the estimated offloading overhead for 14 different OpenMP methods, 
+    measured in microseconds (μs) with their corresponding error margins 
+        (which represent the statistical uncertainty of the measurement).
+
+1. Simple Offload Constructs:
+    For methods that perform only data mapping (e.g., target map(tofrom: a), target map(to: a), etc.), 
+        both CPU and GPU show extremely low overhead (around 0.04–0.05 μs). 
+    This indicates that when no substantial computation is launched, the setup cost is minimal on either platform.
+
+2. Parallel For Construct:
+
+    CPU: The omp parallel for construct shows an overhead of approximately 4755 μs. This high cost is likely due to 
+        the overhead of thread creation and synchronization on the CPU for this microbenchmark.
+    GPU: A similarly purposed construct on the GPU, however, shows a much lower overhead of around 20 μs. 
+        This demonstrates that GPUs can handle massive thread parallelism more efficiently 
+            when the workload is appropriately offloaded.
+
+3. Teams-Based Constructs:
+
+    Target Teams Parallel: On the CPU, this construct incurs an overhead of about 4253 μs, 
+        while on the GPU it is lower at roughly 3122 μs.
+    Target Teams Parallel (Repetitions): Similarly, the repeated teams parallel construct takes around 8609 μs on the CPU 
+        compared to approximately 6383 μs on the GPU.
+    Both "target teams parallel" and "target teams parallel (repetitions)" incur high overhead on both platforms 
+        because they involve setting up multiple teams, launching full kernels, and synchronizing threads. 
+    However, GPUs generally have lower overhead for these constructs due to their design for massive parallelism 
+                and efficient thread scheduling. 
+    On the CPU, the cost of creating and managing many threads can be significantly higher, especially when the workload per thread is very light.
+
+
+• High Overhead Methods (Target Teams Parallel):
+Two methods stand out as having a much higher overhead:
+These indicate that launching a target teams parallel region incurs significant overhead. 
+The complexity of initializing multiple teams and threads on a device (e.g., a GPU) can lead to these higher latencies. 
+The fact that repeating the parallel region further increases the cost (as seen in method 10) 
+    reinforces the idea that these constructs are more expensive to set up.
+
+• Notable Observation – Array Section Mapping:
+Comparing methods that use the “target map(to: a[0:N])” with “target map(tofrom: a[0:N])”
+It is because that the data transfer paths were being optimised:
+    The runtime might be detecting that the device code does not modify the data, 
+    so for a "tofrom" mapping it optimised away the copy-back step. 
+    In contrast, the "to" mapping followed a less optimized code path that always performs certain initialization checks.
+    See MBresult/microbenchmark_7206184.out
